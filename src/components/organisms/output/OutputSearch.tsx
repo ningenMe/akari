@@ -1,5 +1,5 @@
 import React, {useEffect, useState } from 'react'
-import { Blog } from 'repository/generated/suzu/v1/suzu_pb'
+import { BlogData } from 'repository/BlogData'
 import { Container, List } from '@mui/material'
 import { Output } from 'interfaces/Output'
 import { OutputChip } from 'components/atoms/output/OutputChip'
@@ -8,7 +8,7 @@ import { ACTIVITY_LIST } from 'constants/activityList'
 
 export const OutputSearch = (): JSX.Element => {
 
-  const [blogList, setBlogList] = useState<Blog[]>([])
+  const [blogList, setBlogList] = useState<BlogData[]>([])
 
   useEffect(
     () => {
@@ -20,9 +20,9 @@ export const OutputSearch = (): JSX.Element => {
 
   const blogOutputList: Output[] = blogList.map((blog) => {
     return {
-      date: blog.getDate(),
-      title: blog.getBlogTitle(),
-      href: blog.getUrl(),
+      date: blog.date,
+      title: blog.blogTitle,
+      href: blog.url,
       type: 'blog'
     }
   });
