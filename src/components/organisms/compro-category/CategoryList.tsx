@@ -1,3 +1,5 @@
+// API dependency temporarily disabled
+/*
 import { Container, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import styles from './CategoryList.module.scss'
@@ -39,7 +41,7 @@ export const CategoryList = (): JSX.Element => {
       href={PathConst.COMPRO_CATEGORY_CATEGORY_TOPIC_LIST(category.categorySystemName)}
       categoryDisplayName={category.categoryDisplayName}
     >
-      {/*TODO 数字の見せ方は要検討*/}
+      // TODO 数字の見せ方は要検討
       <div>topic: {category.topicList.length}</div>
     </CategoryLinkCard>,
   )
@@ -77,6 +79,23 @@ export const CategoryList = (): JSX.Element => {
           自分用のまとめとして他の方の記事を引用させていただいています。このサイト自体に営利目的はないですが、もし気に障る場合はtwitter経由で連絡ください。
         </Typography>
       </PageTextCard>
+    </Container>
+  )
+}
+*/
+
+import React from 'react'
+import { Container, Typography } from '@mui/material'
+
+export const CategoryList = (): JSX.Element => {
+  return (
+    <Container>
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        Category List
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        API接続が無効化されています。機能を使用するにはAPI接続を復旧してください。
+      </Typography>
     </Container>
   )
 }

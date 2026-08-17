@@ -25,7 +25,8 @@ export const Index: NextPage<Props> = (props: Props) => {
       <HtmlHead title={'compro-category category:' + props.categorySystemName + ' topic - '} />
       <ComproCategoryHeader />
       <ComproCategoryPageLink />
-      <CategoryTopicList categorySystemName={props.categorySystemName} />
+      <CategoryTopicList  />
+      {/* <CategoryTopicList categorySystemName={props.categorySystemName} /> */}
       <ComproCategoryFooter />
     </>
   )

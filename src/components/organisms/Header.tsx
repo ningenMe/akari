@@ -13,6 +13,8 @@ import { Box } from '@mui/system'
 import MenuIcon from '@mui/icons-material/Menu'
 import { LinkConst } from '../../constants/Const'
 import { BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
+import { LastUpdatedDesktop } from 'components/atoms/LastUpdatedDesktop'
+import { LastUpdatedMobile } from 'components/atoms/LastUpdatedMobile'
 
 const NormalElement = (
   { link, className, icon }: { link: Link, className: string, icon: ReactNode },
@@ -163,9 +165,12 @@ export const NingenmeNetHeader = (): JSX.Element => {
             onClose={onClose}
             sx={{ display: { xs: 'block', md: 'none' } }}
           >
+            <LastUpdatedMobile />
             {getElementList({ className: styles.buttonSp })}
           </Menu>
         </Box>
+
+        <LastUpdatedDesktop />
 
       </Toolbar>
     </AppBar>
@@ -231,9 +236,12 @@ export const ComproCategoryHeader = (): JSX.Element => {
             onClose={onClose}
             sx={{ display: { xs: 'block', md: 'none' } }}
           >
+            <LastUpdatedMobile />
             {getElementList({ className: styles.buttonSp })}
           </Menu>
         </Box>
+
+        <LastUpdatedDesktop />
 
       </Toolbar>
     </AppBar>

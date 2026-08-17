@@ -1,5 +1,5 @@
 import React from 'react'
-import { Blog } from 'suzu-backend/api/proto/client/api/proto/suzu/v1/suzu_pb'
+import { BlogData } from 'repository/BlogData'
 import Image from 'next/image'
 import Chip from '@mui/material/Chip/Chip'
 import fontStyles from 'styles/Font.module.scss'
@@ -40,18 +40,18 @@ export const BlogNingenmeUrlChip = ({blogType, clickable}: {blogType: string, cl
     )   
 }
 
-export const BlogChip = ({blog}: {blog: Blog}): JSX.Element => {
-    const blogDate = new Date(blog.getDate()); 
+export const BlogChip = ({blog}: {blog: BlogData}): JSX.Element => {
+    const blogDate = new Date(blog.date); 
     return (<ListItem disablePadding className={fontStyles.body}>
         <Chip 
-          label={blog.getDate()} 
+          label={blog.date} 
           variant="outlined" 
           size="small" 
           className={blogDate.getFullYear() % 2 === 0 ? styles.date0 : styles.date1}
         />
-        <BlogNingenmeUrlChip blogType={blog.getBlogType()} clickable={true}/>    
+        <BlogNingenmeUrlChip blogType={blog.blogType} clickable={true}/>    
         <ListItemText>
-          <a href={blog.getUrl()} className={styles.title}>{blog.getBlogTitle()}</a>
+          <a href={blog.url} className={styles.title}>{blog.blogTitle}</a>
         </ListItemText>
     </ListItem>
     );

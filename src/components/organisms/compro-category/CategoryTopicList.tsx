@@ -1,3 +1,5 @@
+// API dependency temporarily disabled
+/*
 import { Container } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { miikoApiMiikoServiceClient } from 'repository/MiikoApiRepository'
@@ -80,7 +82,7 @@ export const CategoryTopicList = ({ categorySystemName }: { categorySystemName: 
       <TopicNormalCard key={it.topicId}>
         <TopicLinkCard href={PathConst.COMPRO_CATEGORY_TOPIC_PROBLEM(it.topicId)}
                        topicDisplayName={it.topicDisplayName} />
-        {/*TODO 右寄せ*/}
+        // TODO 右寄せ
         {isAuthorizedComproCategory ?
           <TopicButton href={PathConst.COMPRO_CATEGORY_TOPIC_EDIT(it.topicId)} name='edit' /> : <></>}
         {getProblemCardList(it.problemList)}
@@ -103,6 +105,23 @@ export const CategoryTopicList = ({ categorySystemName }: { categorySystemName: 
       </PageTextCard>
       {cardList}
 
+    </Container>
+  )
+}
+*/
+
+import React from 'react'
+import { Container, Typography } from '@mui/material'
+
+export const CategoryTopicList = (): JSX.Element => {
+  return (
+    <Container>
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        Category Topic List
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        API接続が無効化されています。機能を使用するにはAPI接続を復旧してください。
+      </Typography>
     </Container>
   )
 }

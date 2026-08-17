@@ -1,3 +1,5 @@
+// API dependency temporarily disabled
+/*
 import { Container } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { PathConst } from 'constants/Const'
@@ -31,6 +33,23 @@ export const ComproCategoryPageLink = (): JSX.Element => {
         {isAuthorizedComproCategory ?
           <ProblemButton href={PathConst.COMPRO_CATEGORY_PROBLEM_CREATE} name='problem create' /> : <></>}
       </div>
+    </Container>
+  )
+}
+*/
+
+import React from 'react'
+import { Container, Typography } from '@mui/material'
+
+export const ComproCategoryPageLink = (): JSX.Element => {
+  return (
+    <Container>
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        Compro Category Page Link
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        API接続が無効化されています。機能を使用するにはAPI接続を復旧してください。
+      </Typography>
     </Container>
   )
 }
