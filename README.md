@@ -9,8 +9,8 @@
 
 ローカルで動かすとき
 ```sh
-yarn install
-yarn next dev
+npm install
+npm run dev
 ```
 
 ## architecture

@@ -5,7 +5,6 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import ArticleIcon from '@mui/icons-material/Article'
 import ComputerIcon from '@mui/icons-material/Computer'
-import LibraryBooksIcon from '@mui/icons-material/LibraryBooks'
 import PaidIcon from '@mui/icons-material/Paid'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar } from '@mui/material'
@@ -177,73 +176,3 @@ export const NingenmeNetHeader = (): JSX.Element => {
   )
 }
 
-export const ComproCategoryHeader = (): JSX.Element => {
-
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-  const onOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget)
-  }
-  const onClose = () => {
-    setAnchorEl(null)
-  }
-
-  //TODO 配列にする
-  const getElementList = ({ className }: { className: string }) => {
-    return [
-      <NormalElement key={1} link={LinkConst.TWITTER} className={className} icon={<TwitterIcon />} />,
-      <NormalElement key={2} link={LinkConst.COMPRO_LIBRARY} className={className} icon={<LibraryBooksIcon />} />,
-      <NormalElement key={3} link={LinkConst.GITHUB_AKARI_FRONT} className={className} icon={<GitHubIcon />} />,
-      <NormalElement key={4} link={LinkConst.GITHUB_MIIKO_API} className={className} icon={<GitHubIcon />} />,
-      <DropdownElement key={5} title={'compro'} links={LinkConst.COMPROS} className={className}
-                       icon={<ComputerIcon />} />,
-      <NormalElement key={6} link={LinkConst.NINGENME_NET} className={className} icon={<></>} />,
-    ]
-  }
-
-  return (
-    <AppBar position='static' className={styles.comproCategoryAppbar}>
-      <Toolbar disableGutters>
-        <a href={LinkConst.COMPRO_CATEGORY.href} className={styles.brand}>
-          {LinkConst.COMPRO_CATEGORY.name}
-        </a>
-
-        {/*pc*/}
-        <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-          {getElementList({ className: styles.buttonPc })}
-        </Box>
-
-        {/*sp*/}
-        <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-          <IconButton
-            aria-haspopup='true'
-            onClick={onOpen}
-            color='inherit'
-            className={styles.hamburger}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{
-              vertical: 'bottom',
-              horizontal: 'left',
-            }}
-            transformOrigin={{
-              vertical: 'top',
-              horizontal: 'left',
-            }}
-            open={Boolean(anchorEl)}
-            onClose={onClose}
-            sx={{ display: { xs: 'block', md: 'none' } }}
-          >
-            <LastUpdatedMobile />
-            {getElementList({ className: styles.buttonSp })}
-          </Menu>
-        </Box>
-
-        <LastUpdatedDesktop />
-
-      </Toolbar>
-    </AppBar>
-  )
-}

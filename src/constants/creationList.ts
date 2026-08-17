@@ -14,12 +14,6 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     body: '競技プログラミングのライブラリ。',
     isDone: true,
   },
-  {
-    href: PathConst.COMPRO_CATEGORY,
-    title: 'compro-category',
-    body: 'ningenMeが解いた競技プログラミングの問題のまとめ。',
-    isDone: true,
-  },
   // {
   //   href: PathConst.CONTRIBUTION,
   //   title: 'contribution',
@@ -32,18 +26,6 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     body: '描いた漫画一覧。大学時代に漫研で活動していました。',
     isDone: true,
   },
-  {
-    href: PathConst.BOOKMARK,
-    title: 'bookmark',
-    body: '開発してる時に参考にした記事たち',
-    isDone: true,
-  },
-  // {
-  //   href: PathConst.SYSTEM,
-  //   title: 'system',
-  //   body: 'システム管理ページ。',
-  //   isDone: true,
-  // },
   // {
   //   href: PathConst.DIARIES,
   //   title: '今日のITドカタ',

@@ -6,53 +6,13 @@ export class PathConst {
   static readonly BLOG: string = '/blog'
   static readonly DIARIES: string = '/diaries'
   static readonly CONTRIBUTION: string = '/contribution'
-  static readonly COMPRO_CATEGORY: string = '/compro-category'
-  static readonly COMPRO_CATEGORY_CATEGORY_LIST: string = PathConst.COMPRO_CATEGORY + '/category'
-  static readonly COMPRO_CATEGORY_CATEGORY_MANAGE: string = PathConst.COMPRO_CATEGORY + '/category/manage'
-  static readonly COMPRO_CATEGORY_CATEGORY_TOPIC_LIST = (categorySystemName: string): string => {
-    return PathConst.COMPRO_CATEGORY_CATEGORY_LIST + '/' + categorySystemName + '/topic'
-  }
-  private static readonly COMPRO_CATEGORY_PROBLEM: string = PathConst.COMPRO_CATEGORY + '/problem'
-  static readonly COMPRO_CATEGORY_PROBLEM_LIST = (page: number): string => {
-    return PathConst.COMPRO_CATEGORY_PROBLEM + '?page=' + page
-  }
-  static readonly COMPRO_CATEGORY_PROBLEM_CREATE: string = PathConst.COMPRO_CATEGORY_PROBLEM + '/create'
-  static readonly COMPRO_CATEGORY_PROBLEM_EDIT = (problemId: string): string => {
-    return PathConst.COMPRO_CATEGORY_PROBLEM + '/' + problemId + '/edit'
-  }
-  static readonly COMPRO_CATEGORY_TOPIC_LIST: string = PathConst.COMPRO_CATEGORY + '/topic'
-  static readonly COMPRO_CATEGORY_TOPIC_CREATE: string = PathConst.COMPRO_CATEGORY_TOPIC_LIST + '/create'
-  static readonly COMPRO_CATEGORY_TOPIC_PROBLEM = (topicId: string): string => {
-    return PathConst.COMPRO_CATEGORY_TOPIC_LIST + '/' + topicId + '/problem'
-  }
-  static readonly COMPRO_CATEGORY_TOPIC_EDIT = (topicId: string): string => {
-    return PathConst.COMPRO_CATEGORY_TOPIC_LIST + '/' + topicId + '/edit'
-  }
-  static readonly BOOKMARK: string = '/bookmark'
-  static readonly USER_LOGIN: string = '/user/login'
-  static readonly SYSTEM: string = '/system'
-}
-
-class HostConst {
-  static readonly NINGENME_NET: string = 'ningenme.net'
-  static readonly NINA_API: string = 'nina-api.ningenme.net'
-  static readonly KIWA_API: string = 'kiwa-api.ningenme.net'
-  static readonly MIIKO_API: string = 'miiko-api.ningenme.net'
-  static readonly SUZU_API: string = 'suzu-api.ningenme.net'
-  static readonly ROMAN_API: string = 'roman-api.ningenme.net'
 }
 
 export class UrlConst {
   static readonly NINGENME_NET: string = PathConst.HOME
-  static readonly NINA_API: string = 'https://' + HostConst.NINA_API
-  static readonly KIWA_API: string = 'https://' + HostConst.KIWA_API
-  static readonly MIIKO_API: string = 'https://' + HostConst.MIIKO_API
-  static readonly SUZU_API: string = HostConst.SUZU_API + ':443'
-  static readonly ROMAN_API: string = 'https://' + HostConst.ROMAN_API
   static readonly GITHUB: string = 'https://github.com/ningenMe'
   static readonly GITHUB_SPONSOR: string = 'https://github.com/sponsors/ningenMe'
   static readonly GITHUB_AKARI_FRONT: string = 'https://github.com/ningenMe/akari-front'
-  static readonly GITHUB_MIIKO_API: string = 'https://github.com/ningenMe/miiko-api'
   static readonly TWITTER: string = 'https://twitter.com/ningenMe'
   static readonly ATCODER: string = 'https://atcoder.jp/users/ningenMe'
   static readonly CODEFORCES: string = 'https://codeforces.com/profile/ningenMe'
@@ -84,7 +44,6 @@ export class LinkConst {
   static readonly GITHUB: Link = { href: UrlConst.GITHUB, name: 'GitHub' }
   static readonly GITHUB_SPONSOR: Link = { href: UrlConst.GITHUB_SPONSOR, name: 'Become a sponsor' }
   static readonly GITHUB_AKARI_FRONT: Link = { href: UrlConst.GITHUB_AKARI_FRONT, name: 'frontend' }
-  static readonly GITHUB_MIIKO_API: Link = { href: UrlConst.GITHUB_MIIKO_API, name: 'backend' }
   static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: '@ningenMe' }
   static readonly ATCODER: Link = { href: UrlConst.ATCODER, name: 'AtCoder' }
   static readonly CODEFORCES: Link = { href: UrlConst.CODEFORCES, name: 'Codeforces' }
@@ -96,7 +55,6 @@ export class LinkConst {
   static readonly QIITA: Link = { href: UrlConst.QIITA, name: 'QIITA' }
   static readonly ZENN: Link = { href: UrlConst.ZENN, name: 'ZENN' }
   static readonly SIZU: Link = { href: UrlConst.SIZU, name: 'SIZU' }
-  static readonly COMPRO_CATEGORY: Link = { href: PathConst.COMPRO_CATEGORY, name: 'compro-category' }
   static readonly COMPROS: ReadonlyArray<Link> = [LinkConst.ATCODER, LinkConst.CODEFORCES, LinkConst.YUKICODER, LinkConst.TOKI, LinkConst.CSACADEMY] as const
 }
 
