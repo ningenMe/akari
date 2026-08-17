@@ -17,14 +17,14 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props }
 }
 
-export const Index: NextPage<Props> = (props: Props) => {
+export const Index: NextPage<Props> = () => {
 
   return (
     <>
       <HtmlHead title={'compro-category category: problem - '} />
       <ComproCategoryHeader />
       <ComproCategoryPageLink />
-      <ProblemList page={props.page} />
+      <ProblemList />
       <ComproCategoryFooter />
     </>
   )

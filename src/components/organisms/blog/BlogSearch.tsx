@@ -1,8 +1,6 @@
-import React, {useEffect, useState } from 'react'
-import { suzuApiBlogServiceClient } from 'repository/SuzuApiRepository'
-import { Empty } from 'google-protobuf/google/protobuf/empty_pb'
-import { Blog } from 'suzu-backend/api/proto/client/api/proto/suzu/v1/suzu_pb'
-import { Checkbox, Container, FormControlLabel, FormGroup, List } from '@mui/material'
+import React, { useState } from 'react'
+import { BlogData } from 'repository/BlogData'
+import { Checkbox, Container, List } from '@mui/material'
 import { BlogChip, BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
 
 const useBool = (): [boolean, () => void] => {
@@ -10,31 +8,31 @@ const useBool = (): [boolean, () => void] => {
   return [value, () => setValue(value => !value)];
 }
 
-export const BlogSearch = (): JSX.Element => {
+interface BlogSearchProps {
+  blogList: BlogData[]
+}
 
-  const [blogList, setBlogList] = useState<Blog[]>([])
+export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
   const [isSizu, toggleSizu] = useBool()
   const [isZenn, toggleZenn] = useBool()
   const [isQiita, toggleQiita] = useBool()
   const [isHatena, toggleHatena] = useBool()
   const [isAmeba, toggleAmeba] = useBool()
 
-  useEffect(
-    () => {
-      suzuApiBlogServiceClient.getBlog(new Empty(), null)
-      .then(res => {
-        setBlogList(res.getBlogListList())
-      })
-      .catch(err => console.log(err))
-    },
-    [suzuApiBlogServiceClient])
+  if (blogList.length === 0) {
+    return (
+      <Container>
+        <p>ブログデータの取得に失敗しました。しばらく時間をおいて再度アクセスしてください。</p>
+      </Container>
+    )
+  }
 
   const blogCardList = blogList.filter((blog) => {
-    if (isSizu && blog.getBlogType() === 'SIZU') return true
-    if (isZenn && blog.getBlogType() === 'ZENN') return true
-    if (isQiita && blog.getBlogType() === 'QIITA') return true
-    if (isHatena && blog.getBlogType() === 'HATENA') return true
-    if (isAmeba && blog.getBlogType() === 'AMEBA') return true
+    if (isSizu && blog.blogType === 'SIZU') return true
+    if (isZenn && blog.blogType === 'ZENN') return true
+    if (isQiita && blog.blogType === 'QIITA') return true
+    if (isHatena && blog.blogType === 'HATENA') return true
+    if (isAmeba && blog.blogType === 'AMEBA') return true
     return false
   }).map((blog, idx) => (
     <BlogChip blog={blog} key={idx}/>

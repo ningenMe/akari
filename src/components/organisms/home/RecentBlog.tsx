@@ -1,28 +1,25 @@
-import { useEffect, useState } from 'react'
-import { Empty } from 'google-protobuf/google/protobuf/empty_pb'
-import { suzuApiBlogServiceClient } from 'repository/SuzuApiRepository'
-import { Blog } from 'suzu-backend/api/proto/client/api/proto/suzu/v1/suzu_pb'
+import { BlogData } from 'repository/BlogData'
 import { SubTitle } from 'components/atoms/Title'
 import { PathConst } from 'constants/Const'
 import { List } from '@mui/material'
 import { BlogChip } from 'components/atoms/blog/BlogChip'
 
-export const RecentBlog = () => {
+interface RecentBlogProps {
+  blogList: BlogData[]
+}
 
-  const [blogList, setBlogList] = useState<Blog[]>([])
+export const RecentBlog = ({ blogList }: RecentBlogProps): JSX.Element => {
+  if (blogList.length === 0) {
+    return (
+      <>
+        <SubTitle title={'recent blog'}></SubTitle>
+        <p>ブログデータの取得に失敗しました。</p>
+      </>
+    )
+  }
 
-  useEffect(
-    () => {
-      suzuApiBlogServiceClient.getBlog(new Empty(), null)
-      .then(res => {
-        setBlogList(res.getBlogListList().slice(0, 5))
-      })
-      .catch(err => console.log(err))
-    },
-    [suzuApiBlogServiceClient]
-  )
-
-  const blogCardList = blogList.map((blog, idx) => (
+  const recentBlogList = blogList.slice(0, 5)
+  const blogCardList = recentBlogList.map((blog, idx) => (
     <BlogChip blog={blog} key={idx}/>
   ));
 

@@ -1,3 +1,5 @@
+// API dependency temporarily disabled
+/*
 import { Container, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { PathConst } from 'constants/Const'
@@ -27,16 +29,16 @@ export const TopicList = (): JSX.Element => {
     })
     .flatMap(it => it)
     .map((it) =>
-      <>
-        {/*<CategoryLinkCard*/}
-        {/*  key={it.category.categoryId}*/}
-        {/*  href={PathConst.COMPRO_CATEGORY_CATEGORY_TOPIC_LIST(it.category.categorySystemName)}*/}
-        {/*  categoryDisplayName={it.category.categoryDisplayName}*/}
-        {/*>*/}
-        {/*</CategoryLinkCard>*/}
+      <div key={it.category.categoryId}>
+        // <CategoryLinkCard
+        //   key={it.category.categoryId}
+        //   href={PathConst.COMPRO_CATEGORY_CATEGORY_TOPIC_LIST(it.category.categorySystemName)}
+        //   categoryDisplayName={it.category.categoryDisplayName}
+        // >
+        // </CategoryLinkCard>
         <TopicLinkCard href={PathConst.COMPRO_CATEGORY_TOPIC_PROBLEM(it.topic.topicId)}
                        topicDisplayName={it.topic.topicDisplayName} />
-      </>,
+      </div>,
     )
 
   return (
@@ -45,6 +47,23 @@ export const TopicList = (): JSX.Element => {
         <Typography variant='body2'>ひどいUIだけど一旦これで事足りるので許容......。topic全体をgrepするためのページ</Typography>
       </PageTextCard>
       {cardList}
+    </Container>
+  )
+}
+*/
+
+import React from 'react'
+import { Container, Typography } from '@mui/material'
+
+export const TopicList = (): JSX.Element => {
+  return (
+    <Container>
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        Topic List
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        API接続が無効化されています。機能を使用するにはAPI接続を復旧してください。
+      </Typography>
     </Container>
   )
 }

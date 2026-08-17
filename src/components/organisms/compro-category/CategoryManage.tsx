@@ -1,3 +1,5 @@
+// API dependency temporarily disabled
+/*
 import { Container, FormControl, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import styles from './CategoryManage.module.scss'
@@ -123,6 +125,23 @@ export const CategoryManage = (): JSX.Element => {
       <div className={styles.buttongrid}>
         <UpsertButton name='category upsert' onClick={upsertClick} />
       </div>
+    </Container>
+  )
+}
+*/
+
+import React from 'react'
+import { Container, Typography } from '@mui/material'
+
+export const CategoryManage = (): JSX.Element => {
+  return (
+    <Container>
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        Category Manage
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        API接続が無効化されています。機能を使用するにはAPI接続を復旧してください。
+      </Typography>
     </Container>
   )
 }

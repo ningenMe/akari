@@ -5,6 +5,8 @@ extends:
   - 'eslint:recommended'
   - 'plugin:react/recommended'
   - 'plugin:@typescript-eslint/recommended'
+ignorePatterns:
+  - 'src/repository/generated/**/*'
 parser: '@typescript-eslint/parser'
 parserOptions:
   ecmaFeatures:
@@ -17,3 +19,4 @@ plugins:
 rules:
   "react/jsx-uses-react": "off"
   "react/react-in-jsx-scope": "off"
+  "react/prop-types": "off"

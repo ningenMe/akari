@@ -9,7 +9,7 @@ export const Profile = (): JSX.Element => {
       </h4>
       <p className={fontStyles.body}>
         web開発をしています。
-        競技プログラミングとコードレビューが好きです。
+        競技プログラミングとコードレビューとRustが好きです。
       </p>
     </CustomNormalCard>
   )

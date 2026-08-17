@@ -1,5 +1,5 @@
-FROM node:16.13.1-alpine3.13
+FROM node:22.0.0-alpine
 
 COPY . .
 
-CMD ["yarn","start"]
+CMD ["npm","start"]

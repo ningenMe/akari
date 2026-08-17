@@ -47,7 +47,7 @@ export class UrlConst {
   static readonly NINA_API: string = 'https://' + HostConst.NINA_API
   static readonly KIWA_API: string = 'https://' + HostConst.KIWA_API
   static readonly MIIKO_API: string = 'https://' + HostConst.MIIKO_API
-  static readonly SUZU_API: string = 'https://' + HostConst.SUZU_API
+  static readonly SUZU_API: string = HostConst.SUZU_API + ':443'
   static readonly ROMAN_API: string = 'https://' + HostConst.ROMAN_API
   static readonly GITHUB: string = 'https://github.com/ningenMe'
   static readonly GITHUB_SPONSOR: string = 'https://github.com/sponsors/ningenMe'

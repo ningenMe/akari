@@ -1,3 +1,5 @@
+// API dependency temporarily disabled
+/*
 import { Container, FormControl, MenuItem, Select, SelectChangeEvent, TextField, Typography } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { miikoApiMiikoServiceClient } from 'repository/MiikoApiRepository'
@@ -160,6 +162,23 @@ export const ProblemCreate = (): JSX.Element => {
         <UpsertButton name='problem upsert' onClick={upsertClick} />
       </div>
 
+    </Container>
+  )
+}
+*/
+
+import React from 'react'
+import { Container, Typography } from '@mui/material'
+
+export const ProblemCreate = (): JSX.Element => {
+  return (
+    <Container>
+      <Typography variant="h4" sx={{ mb: 2 }}>
+        Problem Create
+      </Typography>
+      <Typography variant="body1" color="text.secondary">
+        API接続が無効化されています。機能を使用するにはAPI接続を復旧してください。
+      </Typography>
     </Container>
   )
 }

@@ -1,9 +1,6 @@
 import React, {useEffect, useState } from 'react'
-import { suzuApiBlogServiceClient } from 'repository/SuzuApiRepository'
-import { Empty } from 'google-protobuf/google/protobuf/empty_pb'
-import { Blog } from 'suzu-backend/api/proto/client/api/proto/suzu/v1/suzu_pb'
-import { Checkbox, Container, FormControlLabel, FormGroup, List } from '@mui/material'
-import { BlogChip, BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
+import { Blog } from 'repository/generated/suzu/v1/suzu_pb'
+import { Container, List } from '@mui/material'
 import { Output } from 'interfaces/Output'
 import { OutputChip } from 'components/atoms/output/OutputChip'
 import { TASK_LIST } from 'constants/taskList'
@@ -15,13 +12,11 @@ export const OutputSearch = (): JSX.Element => {
 
   useEffect(
     () => {
-      suzuApiBlogServiceClient.getBlog(new Empty(), null)
-      .then(res => {
-        setBlogList(res.getBlogListList())
-      })
-      .catch(err => console.log(err))
+      // TODO: Implement server-side fetch for output page
+      // Temporarily using empty array to avoid client-side gRPC issues
+      setBlogList([])
     },
-    [suzuApiBlogServiceClient])
+    [])
 
   const blogOutputList: Output[] = blogList.map((blog) => {
     return {
