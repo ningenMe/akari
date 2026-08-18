@@ -17,7 +17,12 @@ env:
 
 jobs:
   build-and-push:
-    runs-on: ubuntu-latest
+    # The app-platform EC2 instance is arm64 (t4g.small). Build natively on
+    # an arm64 runner instead of cross-building via buildx+QEMU on amd64 -
+    # QEMU emulation of `npm run build` (and native addons like sharp) took
+    # ~9 minutes; last1tile-front hit the same issue and switching to a
+    # native arm64 runner fixed it.
+    runs-on: ubuntu-24.04-arm
     steps:
       - uses: actions/checkout@v4
 
@@ -33,24 +38,15 @@ jobs:
         id: ecr-login
         uses: aws-actions/amazon-ecr-login@v2
 
-      # The app-platform EC2 instance is arm64 (t4g.small); the default
-      # GitHub-hosted runner is amd64, so cross-build via QEMU.
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v3
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Build and push image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          platforms: linux/arm64
-          push: true
+        env:
+          ECR_REGISTRY: ${{ steps.ecr-login.outputs.registry }}
           # ECR repository uses immutable tags, so this must be unique per
           # build rather than reusing "latest".
-          tags: ${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" .
+          docker push "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
 
   deploy:
     runs-on: ubuntu-latest
