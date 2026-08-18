@@ -6,7 +6,7 @@ set -euo pipefail
 AWS_REGION="ap-northeast-1"
 ECR_REPOSITORY="akari-front-repository"
 APP_PORT="3001"
-APP_DIR="/home/ubuntu/akari-front"
+APP_DIR="/opt/akari-front"
 
 # Nothing here is a secret: the account ID is resolved via the EC2
 # instance's own IAM role (no credentials embedded in this script), and the
