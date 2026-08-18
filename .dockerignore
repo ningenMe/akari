@@ -1,8 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.git
+.github
+
 # dependencies
+node_modules
 /.pnp
 .pnp.js
+
+# next.js build output
+.next
+tsconfig.tsbuildinfo
 
 # testing
 /coverage

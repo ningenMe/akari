@@ -1,4 +1,5 @@
 module.exports = {
+  output: 'standalone',
   transpilePackages: [
     '@mui/material',
     '@mui/system',

@@ -1,0 +1,88 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  AWS_REGION: ap-northeast-1
+  ECR_REPOSITORY: akari-front-repository
+  DEPLOY_BUCKET: app-platform-deploy.ningenme.net
+  DEPLOY_KEY_PREFIX: akari-front
+  CODEDEPLOY_APPLICATION: akari-front
+  CODEDEPLOY_DEPLOYMENT_GROUP: akari-front
+
+jobs:
+  deploy:
+    name: deploy
+    # The app-platform EC2 instance is arm64 (t4g.small). Build natively on
+    # an arm64 runner instead of cross-building via buildx+QEMU on amd64 -
+    # QEMU emulation of `npm run build` (and native addons like sharp) took
+    # ~9 minutes; last1tile-front hit the same issue and switching to a
+    # native arm64 runner fixed it.
+    runs-on: ubuntu-24.04-arm
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - id: checkout
+      name: checkout
+      uses: actions/checkout@v4
+
+    - id: configure-aws-credentials
+      name: configure-aws-credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        role-session-name: github-actions-session
+        aws-region: ${{ env.AWS_REGION }}
+
+    - id: login-ecr
+      name: login-ecr
+      uses: aws-actions/amazon-ecr-login@v2
+
+    - id: build-and-push
+      name: build-and-push
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        # Same commit -> same image, so if this tag was already pushed by a
+        # previous run (e.g. a retry), there's nothing to rebuild. The repo
+        # is IMMUTABLE, so re-pushing the same tag would fail anyway.
+        if aws ecr describe-images --repository-name "$ECR_REPOSITORY" --image-ids imageTag="$IMAGE_TAG" >/dev/null 2>&1; then
+          echo "Image $ECR_REPOSITORY:$IMAGE_TAG already exists, skipping build"
+        else
+          docker build -t "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" .
+          docker push "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+        fi
+        echo "image_uri=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> "$GITHUB_OUTPUT"
+
+    - id: package-revision
+      name: package-revision
+      env:
+        IMAGE_URI: ${{ steps.build-and-push.outputs.image_uri }}
+      run: |
+        mkdir -p dist/scripts
+        cp codedeploy/appspec.yml dist/
+        cp codedeploy/scripts/*.sh dist/scripts/
+        echo -n "$IMAGE_URI" > dist/image_uri.txt
+        (cd dist && zip -r ../bundle.zip .)
+
+    - id: upload-revision
+      name: upload-revision
+      run: |
+        aws s3 cp bundle.zip "s3://$DEPLOY_BUCKET/$DEPLOY_KEY_PREFIX/${{ github.sha }}.zip"
+
+    - id: create-deployment
+      name: create-deployment
+      run: |
+        DEPLOYMENT_ID=$(aws deploy create-deployment \
+          --application-name "$CODEDEPLOY_APPLICATION" \
+          --deployment-group-name "$CODEDEPLOY_DEPLOYMENT_GROUP" \
+          --s3-location bucket="$DEPLOY_BUCKET",key="$DEPLOY_KEY_PREFIX/${{ github.sha }}.zip",bundleType=zip \
+          --query 'deploymentId' --output text)
+        echo "Deployment ID: $DEPLOYMENT_ID"
+        aws deploy wait deployment-successful --deployment-id "$DEPLOYMENT_ID"
