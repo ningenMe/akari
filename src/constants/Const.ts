@@ -36,6 +36,9 @@ export class UrlConst {
   static readonly FINDY_MODULAR_MONOLITH_20230912: string = 'https://findy.connpass.com/event/293748/'
   static readonly LY_TECHBLOG_20240611: string = 'https://techblog.lycorp.co.jp/ja/20240611a'
   static readonly LY_OPEN_HACK_U_NAGOYA_2025: string = 'https://hacku.connpass.com/event/339348/'
+  static readonly ISUCON14_TEAM_LIST: string = 'https://isucon.net/archives/58847057.html'
+  static readonly ISUCON13_TEAM_LIST: string = 'https://isucon.net/archives/57566481.html'
+  static readonly ISUCON12_TEAM_LIST: string = 'https://isucon.net/archives/56566155.html'
 }
 
 export class LinkConst {
