@@ -23,7 +23,3 @@ docker run -d \
   --restart unless-stopped \
   -p "${APP_PORT}:${APP_PORT}" \
   "${registry}/${ECR_REPOSITORY}:${image_tag}"
-
-# Drop older, now-dangling image layers so the disk doesn't fill up over
-# repeated deployments.
-docker image prune -f
