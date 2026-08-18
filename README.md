@@ -1,5 +1,5 @@
-# akari-front
-趣味開発のフロントエンド。
+# akari
+ningenMeのポートフォリオ
 
 ## domain
 
@@ -13,20 +13,11 @@ npm install
 npm run dev
 ```
 
-## architecture
-
-|             |                                 |
-| ----------- | ------------------------------- |
-| routing     | CloudFront + k8s                |
-| hosting     | ec2                             |
-| ci/cd       | github actions, aws codedeploy  |
-| application | Next.js + TypeScript            |
-
 ## history
 
 | version  | repository                                                                   | architecture               |
 | -------- | ---------------------------------------------------------------------------- | -------------------------- |
-| v5(this) | [akari-front](https://github.com/ningenMe/akari-front)                       | Next.js + TypeScript + K8S |
+| v5(this) | [akari](https://github.com/ningenMe/akari)                                   | Next.js + TypeScript + EC2 |
 | v4       | [net-front](https://github.com/ningenMe/net-front) (renamed to akari-front)  | Next.js + TypeScript + ECS |
 | v3       | [ningenme-net-front](https://github.com/ningenMe/ningenme-net-front)         | react + s3                 |
 | v2       | [ningenMe.net.UI](https://github.com/ningenMe/ningenMe.net.UI)               | vue + s3                   |
