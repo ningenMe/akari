@@ -1,13 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -euo pipefail
-
-APP_PORT="3001"
 
 # The container has its own Docker HEALTHCHECK, but CodeDeploy's
 # ValidateService hook is what actually gates a bad deployment from being
 # marked successful, so re-check from the host side too.
 for _ in $(seq 1 10); do
-  if curl -sf "http://127.0.0.1:${APP_PORT}/" > /dev/null; then
+  if curl -sf http://localhost:3001/ >/dev/null; then
     # Drop old akari-front images now that the new one is confirmed
     # healthy. Scoped to images matching this repo (via --filter, which
     # `docker images` supports but `docker image prune` does not) and
@@ -26,5 +24,5 @@ for _ in $(seq 1 10); do
   sleep 3
 done
 
-echo "akari-front did not become healthy on port ${APP_PORT}" >&2
+echo "akari-front did not become healthy in time" >&2
 exit 1
