@@ -13,9 +13,19 @@ export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
     href: UrlConst.LY_TECHBLOG_20240611,
   },
   {
+    year: 2024,
+    body: 'ISUCON14 参加(チーム: たこたこ)',
+    href: UrlConst.ISUCON14_TEAM_LIST,
+  },
+  {
     year: 2023,
     body: 'モジュラモノリス徹底解剖vol.2〜実践者から学ぶLunch LT〜',
     href: UrlConst.FINDY_MODULAR_MONOLITH_20230912,
+  },
+  {
+    year: 2023,
+    body: 'ISUCON13 参加(チーム: たこたこ)',
+    href: UrlConst.ISUCON13_NINGENME,
   },
   {
     year: 2023,
@@ -41,6 +51,11 @@ export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
     year: 2022,
     body: '2022 LINEインターンシップ メンター',
     href: UrlConst.LINE_INTERNSHIP_2022,
+  },
+  {
+    year: 2022,
+    body: 'ISUCON12 参加(チーム: タコタコ)',
+    href: UrlConst.ISUCON12_NINGENME,
   },
   {
     year: 2021,
