@@ -1,11 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
-# Matches infra-terraform/aws-app-platform's port assignment for this app
-# (3001=last1tile-front, 3002=health-check, 3003=akari-front).
+# Must match the CloudFront origin port configured for akari-front in
+# infra-terraform.
 AWS_REGION="ap-northeast-1"
 ECR_REPOSITORY="akari-front-repository"
-APP_PORT="3003"
+APP_PORT="3001"
 APP_DIR="/home/ubuntu/akari-front"
 
 # Nothing here is a secret: the account ID is resolved via the EC2

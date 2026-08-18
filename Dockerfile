@@ -1,8 +1,6 @@
 # App port on the shared app-platform EC2 instance. Must match the
-# CloudFront origin port configured for akari-front in infra-terraform
-# (aws-app-platform/security_group.tf reserves 3001-3010 for apps sharing
-# the instance; 3001=last1tile-front, 3002=health-check, 3003=akari-front).
-ARG APP_PORT=3003
+# CloudFront origin port configured for akari-front in infra-terraform.
+ARG APP_PORT=3001
 
 FROM node:22-alpine AS deps
 WORKDIR /app

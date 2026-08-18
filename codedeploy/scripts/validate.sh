@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-APP_PORT="3003"
+APP_PORT="3001"
 
 # The container has its own Docker HEALTHCHECK, but CodeDeploy's
 # ValidateService hook is what actually gates a bad deployment from being
