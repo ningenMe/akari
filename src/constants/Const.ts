@@ -37,8 +37,8 @@ export class UrlConst {
   static readonly LY_TECHBLOG_20240611: string = 'https://techblog.lycorp.co.jp/ja/20240611a'
   static readonly LY_OPEN_HACK_U_NAGOYA_2025: string = 'https://hacku.connpass.com/event/339348/'
   static readonly ISUCON14_TEAM_LIST: string = 'https://isucon.net/archives/58847057.html'
-  static readonly ISUCON13_NINGENME: string = 'https://ningenme.hatenablog.com/entry/2023/12/02/024503'
-  static readonly ISUCON12_NINGENME: string = 'https://ningenme.hatenablog.com/entry/2022/08/01/041502'
+  static readonly ISUCON13_TEAM_LIST: string = 'https://isucon.net/archives/57566481.html'
+  static readonly ISUCON12_TEAM_LIST: string = 'https://isucon.net/archives/56566155.html'
 }
 
 export class LinkConst {

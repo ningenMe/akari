@@ -25,7 +25,7 @@ export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
   {
     year: 2023,
     body: 'ISUCON13 参加(チーム: たこたこ)',
-    href: UrlConst.ISUCON13_NINGENME,
+    href: UrlConst.ISUCON13_TEAM_LIST,
   },
   {
     year: 2023,
@@ -55,7 +55,7 @@ export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
   {
     year: 2022,
     body: 'ISUCON12 参加(チーム: タコタコ)',
-    href: UrlConst.ISUCON12_NINGENME,
+    href: UrlConst.ISUCON12_TEAM_LIST,
   },
   {
     year: 2021,
