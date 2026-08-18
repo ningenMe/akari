@@ -1,0 +1,93 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  AWS_REGION: ap-northeast-1
+  ECR_REPOSITORY: akari-front-repository
+  CODEDEPLOY_APPLICATION: akari-front
+  CODEDEPLOY_DEPLOYMENT_GROUP: akari-front
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Resolves the account-specific registry URI from the assumed role,
+      # so no AWS account ID needs to be stored as a secret or literal.
+      - name: Login to Amazon ECR
+        id: ecr-login
+        uses: aws-actions/amazon-ecr-login@v2
+
+      # The app-platform EC2 instance is arm64 (t4g.small); the default
+      # GitHub-hosted runner is amd64, so cross-build via QEMU.
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          platforms: linux/arm64
+          push: true
+          # ECR repository uses immutable tags, so this must be unique per
+          # build rather than reusing "latest".
+          tags: ${{ steps.ecr-login.outputs.registry }}/${{ env.ECR_REPOSITORY }}:${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build-and-push]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.ROLE_TO_ASSUME }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      # Bundle built outside the repo working tree so nothing generated at
+      # CI time (the image tag) ever touches the actual git tree.
+      - name: Prepare CodeDeploy bundle
+        run: |
+          bundle_dir="$(mktemp -d)"
+          cp -r codedeploy/. "$bundle_dir/"
+          echo "${{ github.sha }}" > "$bundle_dir/IMAGE_TAG"
+          (cd "$bundle_dir" && zip -rq "$RUNNER_TEMP/akari-front.zip" .)
+
+      - name: Upload revision to S3
+        run: |
+          aws s3 cp "$RUNNER_TEMP/akari-front.zip" \
+            "s3://${{ secrets.AWS_S3_BUCKET }}/akari-front/akari-front-${{ github.sha }}.zip"
+
+      - name: Trigger CodeDeploy deployment
+        id: deploy
+        run: |
+          deployment_id=$(aws deploy create-deployment \
+            --application-name "${{ env.CODEDEPLOY_APPLICATION }}" \
+            --deployment-group-name "${{ env.CODEDEPLOY_DEPLOYMENT_GROUP }}" \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --s3-location bucket=${{ secrets.AWS_S3_BUCKET }},key=akari-front/akari-front-${{ github.sha }}.zip,bundleType=zip \
+            --query deploymentId --output text)
+          echo "deployment_id=$deployment_id" >> "$GITHUB_OUTPUT"
+
+      - name: Wait for deployment to finish
+        run: aws deploy wait deployment-successful --deployment-id "${{ steps.deploy.outputs.deployment_id }}"
