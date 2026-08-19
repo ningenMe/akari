@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { BlogData } from 'repository/BlogData'
-import { Checkbox, Container, List } from '@mui/material'
+import { Box, Checkbox, Container, List } from '@mui/material'
 import { BlogChip, BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
 
 const useBool = (): [boolean, () => void] => {
@@ -40,11 +40,23 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
 
   return (
     <Container>
-      <Checkbox checked={isSizu} onChange={toggleSizu} /> <BlogNingenmeUrlChip blogType={'SIZU'} clickable={false} />
-      <Checkbox checked={isZenn} onChange={toggleZenn} /> <BlogNingenmeUrlChip blogType={'ZENN'} clickable={false} />
-      <Checkbox checked={isQiita} onChange={toggleQiita} /> <BlogNingenmeUrlChip blogType={'QIITA'} clickable={false} />
-      <Checkbox checked={isHatena} onChange={toggleHatena} /> <BlogNingenmeUrlChip blogType={'HATENA'} clickable={false} />
-      <Checkbox checked={isAmeba} onChange={toggleAmeba} /> <BlogNingenmeUrlChip blogType={'AMEBA'} clickable={false} />
+      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, flexWrap: 'wrap', alignItems: { xs: 'flex-start', sm: 'center' }, gap: 1 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Checkbox checked={isSizu} onChange={toggleSizu} /> <BlogNingenmeUrlChip blogType={'SIZU'} clickable={false} />
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Checkbox checked={isZenn} onChange={toggleZenn} /> <BlogNingenmeUrlChip blogType={'ZENN'} clickable={false} />
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Checkbox checked={isQiita} onChange={toggleQiita} /> <BlogNingenmeUrlChip blogType={'QIITA'} clickable={false} />
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Checkbox checked={isHatena} onChange={toggleHatena} /> <BlogNingenmeUrlChip blogType={'HATENA'} clickable={false} />
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Checkbox checked={isAmeba} onChange={toggleAmeba} /> <BlogNingenmeUrlChip blogType={'AMEBA'} clickable={false} />
+        </Box>
+      </Box>
 
       <List>
         {blogCardList}
