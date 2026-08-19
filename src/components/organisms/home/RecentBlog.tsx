@@ -12,7 +12,7 @@ export const RecentBlog = ({ blogList }: RecentBlogProps): JSX.Element => {
   if (blogList.length === 0) {
     return (
       <>
-        <SubTitle title={'recent blog'}></SubTitle>
+        <SubTitle title={'Recent Blog'}></SubTitle>
         <p>ブログデータの取得に失敗しました。</p>
       </>
     )
@@ -25,7 +25,7 @@ export const RecentBlog = ({ blogList }: RecentBlogProps): JSX.Element => {
 
   return (
     <>
-      <SubTitle title={'recent blog'}></SubTitle>
+      <SubTitle title={'Recent Blog'}></SubTitle>
         <List>
           {blogCardList}
         </List>
