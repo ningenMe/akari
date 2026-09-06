@@ -4,24 +4,32 @@ import React from 'react'
 import { TASK_LIST } from 'constants/taskList'
 import { CustomLinkCard } from '../CustomCard'
 import styles from './Task.module.scss'
+import fontStyles from 'styles/Font.module.scss'
 import { onlineJudgeIconPath } from 'components/atoms/task/onlineJudgeIconPath'
+import { onlineJudgeTypeLabel } from 'components/atoms/task/onlineJudgeTypeLabel'
 
 export const Task = (): JSX.Element => {
   const cardList = TASK_LIST.map((task) =>
     <CustomLinkCard href={task.href} key={task.href}>
-      {/* TODO 画像と文字を横並びにする */}
-      <img src={onlineJudgeIconPath(task.type)} width={50} height={50} />
-      <h5 className={styles.title}>
-        {task.title}
-      </h5>
+      <div className={styles.head}>
+        <img className={styles.icon} src={onlineJudgeIconPath(task.type)} width={36} height={36} alt={task.type} />
+        <h5 className={styles.title}>
+          {task.title}
+        </h5>
+      </div>
+      <div className={styles.meta}>
+        <span className={styles.date}>{task.date}</span>
+        <span className={styles.type}>{onlineJudgeTypeLabel(task.type)}</span>
+      </div>
     </CustomLinkCard>
   )
 
   return (
     <Container>
       <Title title='Task' />
-      {/* TODO ここの説明文にcssを当てる */}
-      <Typography variant='body2'>ningenMeの作った問題一覧</Typography>
+      <Typography variant='body2' className={`${styles.description} ${fontStyles.body}`}>
+        ningenMeの作った問題一覧
+      </Typography>
       <div className={styles.grid}>
         {cardList}
       </div>
