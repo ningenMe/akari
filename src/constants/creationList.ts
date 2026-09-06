@@ -44,6 +44,12 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     body: '書いた論文一覧。',
     isDone: true,
   },
+  {
+    href: UrlConst.LAST1TILE,
+    title: 'last1tile',
+    body: 'Solve the maze. Unravel the last tile.',
+    isDone: true,
+  },
   // {
   //   href: PathConst.DIARIES,
   //   title: '今日のITドカタ',
