@@ -7,6 +7,7 @@ export class PathConst {
   static readonly DIARIES: string = '/diaries'
   static readonly CONTRIBUTION: string = '/contribution'
   static readonly PAPER: string = '/paper'
+  static readonly SERVICE: string = '/service'
 }
 
 export class UrlConst {

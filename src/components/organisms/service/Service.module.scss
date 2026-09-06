@@ -1,0 +1,29 @@
+.page {
+  background-color: #f7f5fb;
+  min-height: 100vh;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 32px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #6e56cf;
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background-color: #6e56cf;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
