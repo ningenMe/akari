@@ -37,3 +37,7 @@ yarn-error.log*
 
 # python
 __pycache__
+
+# illustration originals (high-res source, resized copies live in public/illustration)
+/public/c-illustration/
+/public/m-illustration/
