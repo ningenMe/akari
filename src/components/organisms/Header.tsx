@@ -14,13 +14,15 @@ import { BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
 import { LastUpdatedDesktop } from 'components/atoms/LastUpdatedDesktop'
 import { LastUpdatedMobile } from 'components/atoms/LastUpdatedMobile'
 
+const iconSx = { fontSize: 18 }
+const caretSx = { fontSize: 16 }
+
 const NormalElement = (
   { link, className, icon }: { link: Link, className: string, icon: ReactNode },
 ) => {
   return (
     <div>
-      <Button className={className} href={link.href} rel='noreferrer noopener' target='_blank'>
-        {icon}
+      <Button className={className} href={link.href} rel='noreferrer noopener' target='_blank' startIcon={icon}>
         {link.name}
       </Button>
     </div>
@@ -42,10 +44,8 @@ const DropdownElement = ({
   }
   return (
     <div>
-      <Button onClick={onOpen} className={className}>
-        {icon}
+      <Button onClick={onOpen} className={className} startIcon={icon} endIcon={<KeyboardArrowDownIcon sx={caretSx} />}>
         {title}
-        <KeyboardArrowDownIcon />
       </Button>
       <Menu
         anchorEl={anchorEl}
@@ -76,10 +76,8 @@ const BlogDropdownElement = ({
   }
   return (
   <div>
-    <Button onClick={onOpen} className={className}>
-      {<ArticleIcon />}
+    <Button onClick={onOpen} className={className} startIcon={<ArticleIcon sx={iconSx} />} endIcon={<KeyboardArrowDownIcon sx={caretSx} />}>
       {'blog'}
-      <KeyboardArrowDownIcon />
     </Button>
     <Menu
       anchorEl={anchorEl}
@@ -118,10 +116,10 @@ export const NingenmeNetHeader = (): JSX.Element => {
 
   const getElementList = ({ className }: { className: string }) => {
     return [
-      <NormalElement key={1} link={LinkConst.GITHUB} className={className} icon={<GitHubIcon />} />,
-      <NormalElement key={2} link={LinkConst.TWITTER} className={className} icon={<TwitterIcon />} />,
+      <NormalElement key={1} link={LinkConst.GITHUB} className={className} icon={<GitHubIcon sx={iconSx} />} />,
+      <NormalElement key={2} link={LinkConst.TWITTER} className={className} icon={<TwitterIcon sx={iconSx} />} />,
       <DropdownElement key={3} title={'compro'} links={LinkConst.COMPROS} className={className}
-                       icon={<ComputerIcon />} />,
+                       icon={<ComputerIcon sx={iconSx} />} />,
       <BlogDropdownElement key={4} className={className} />,
     ]
   }
