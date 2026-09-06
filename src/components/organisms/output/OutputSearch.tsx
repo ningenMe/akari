@@ -1,23 +1,13 @@
-import React, {useEffect, useState } from 'react'
-import { BlogData } from 'repository/BlogData'
+import React from 'react'
 import { Container, List } from '@mui/material'
 import { Output } from 'interfaces/Output'
 import { OutputChip } from 'components/atoms/output/OutputChip'
 import { TASK_LIST } from 'constants/taskList'
 import { ACTIVITY_LIST } from 'constants/activityList'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
+import blogList from 'data/blog.json'
 
 export const OutputSearch = (): JSX.Element => {
-
-  const [blogList, setBlogList] = useState<BlogData[]>([])
-
-  useEffect(
-    () => {
-      // TODO: Implement server-side fetch for output page
-      // Temporarily using empty array to avoid client-side gRPC issues
-      setBlogList([])
-    },
-    [])
 
   const blogOutputList: Output[] = blogList.map((blog) => {
     return {
