@@ -53,8 +53,8 @@ const DropdownElement = ({
         onClose={onClose}
       >
         {links.map((link) => (
-          <MenuItem key={link.name}>
-            <a href={link.href}>
+          <MenuItem key={link.name} sx={{ padding: 0 }}>
+            <a href={link.href} className={styles.dropdownLink}>
               {link.name}
             </a>
           </MenuItem>

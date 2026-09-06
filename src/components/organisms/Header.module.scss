@@ -45,6 +45,20 @@
     color: black !important;
   }
 }
+.dropdownLink {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  color: theme.$color-text;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover {
+    color: theme.$color-accent-strong;
+    background-color: theme.$color-accent-soft;
+  }
+}
 .hamburger {
   position: absolute !important;
   top: 5px !important;
