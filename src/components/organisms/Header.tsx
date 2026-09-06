@@ -121,9 +121,9 @@ const BlogDropdownElement = ({
         <BlogNingenmeUrlChip blogType='AMEBA' clickable={true} />
       </MenuItem>
       <MenuItem sx={{ padding: 0 }}>
-        <a href={PathConst.OLD_DIARY} className={styles.dropdownLink}>
+        <a href={PathConst.OLD_DIARY} className={styles.dropdownLinkStrong}>
           <MenuBookIcon sx={caretSx} />
-          old-diary
+          OLD DIARY
         </a>
       </MenuItem>
     </Menu>
