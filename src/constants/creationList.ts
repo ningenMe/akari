@@ -16,17 +16,10 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     isDone: true,
     category: 'software',
   },
-  // {
-  //   href: PathConst.CONTRIBUTION,
-  //   title: 'contribution',
-  //   body: '日々のgithubのcontribution。',
-  //   isDone: true,
-  //   category: 'software',
-  // },
   {
     href: UrlConst.WORK,
     title: 'work',
-    body: '描いた漫画一覧。大学時代に漫研で活動していました。',
+    body: '描いた漫画一覧。',
     isDone: true,
     category: 'writing',
   },
@@ -41,7 +34,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
   {
     href: PathConst.BLOG,
     title: 'blog',
-    body: '日々',
+    body: '日々。',
     isDone: true,
     category: 'writing',
   },
@@ -60,16 +53,6 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     category: 'service',
     accentColor: '#2b4a8a',
   },
-  // {
-  //   href: PathConst.DIARIES,
-  //   title: '今日のITドカタ',
-  //   body: '殴り書きに近めのブログ。主に業務のwebの話。',
-  // },
-  // {
-  //   href: PathConst.SYSTEMS,
-  //   title: 'システム構成図',
-  //   body: '趣味開発システム構成図',
-  // },
 ] as const
 
 export const SERVICE_CREATION_LIST: ReadonlyArray<Creation> = CREATION_LIST.filter(

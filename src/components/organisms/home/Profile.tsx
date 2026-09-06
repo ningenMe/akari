@@ -11,8 +11,7 @@ export const Profile = (): JSX.Element => {
           Furuta Taishi
         </h4>
         <p className={fontStyles.body}>
-          web開発をしています。
-          競技プログラミングとコードレビューとRustが好きです。
+          ソフトウェア開発とコードレビューと静的型付け言語が好きです。ningenMeというハンドルネームで活動しています。
         </p>
       </CustomNormalCard>
     </div>
