@@ -62,7 +62,3 @@ export class LinkConst {
   static readonly SIZU: Link = { href: UrlConst.SIZU, name: 'SIZU' }
   static readonly COMPROS: ReadonlyArray<Link> = [LinkConst.ATCODER, LinkConst.CODEFORCES, LinkConst.YUKICODER, LinkConst.TOKI, LinkConst.CSACADEMY] as const
 }
-
-export class ImageConst {
-  static readonly NINGENME_NET: string = 'https://static.ningenme.net/net-front/ningenme.png'
-}

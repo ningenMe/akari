@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { ImageConst, UrlConst } from '../../constants/Const'
+import { UrlConst } from '../../constants/Const'
 
 interface HtmlHeadProps {
   title: string
@@ -15,7 +15,8 @@ export const HtmlHead = ({ title, description, type = 'website', publishedTime }
   const pageTitle = title ? `${title} | ${siteName}` : siteName
   const socialTitle = title || siteName
   const url = UrlConst.ORIGIN + router.asPath
-  const image = ImageConst.NINGENME_NET
+  // faviconと同じ素材を使い回す暫定対応。専用の1200x630 OGP画像を用意したら差し替える
+  const image = `${UrlConst.ORIGIN}/icon-512.png`
 
   return (
     <Head>
@@ -36,6 +37,8 @@ export const HtmlHead = ({ title, description, type = 'website', publishedTime }
       <meta property='og:title' content={socialTitle} />
       <meta property='og:description' content={description} />
       <meta property='og:image' content={image} />
+      <meta property='og:image:width' content='512' />
+      <meta property='og:image:height' content='512' />
       {type === 'article' && publishedTime && (
         <meta property='article:published_time' content={publishedTime} />
       )}
