@@ -21,6 +21,7 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
   const [isQiita, toggleQiita] = useBool()
   const [isHatena, toggleHatena] = useBool()
   const [isAmeba, toggleAmeba] = useBool()
+  const [isOldDiary, toggleOldDiary] = useBool()
 
   if (blogList.length === 0) {
     return (
@@ -36,6 +37,7 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
     if (isQiita && blog.blogType === 'QIITA') return true
     if (isHatena && blog.blogType === 'HATENA') return true
     if (isAmeba && blog.blogType === 'AMEBA') return true
+    if (isOldDiary && blog.blogType === 'OLD_DIARY') return true
     return false
   }).map((blog, idx) => (
     <BlogChip blog={blog} key={idx}/>
@@ -58,6 +60,9 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Checkbox checked={isAmeba} onChange={toggleAmeba} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'AMEBA'} clickable={false} />
+        </Box>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <Checkbox checked={isOldDiary} onChange={toggleOldDiary} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'OLD_DIARY'} clickable={false} />
         </Box>
       </Box>
 

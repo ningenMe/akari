@@ -4,7 +4,7 @@ export class PathConst {
   static readonly HOME: string = '/home'
   static readonly TASK: string = '/task'
   static readonly BLOG: string = '/blog'
-  static readonly DIARIES: string = '/diaries'
+  static readonly OLD_DIARY: string = '/old-diary'
   static readonly PAPER: string = '/paper'
   static readonly SERVICE: string = '/service'
 }

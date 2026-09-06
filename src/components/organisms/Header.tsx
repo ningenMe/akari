@@ -105,12 +105,6 @@ const BlogDropdownElement = ({
           All
         </a>
       </MenuItem>
-      <MenuItem sx={{ padding: 0 }}>
-        <a href={PathConst.DIARIES} className={styles.dropdownLink}>
-          <MenuBookIcon sx={caretSx} />
-          diaries
-        </a>
-      </MenuItem>
       <MenuItem>
         <BlogNingenmeUrlChip blogType='HATENA' clickable={true} />
       </MenuItem>
@@ -125,7 +119,13 @@ const BlogDropdownElement = ({
       </MenuItem>
       <MenuItem>
         <BlogNingenmeUrlChip blogType='AMEBA' clickable={true} />
-      </MenuItem>          
+      </MenuItem>
+      <MenuItem sx={{ padding: 0 }}>
+        <a href={PathConst.OLD_DIARY} className={styles.dropdownLink}>
+          <MenuBookIcon sx={caretSx} />
+          old-diary
+        </a>
+      </MenuItem>
     </Menu>
   </div>
 )
