@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { BlogData } from 'repository/BlogData'
 import { Box, Checkbox, Container, List } from '@mui/material'
 import { BlogChip, BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
+import { CustomNormalCard } from 'components/organisms/CustomCard'
 
 const useBool = (): [boolean, () => void] => {
   const [value, setValue] = useState(true);
@@ -60,9 +61,13 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
         </Box>
       </Box>
 
-      <List>
-        {blogCardList}
-      </List>
-    </Container>      
+      <Box sx={{ mt: 3 }}>
+        <CustomNormalCard>
+          <List disablePadding>
+            {blogCardList}
+          </List>
+        </CustomNormalCard>
+      </Box>
+    </Container>
   )
 }
