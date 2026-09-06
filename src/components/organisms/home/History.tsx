@@ -19,8 +19,11 @@ export const History = (): JSX.Element => {
   }
 
   const contents = HISTORY_LIST.map((history, idx) =>
-    <div key={idx} className={fontStyles.body}>
-      <span className={styles.year}>{history.yearFrom}-{history.yearTo}</span>: {history.body}
+    <div key={idx} className={`${styles.row} ${fontStyles.body}`}>
+      <div className={styles.rowHead}>
+        <span className={styles.year}>{history.yearFrom}-{history.yearTo}</span>
+        <span>{history.body}</span>
+      </div>
       <div className={styles.inner}>
         {innerContents(history.contentList)}
       </div>

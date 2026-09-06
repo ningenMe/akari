@@ -27,13 +27,15 @@ export const RecentBlog = ({ blogList }: RecentBlogProps): JSX.Element => {
 
   return (
     <div>
-      <SubTitle title={'Recent Blog'}></SubTitle>
+      <div className={styles.header}>
+        <SubTitle title={'Recent Blog'}></SubTitle>
+        <a href={PathConst.BLOG} className={styles.more}>もっと見る →</a>
+      </div>
       <CustomNormalCard>
         <List disablePadding>
           {blogCardList}
         </List>
       </CustomNormalCard>
-      <a href={PathConst.BLOG} className={styles.more}>もっと見る →</a>
     </div>
   )
 }

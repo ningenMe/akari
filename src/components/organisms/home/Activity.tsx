@@ -8,10 +8,11 @@ import styles from './Activity.module.scss'
 
 export const Activity = (): JSX.Element => {
   const contents = ACTIVITY_LIST.map((activity, idx) =>
-    <div key={idx} className={fontStyles.body}>
+    <div key={idx} className={`${styles.row} ${fontStyles.body}`}>
       <span className={styles.year}>{activity.year}</span>
-      {': '}
-      <OptionalHref body={activity.body} href={activity.href} />
+      <span className={styles.body}>
+        <OptionalHref body={activity.body} href={activity.href} />
+      </span>
     </div>
   )
 
