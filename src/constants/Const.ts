@@ -6,12 +6,12 @@ export class PathConst {
   static readonly BLOG: string = '/blog'
   static readonly DIARIES: string = '/diaries'
   static readonly CONTRIBUTION: string = '/contribution'
+  static readonly PAPER: string = '/paper'
 }
 
 export class UrlConst {
   static readonly NINGENME_NET: string = PathConst.HOME
   static readonly GITHUB: string = 'https://github.com/ningenMe'
-  static readonly GITHUB_SPONSOR: string = 'https://github.com/sponsors/ningenMe'
   static readonly GITHUB_AKARI_FRONT: string = 'https://github.com/ningenMe/akari-front'
   static readonly TWITTER: string = 'https://twitter.com/ningenMe'
   static readonly ATCODER: string = 'https://atcoder.jp/users/ningenMe'
@@ -39,13 +39,13 @@ export class UrlConst {
   static readonly ISUCON14_TEAM_LIST: string = 'https://isucon.net/archives/58847057.html'
   static readonly ISUCON13_TEAM_LIST: string = 'https://isucon.net/archives/57566481.html'
   static readonly ISUCON12_TEAM_LIST: string = 'https://isucon.net/archives/56566155.html'
+  static readonly ROOM: string = 'https://room.ningenme.net/'
 }
 
 export class LinkConst {
   static readonly NINGENME_NET: Link = { href: UrlConst.NINGENME_NET, name: 'ningenMe.net' }
   static readonly COMPRO_LIBRARY: Link = { href: UrlConst.COMPRO_LIBRARY, name: 'compro-library' }
   static readonly GITHUB: Link = { href: UrlConst.GITHUB, name: 'GitHub' }
-  static readonly GITHUB_SPONSOR: Link = { href: UrlConst.GITHUB_SPONSOR, name: 'Become a sponsor' }
   static readonly GITHUB_AKARI_FRONT: Link = { href: UrlConst.GITHUB_AKARI_FRONT, name: 'frontend' }
   static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: '@ningenMe' }
   static readonly ATCODER: Link = { href: UrlConst.ATCODER, name: 'AtCoder' }

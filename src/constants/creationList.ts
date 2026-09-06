@@ -26,6 +26,24 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     body: '描いた漫画一覧。大学時代に漫研で活動していました。',
     isDone: true,
   },
+  {
+    href: UrlConst.ROOM,
+    title: 'room',
+    body: 'All you do is ROM in ROOM.',
+    isDone: true,
+  },
+  {
+    href: PathConst.BLOG,
+    title: 'blog',
+    body: '日々',
+    isDone: true,
+  },
+  {
+    href: PathConst.PAPER,
+    title: 'paper',
+    body: '書いた論文一覧。',
+    isDone: true,
+  },
   // {
   //   href: PathConst.DIARIES,
   //   title: '今日のITドカタ',
