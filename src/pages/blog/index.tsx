@@ -15,7 +15,10 @@ interface Props {
 export const Index: NextPage<Props> = ({ blogList }) => {
   return (
     <>
-      <HtmlHead title='blog - ' />
+      <HtmlHead
+        title='Blog'
+        description='ningenMeのブログ記事一覧。Zenn, Qiita, はてなブログ, Ameba, sizuなど複数プラットフォームの投稿をまとめています。'
+      />
       <NingenmeNetHeader />
       <BlogSearch blogList={blogList} />
       <NingenmeNetFooter />

@@ -10,6 +10,8 @@ export class PathConst {
 }
 
 export class UrlConst {
+  // サイト自体の絶対オリジン。canonical/OGPのURL組み立て専用（サイト内リンクにはPathConstを使う）
+  static readonly ORIGIN: string = 'https://ningenme.net'
   static readonly NINGENME_NET: string = PathConst.HOME
   static readonly GITHUB: string = 'https://github.com/ningenMe'
   static readonly TWITTER: string = 'https://twitter.com/ningenMe'
@@ -59,8 +61,4 @@ export class LinkConst {
   static readonly ZENN: Link = { href: UrlConst.ZENN, name: 'ZENN' }
   static readonly SIZU: Link = { href: UrlConst.SIZU, name: 'SIZU' }
   static readonly COMPROS: ReadonlyArray<Link> = [LinkConst.ATCODER, LinkConst.CODEFORCES, LinkConst.YUKICODER, LinkConst.TOKI, LinkConst.CSACADEMY] as const
-}
-
-export class ImageConst {
-  static readonly NINGENME_NET: string = 'https://static.ningenme.net/net-front/ningenme.png'
 }

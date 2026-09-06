@@ -6,4 +6,5 @@ export interface OldDiaryPost {
 
 export interface OldDiaryPostDetail extends OldDiaryPost {
   readonly html: string
+  readonly description: string
 }

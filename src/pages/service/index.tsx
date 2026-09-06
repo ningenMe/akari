@@ -7,7 +7,7 @@ import { NextPage } from 'next'
 export const Index: NextPage = () => {
   return (
     <>
-      <HtmlHead title='service - ' />
+      <HtmlHead title='Service' description='ningenMeが開発したサービス一覧。' />
       <ServiceHeader />
       <Service />
       <ServiceFooter />

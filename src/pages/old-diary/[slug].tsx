@@ -13,7 +13,12 @@ interface Props {
 export const Page: NextPage<Props> = ({ oldDiary }) => {
   return (
     <>
-      <HtmlHead title={`${oldDiary.title} - `} />
+      <HtmlHead
+        title={oldDiary.title}
+        description={oldDiary.description}
+        type='article'
+        publishedTime={new Date(oldDiary.date).toISOString()}
+      />
       <NingenmeNetHeader />
       <OldDiaryDetail oldDiary={oldDiary} />
       <NingenmeNetFooter />

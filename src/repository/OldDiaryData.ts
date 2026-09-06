@@ -19,6 +19,21 @@ const splitTitleAndBody = (content: string): { title: string, body: string } => 
   return { title, body }
 }
 
+const DESCRIPTION_LENGTH = 100
+
+const buildDescription = (html: string): string => {
+  const plainText = html
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (plainText.length <= DESCRIPTION_LENGTH) return plainText
+  return `${plainText.slice(0, DESCRIPTION_LENGTH)}…`
+}
+
 export const getOldDiarySlugs = (): string[] => readSlugs()
 
 export const getOldDiaryList = (): ReadonlyArray<OldDiaryPost> => {
@@ -32,5 +47,6 @@ export const getOldDiaryList = (): ReadonlyArray<OldDiaryPost> => {
 export const getOldDiaryDetail = (slug: string): OldDiaryPostDetail => {
   const content = fs.readFileSync(path.join(OLD_DIARY_DIR, `${slug}.md`), 'utf-8')
   const { title, body } = splitTitleAndBody(content)
-  return { slug, date: slug, title, html: md.render(body) }
+  const html = md.render(body)
+  return { slug, date: slug, title, html, description: buildDescription(html) }
 }

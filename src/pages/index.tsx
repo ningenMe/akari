@@ -1,15 +1,10 @@
-import { NextPage } from 'next'
-import { useRouter } from 'next/router'
-import { useEffect } from 'react'
+import { GetServerSideProps, NextPage } from 'next'
 import { PathConst } from '../constants/Const'
 
-export const Index: NextPage = () => {
-  const router = useRouter()
+export const Index: NextPage = () => null
 
-  useEffect(() => {
-    router.replace(PathConst.HOME)
-  }, [])
-
-  return null
+export const getServerSideProps: GetServerSideProps = async () => {
+  return { redirect: { destination: PathConst.HOME, permanent: true } }
 }
+
 export default Index

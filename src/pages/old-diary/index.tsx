@@ -13,7 +13,7 @@ interface Props {
 export const Index: NextPage<Props> = ({ oldDiaryList }) => {
   return (
     <>
-      <HtmlHead title='old-diary - ' />
+      <HtmlHead title='Old Diary' description='ningenMeが昔つけていた日記のアーカイブ。' />
       <NingenmeNetHeader />
       <OldDiaryList oldDiaryList={oldDiaryList} />
       <NingenmeNetFooter />
