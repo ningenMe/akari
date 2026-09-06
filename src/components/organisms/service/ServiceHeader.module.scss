@@ -1,0 +1,21 @@
+.appbar {
+  background-color: #453a6b !important;
+  box-shadow: none !important;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  padding: 16px 10%;
+}
+
+.brand {
+  color: #fbf9ff;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  &:hover {
+    color: #fbf9ff;
+    text-decoration: underline;
+  }
+}

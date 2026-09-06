@@ -36,6 +36,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     body: 'All you do is ROM in ROOM.',
     isDone: true,
     category: 'service',
+    accentColor: '#111111',
   },
   {
     href: PathConst.BLOG,
@@ -57,6 +58,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     body: 'Solve the maze. Unravel the last tile.',
     isDone: true,
     category: 'service',
+    accentColor: '#2b4a8a',
   },
   // {
   //   href: PathConst.DIARIES,
@@ -69,3 +71,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
   //   body: '趣味開発システム構成図',
   // },
 ] as const
+
+export const SERVICE_CREATION_LIST: ReadonlyArray<Creation> = CREATION_LIST.filter(
+  (creation) => creation.category === 'service'
+)

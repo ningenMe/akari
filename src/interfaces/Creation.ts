@@ -5,5 +5,6 @@ export interface Creation{
   readonly title: string,
   readonly body:  string,
   readonly isDone: boolean,
-  readonly category: CreationCategory
+  readonly category: CreationCategory,
+  readonly accentColor?: string
 }
