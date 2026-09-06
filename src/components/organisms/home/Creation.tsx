@@ -13,29 +13,29 @@ export const Creation = (): JSX.Element => {
     if (creation.isDone) {
       return (
         <CustomLinkCard href={creation.href} key={creation.href}>
-          <span className={styles.category}>
-            {creationCategoryLabel(creation.category)}
-          </span>
           <h5 className={styles.title}>
             {creation.title}
           </h5>
           <p className={fontStyles.body}>
             {creation.body}
           </p>
+          <span className={styles.category}>
+            {creationCategoryLabel(creation.category)}
+          </span>
         </CustomLinkCard>
       )
     }
     return (
       <CustomNormalCard key={creation.href}>
-        <span className={styles.category}>
-          {creationCategoryLabel(creation.category)}
-        </span>
         <h5 className={styles.title}>
           {creation.title}
         </h5>
         <p className={fontStyles.body}>
           準備中...
         </p>
+        <span className={styles.category}>
+          {creationCategoryLabel(creation.category)}
+        </span>
       </CustomNormalCard>
     )
   }
