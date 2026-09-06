@@ -1,0 +1,33 @@
+// akari共通デザイントークン（紫を基調としたライトテーマ）
+// /serviceページで壁打ちして合意した配色・書式を、サイト全体に展開するための一元管理場所。
+
+// 面
+$color-bg: #f7f5fb;
+$color-surface: #ffffff;
+$color-surface-hover: #fbfaff;
+
+// 文字
+$color-text: #1e1b24;
+$color-text-muted: #6b6575;
+$color-text-faint: #9d97ab;
+
+// アクセント（小面積で使う紫）
+$color-accent: #6e56cf;
+$color-accent-strong: #5b3fc0;
+$color-accent-soft: #e9e3f9;
+
+// 罫線
+$color-border: #e3ddef;
+$color-border-strong: #cfc5e6;
+
+// ヘッダー/フッター（大面積のベタ塗り用。彩度・明度を落とした濃紫）
+$color-header-bg: #453a6b;
+$color-header-text: #fbf9ff;
+$color-header-text-muted: rgba(251, 249, 255, 0.65);
+
+// 影
+$shadow-card: 0 1px 2px rgba(30, 20, 50, 0.06);
+$shadow-card-hover: 0 12px 24px -12px rgba(94, 63, 192, 0.35);
+
+// フォント（既存サイトの資産をそのまま採用）
+$font-body: 'M PLUS Rounded 1c', sans-serif;

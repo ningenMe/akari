@@ -8,6 +8,8 @@ const useBool = (): [boolean, () => void] => {
   return [value, () => setValue(value => !value)];
 }
 
+const checkboxSx = { '&.Mui-checked': { color: '#6e56cf' } }
+
 interface BlogSearchProps {
   blogList: BlogData[]
 }
@@ -42,19 +44,19 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
     <Container>
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, flexWrap: 'wrap', alignItems: { xs: 'flex-start', sm: 'center' }, gap: 1 }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isSizu} onChange={toggleSizu} /> <BlogNingenmeUrlChip blogType={'SIZU'} clickable={false} />
+          <Checkbox checked={isSizu} onChange={toggleSizu} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'SIZU'} clickable={false} />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isZenn} onChange={toggleZenn} /> <BlogNingenmeUrlChip blogType={'ZENN'} clickable={false} />
+          <Checkbox checked={isZenn} onChange={toggleZenn} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'ZENN'} clickable={false} />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isQiita} onChange={toggleQiita} /> <BlogNingenmeUrlChip blogType={'QIITA'} clickable={false} />
+          <Checkbox checked={isQiita} onChange={toggleQiita} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'QIITA'} clickable={false} />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isHatena} onChange={toggleHatena} /> <BlogNingenmeUrlChip blogType={'HATENA'} clickable={false} />
+          <Checkbox checked={isHatena} onChange={toggleHatena} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'HATENA'} clickable={false} />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isAmeba} onChange={toggleAmeba} /> <BlogNingenmeUrlChip blogType={'AMEBA'} clickable={false} />
+          <Checkbox checked={isAmeba} onChange={toggleAmeba} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'AMEBA'} clickable={false} />
         </Box>
       </Box>
 

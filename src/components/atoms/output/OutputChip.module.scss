@@ -1,3 +1,5 @@
+@use '../../../styles/theme';
+
 .basedate {
   font-weight: bold;
   margin-left: 10px;
@@ -5,7 +7,7 @@
 }
 .date {
   @extend .basedate;
-  background-color: aliceblue;
+  background-color: theme.$color-accent-soft;
 }
 .type {
   font-weight: bold;
