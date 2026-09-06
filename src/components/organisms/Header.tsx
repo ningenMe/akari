@@ -5,6 +5,8 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import ArticleIcon from '@mui/icons-material/Article'
 import ComputerIcon from '@mui/icons-material/Computer'
+import AppsIcon from '@mui/icons-material/Apps'
+import ListIcon from '@mui/icons-material/List'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar } from '@mui/material'
 import { Box } from '@mui/system'
@@ -23,6 +25,18 @@ const NormalElement = (
   return (
     <div>
       <Button className={className} href={link.href} rel='noreferrer noopener' target='_blank' startIcon={icon}>
+        {link.name}
+      </Button>
+    </div>
+  )
+}
+
+const InternalLinkElement = (
+  { link, className, icon }: { link: Link, className: string, icon: ReactNode },
+) => {
+  return (
+    <div>
+      <Button className={className} href={link.href} startIcon={icon}>
         {link.name}
       </Button>
     </div>
@@ -86,6 +100,7 @@ const BlogDropdownElement = ({
     >
       <MenuItem sx={{ padding: 0 }}>
         <a href={PathConst.BLOG} className={styles.dropdownLink}>
+          <ListIcon sx={caretSx} />
           All
         </a>
       </MenuItem>
@@ -126,6 +141,7 @@ export const NingenmeNetHeader = (): JSX.Element => {
       <DropdownElement key={3} title={'compro'} links={LinkConst.COMPROS} className={className}
                        icon={<ComputerIcon sx={iconSx} />} />,
       <BlogDropdownElement key={4} className={className} />,
+      <InternalLinkElement key={5} link={LinkConst.SERVICE} className={className} icon={<AppsIcon sx={iconSx} />} />,
     ]
   }
 

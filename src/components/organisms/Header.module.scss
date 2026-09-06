@@ -46,7 +46,9 @@
   }
 }
 .dropdownLink {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
   width: 100%;
   box-sizing: border-box;
   padding: 6px 16px;
