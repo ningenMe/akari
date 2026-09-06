@@ -5,7 +5,6 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import ArticleIcon from '@mui/icons-material/Article'
 import ComputerIcon from '@mui/icons-material/Computer'
-import PaidIcon from '@mui/icons-material/Paid'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar } from '@mui/material'
 import { Box } from '@mui/system'
@@ -124,7 +123,6 @@ export const NingenmeNetHeader = (): JSX.Element => {
       <DropdownElement key={3} title={'compro'} links={LinkConst.COMPROS} className={className}
                        icon={<ComputerIcon />} />,
       <BlogDropdownElement key={4} className={className} />,
-      <NormalElement key={5} link={LinkConst.GITHUB_SPONSOR} className={className} icon={<PaidIcon />} />,
     ]
   }
 
