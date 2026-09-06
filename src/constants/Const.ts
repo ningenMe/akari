@@ -40,6 +40,7 @@ export class UrlConst {
   static readonly ISUCON13_TEAM_LIST: string = 'https://isucon.net/archives/57566481.html'
   static readonly ISUCON12_TEAM_LIST: string = 'https://isucon.net/archives/56566155.html'
   static readonly ROOM: string = 'https://room.ningenme.net/'
+  static readonly LAST1TILE: string = 'https://last1tile.ningenme.net/'
 }
 
 export class LinkConst {
