@@ -47,6 +47,7 @@ export class UrlConst {
 export class LinkConst {
   static readonly NINGENME_NET: Link = { href: UrlConst.NINGENME_NET, name: 'ningenMe.net' }
   static readonly COMPRO_LIBRARY: Link = { href: UrlConst.COMPRO_LIBRARY, name: 'compro-library' }
+  static readonly SERVICE: Link = { href: PathConst.SERVICE, name: 'service' }
   static readonly GITHUB: Link = { href: UrlConst.GITHUB, name: 'GitHub' }
   static readonly GITHUB_AKARI_FRONT: Link = { href: UrlConst.GITHUB_AKARI_FRONT, name: 'frontend' }
   static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: '@ningenMe' }

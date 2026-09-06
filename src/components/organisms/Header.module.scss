@@ -8,7 +8,7 @@
   margin: 10px 10px 10px 10%;
   color: white;
   font-weight: bold;
-  font-size: large;
+  font-size: 1.05rem;
   text-decoration: none;
   &:hover {
     color: white;
@@ -17,7 +17,19 @@
 }
 .button {
   margin: 5px 5px 1px;
-  text-transform: none !important
+  font-size: 0.85rem;
+  text-transform: none !important;
+
+  .MuiButton-startIcon,
+  .MuiButton-endIcon {
+    margin-left: 0;
+    margin-right: 4px;
+  }
+
+  .MuiButton-endIcon {
+    margin-left: 2px;
+    margin-right: 0;
+  }
 }
 .buttonPc {
   @extend .button;
@@ -31,6 +43,22 @@
   color: black !important;
   &:hover {
     color: black !important;
+  }
+}
+.dropdownLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 16px;
+  color: theme.$color-text;
+  font-size: 0.9rem;
+  text-decoration: none;
+
+  &:hover {
+    color: theme.$color-accent-strong;
+    background-color: theme.$color-accent-soft;
   }
 }
 .hamburger {

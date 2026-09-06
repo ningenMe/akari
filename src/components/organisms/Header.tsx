@@ -5,22 +5,38 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import ArticleIcon from '@mui/icons-material/Article'
 import ComputerIcon from '@mui/icons-material/Computer'
+import AppsIcon from '@mui/icons-material/Apps'
+import ListIcon from '@mui/icons-material/List'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar } from '@mui/material'
 import { Box } from '@mui/system'
 import MenuIcon from '@mui/icons-material/Menu'
-import { LinkConst } from '../../constants/Const'
+import { LinkConst, PathConst } from '../../constants/Const'
 import { BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
 import { LastUpdatedDesktop } from 'components/atoms/LastUpdatedDesktop'
 import { LastUpdatedMobile } from 'components/atoms/LastUpdatedMobile'
+
+const iconSx = { fontSize: 18 }
+const caretSx = { fontSize: 16 }
 
 const NormalElement = (
   { link, className, icon }: { link: Link, className: string, icon: ReactNode },
 ) => {
   return (
     <div>
-      <Button className={className} href={link.href} rel='noreferrer noopener' target='_blank'>
-        {icon}
+      <Button className={className} href={link.href} rel='noreferrer noopener' target='_blank' startIcon={icon}>
+        {link.name}
+      </Button>
+    </div>
+  )
+}
+
+const InternalLinkElement = (
+  { link, className, icon }: { link: Link, className: string, icon: ReactNode },
+) => {
+  return (
+    <div>
+      <Button className={className} href={link.href} startIcon={icon}>
         {link.name}
       </Button>
     </div>
@@ -42,10 +58,8 @@ const DropdownElement = ({
   }
   return (
     <div>
-      <Button onClick={onOpen} className={className}>
-        {icon}
+      <Button onClick={onOpen} className={className} startIcon={icon} endIcon={<KeyboardArrowDownIcon sx={caretSx} />}>
         {title}
-        <KeyboardArrowDownIcon />
       </Button>
       <Menu
         anchorEl={anchorEl}
@@ -53,8 +67,8 @@ const DropdownElement = ({
         onClose={onClose}
       >
         {links.map((link) => (
-          <MenuItem key={link.name}>
-            <a href={link.href}>
+          <MenuItem key={link.name} sx={{ padding: 0 }}>
+            <a href={link.href} className={styles.dropdownLink}>
               {link.name}
             </a>
           </MenuItem>
@@ -76,16 +90,20 @@ const BlogDropdownElement = ({
   }
   return (
   <div>
-    <Button onClick={onOpen} className={className}>
-      {<ArticleIcon />}
+    <Button onClick={onOpen} className={className} startIcon={<ArticleIcon sx={iconSx} />} endIcon={<KeyboardArrowDownIcon sx={caretSx} />}>
       {'blog'}
-      <KeyboardArrowDownIcon />
     </Button>
     <Menu
       anchorEl={anchorEl}
       open={Boolean(anchorEl)}
       onClose={onClose}
     >
+      <MenuItem sx={{ padding: 0 }}>
+        <a href={PathConst.BLOG} className={styles.dropdownLink}>
+          <ListIcon sx={caretSx} />
+          All
+        </a>
+      </MenuItem>
       <MenuItem>
         <BlogNingenmeUrlChip blogType='HATENA' clickable={true} />
       </MenuItem>
@@ -118,11 +136,12 @@ export const NingenmeNetHeader = (): JSX.Element => {
 
   const getElementList = ({ className }: { className: string }) => {
     return [
-      <NormalElement key={1} link={LinkConst.GITHUB} className={className} icon={<GitHubIcon />} />,
-      <NormalElement key={2} link={LinkConst.TWITTER} className={className} icon={<TwitterIcon />} />,
+      <NormalElement key={1} link={LinkConst.GITHUB} className={className} icon={<GitHubIcon sx={iconSx} />} />,
+      <NormalElement key={2} link={LinkConst.TWITTER} className={className} icon={<TwitterIcon sx={iconSx} />} />,
       <DropdownElement key={3} title={'compro'} links={LinkConst.COMPROS} className={className}
-                       icon={<ComputerIcon />} />,
+                       icon={<ComputerIcon sx={iconSx} />} />,
       <BlogDropdownElement key={4} className={className} />,
+      <InternalLinkElement key={5} link={LinkConst.SERVICE} className={className} icon={<AppsIcon sx={iconSx} />} />,
     ]
   }
 
