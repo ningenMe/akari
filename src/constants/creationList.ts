@@ -24,6 +24,13 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     category: 'writing',
   },
   {
+    href: PathConst.ILLUSTRATION,
+    title: 'illustration',
+    body: '過去に描いたイラストのアーカイブ。',
+    isDone: true,
+    category: 'writing',
+  },
+  {
     href: UrlConst.ROOM,
     title: 'room',
     body: 'All you do is ROM in ROOM.',

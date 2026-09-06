@@ -1,0 +1,128 @@
+[
+  {
+    "category": "color",
+    "file": "2.jpg",
+    "width": 1132,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "3.jpg",
+    "width": 1138,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "4.jpg",
+    "width": 1600,
+    "height": 1132
+  },
+  {
+    "category": "color",
+    "file": "5.jpg",
+    "width": 1600,
+    "height": 1138
+  },
+  {
+    "category": "color",
+    "file": "6.jpg",
+    "width": 1131,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "7.jpg",
+    "width": 1131,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "8.jpg",
+    "width": 1132,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "9.jpg",
+    "width": 1132,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "10.jpg",
+    "width": 1600,
+    "height": 1132
+  },
+  {
+    "category": "color",
+    "file": "11.jpg",
+    "width": 1131,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "13.jpg",
+    "width": 1131,
+    "height": 1600
+  },
+  {
+    "category": "color",
+    "file": "14.jpg",
+    "width": 1114,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "8.jpg",
+    "width": 1132,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "9.jpg",
+    "width": 1138,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "10.jpg",
+    "width": 1164,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "11.jpg",
+    "width": 1132,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "12.jpg",
+    "width": 1132,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "13.jpg",
+    "width": 1132,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "15.jpg",
+    "width": 1131,
+    "height": 1600
+  },
+  {
+    "category": "mono",
+    "file": "17.jpg",
+    "width": 1600,
+    "height": 1132
+  },
+  {
+    "category": "mono",
+    "file": "18.jpg",
+    "width": 1132,
+    "height": 1600
+  }
+]
