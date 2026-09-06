@@ -1,0 +1,72 @@
+@use '../../../styles/theme';
+
+.date {
+  margin: 4px 0 20px;
+  color: theme.$color-text-muted;
+}
+
+.article {
+  line-height: 1.8;
+
+  h1, h2, h3 {
+    margin: 28px 0 12px;
+    color: theme.$color-text;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    margin: 0 0 12px;
+  }
+
+  ul, ol {
+    margin: 0 0 12px;
+    padding-left: 1.4em;
+  }
+
+  a {
+    color: theme.$color-accent-strong;
+    text-decoration: none;
+    word-break: break-all;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  code {
+    background-color: theme.$color-accent-soft;
+    color: theme.$color-accent-strong;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+
+  pre {
+    background-color: theme.$color-surface-hover;
+    border: 1px solid theme.$color-border;
+    border-radius: 8px;
+    padding: 14px;
+    overflow-x: auto;
+
+    code {
+      background-color: transparent;
+      color: inherit;
+      padding: 0;
+    }
+  }
+}
+
+.back {
+  display: inline-block;
+  margin: 24px 0;
+  color: theme.$color-text-muted;
+  text-decoration: none;
+
+  &:hover {
+    color: theme.$color-accent-strong;
+    text-decoration: underline;
+  }
+}
