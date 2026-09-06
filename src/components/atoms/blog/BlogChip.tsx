@@ -26,11 +26,11 @@ const getBlogNingenmeUrl = (blogType: string): string => {
     return PathConst.BLOG;
 }
 
-export const BlogNingenmeUrlChip = ({blogType, clickable}: {blogType: string, clickable: boolean}): JSX.Element => {
+export const BlogNingenmeUrlChip = ({blogType, clickable, label}: {blogType: string, clickable: boolean, label?: string}): JSX.Element => {
     const content = (
       <span className={styles.platform}>
         <Image src={"/" + getBlogIconPath(blogType)} alt="" width={16} height={16} />
-        {blogType}
+        {label ?? blogType}
       </span>
     )
     if (!clickable) return content

@@ -7,7 +7,6 @@ import ArticleIcon from '@mui/icons-material/Article'
 import ComputerIcon from '@mui/icons-material/Computer'
 import AppsIcon from '@mui/icons-material/Apps'
 import ListIcon from '@mui/icons-material/List'
-import MenuBookIcon from '@mui/icons-material/MenuBook'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar } from '@mui/material'
 import { Box } from '@mui/system'
@@ -120,11 +119,8 @@ const BlogDropdownElement = ({
       <MenuItem>
         <BlogNingenmeUrlChip blogType='AMEBA' clickable={true} />
       </MenuItem>
-      <MenuItem sx={{ padding: 0 }}>
-        <a href={PathConst.OLD_DIARY} className={styles.dropdownLinkStrong}>
-          <MenuBookIcon sx={caretSx} />
-          OLD DIARY
-        </a>
+      <MenuItem>
+        <BlogNingenmeUrlChip blogType='OLD_DIARY' clickable={true} label='OLD DIARY' />
       </MenuItem>
     </Menu>
   </div>
