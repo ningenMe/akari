@@ -7,7 +7,7 @@ import { NextPage } from 'next'
 export const Index: NextPage = () => {
   return (
     <>
-      <HtmlHead title='paper - ' />
+      <HtmlHead title='Paper' description='ningenMeが書いた論文一覧。' />
       <NingenmeNetHeader />
       <Paper />
       <NingenmeNetFooter />

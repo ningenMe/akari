@@ -8,7 +8,10 @@ import blogList from 'data/blog.json'
 export const Index: NextPage = () => {
   return (
     <>
-      <HtmlHead title='' />
+      <HtmlHead
+        title=''
+        description='ソフトウェア開発とコードレビューと静的型付け言語が好きなningenMeのポートフォリオサイト。競技プログラミングの作問・ブログ・開発したサービスなどをまとめています。'
+      />
       <NingenmeNetHeader />
       <Home blogList={blogList} />
       <NingenmeNetFooter />
