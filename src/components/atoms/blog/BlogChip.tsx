@@ -12,6 +12,7 @@ const getBlogIconPath = (blogType: string): string => {
     if (blogType === "SIZU") return 'sizu.png'
     if (blogType === "ZENN") return 'zenn.svg'
     if (blogType === "AMEBA") return 'a.png'
+    if (blogType === "OLD_DIARY") return 'dokata.png'
     return 'ningenme.png'
 }
 
@@ -21,6 +22,7 @@ const getBlogNingenmeUrl = (blogType: string): string => {
     if (blogType === "SIZU") return UrlConst.SIZU;
     if (blogType === "ZENN") return UrlConst.ZENN;
     if (blogType === "AMEBA") return UrlConst.AMEBA;
+    if (blogType === "OLD_DIARY") return PathConst.OLD_DIARY;
     return PathConst.BLOG;
 }
 
