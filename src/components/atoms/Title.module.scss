@@ -1,17 +1,35 @@
 @use '../../styles/theme';
 
 .wrapper {
-  margin-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  color: theme.$color-accent;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 1px;
+    background-color: theme.$color-accent;
+  }
 }
 
 .title {
-  font-size: xx-large;
-  font-weight: bold;
-  text-decoration: solid underline theme.$color-accent 4px;
+  @extend .eyebrow;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
 }
 
 .subtitle {
-  font-size: x-large;
-  font-weight: bold;
-  text-decoration: solid underline theme.$color-accent 4px;
+  @extend .eyebrow;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
 }

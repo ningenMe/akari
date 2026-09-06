@@ -5,6 +5,7 @@ import { Output } from 'interfaces/Output'
 import { OutputChip } from 'components/atoms/output/OutputChip'
 import { TASK_LIST } from 'constants/taskList'
 import { ACTIVITY_LIST } from 'constants/activityList'
+import { CustomNormalCard } from 'components/organisms/CustomCard'
 
 export const OutputSearch = (): JSX.Element => {
 
@@ -51,9 +52,11 @@ export const OutputSearch = (): JSX.Element => {
 
   return (
     <Container>
-      <List>
-        {outputChipList}
-      </List>
-    </Container>      
+      <CustomNormalCard>
+        <List disablePadding>
+          {outputChipList}
+        </List>
+      </CustomNormalCard>
+    </Container>
   )
 }

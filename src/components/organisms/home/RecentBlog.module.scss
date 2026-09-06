@@ -1,0 +1,14 @@
+@use '../../../styles/theme';
+
+.more {
+  display: inline-block;
+  margin-top: 10px;
+  color: theme.$color-accent;
+  font-size: 0.85rem;
+  text-decoration: none;
+
+  &:hover {
+    color: theme.$color-accent-strong;
+    text-decoration: underline;
+  }
+}

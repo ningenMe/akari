@@ -1,33 +1,60 @@
 @use '../../../styles/theme';
 
-.basedate {
-  font-weight: bold;
-  margin-left: 10px;
-  margin-right: 2px;
-}
-.date0 {
-  @extend .basedate;
-  background-color: theme.$color-accent-soft;
-}
-.date1 {
-  @extend .basedate;
-  background-color: theme.$color-border;
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 6px;
+  border-bottom: 1px solid theme.$color-border;
+  transition: background-color 0.15s ease;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background-color: theme.$color-surface-hover;
+  }
 }
 
-.type {
+.date {
+  flex-shrink: 0;
+  width: 82px;
+  color: theme.$color-text-faint;
+  font-size: 0.8rem;
+}
+
+.platform {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 74px;
+  color: theme.$color-text-muted;
+  font-size: 0.8rem;
   font-weight: bold;
-  margin-left: 2px;
-  margin-right: 2px;
-  width: 150px;
+
+  img {
+    border-radius: 3px;
+  }
 }
+
+.platformLink {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover .platform {
+    color: theme.$color-accent-strong;
+  }
+}
+
 .title {
-  padding-left: 10px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-}
-.blogCard {
-  margin-top: 2px;
-}
-.divider {
-  color: black;
+  flex-grow: 1;
+  color: theme.$color-text;
+  text-decoration: none;
+
+  &:hover {
+    color: theme.$color-accent-strong;
+    text-decoration: underline;
+  }
 }
