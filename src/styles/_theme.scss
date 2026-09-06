@@ -25,9 +25,9 @@ $color-header-bg: #453a6b;
 $color-header-text: #fbf9ff;
 $color-header-text-muted: rgba(251, 249, 255, 0.65);
 
-// 影
-$shadow-card: 0 1px 2px rgba(30, 20, 50, 0.06);
-$shadow-card-hover: 0 12px 24px -12px rgba(94, 63, 192, 0.35);
+// 影（2層にして、静止時も軽く浮いて見えるようにする）
+$shadow-card: 0 1px 2px rgba(30, 20, 50, 0.04), 0 4px 10px -6px rgba(30, 20, 50, 0.08);
+$shadow-card-hover: 0 16px 28px -12px rgba(94, 63, 192, 0.32);
 
 // フォント（既存サイトの資産をそのまま採用）
 $font-body: 'M PLUS Rounded 1c', sans-serif;

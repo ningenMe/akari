@@ -4,13 +4,21 @@
   box-sizing: border-box;
   width: auto;
   height: auto;
-  padding: 10px 20px 2px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 22px;
   margin: 10px 5px 10px 5px;
   background-color: theme.$color-surface;
   border: 1px solid theme.$color-border;
   border-radius: 14px;
   box-shadow: theme.$shadow-card;
   transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease, background-color 0.18s ease;
+
+  // 見出し・段落のデフォルトmarginに頼らず、gapだけで縦の間隔を揃える
+  > * {
+    margin: 0;
+  }
 }
 
 .normalCard {
@@ -19,13 +27,32 @@
 
 .linkCard {
   @extend .baseCard;
-  position:relative;
+  position: relative;
+
+  &::after {
+    content: '↗';
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    font-size: 15px;
+    line-height: 1;
+    color: theme.$color-accent;
+    opacity: 0.4;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+  }
+
   &:hover {
     background-color: theme.$color-surface-hover;
     border-color: theme.$color-border-strong;
     box-shadow: theme.$shadow-card-hover;
     transform: translateY(-2px);
     color: theme.$color-accent-strong !important;
+  }
+
+  &:hover::after {
+    opacity: 1;
+    transform: translate(2px, -2px);
   }
 }
 
