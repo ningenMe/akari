@@ -1,3 +1,5 @@
+@use '../../../styles/theme';
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -16,7 +18,7 @@
 .category {
   text-align: center;
   font-size: 0.7rem;
-  color: #999999;
+  color: theme.$color-text-faint;
   letter-spacing: 0.05em;
 }
 

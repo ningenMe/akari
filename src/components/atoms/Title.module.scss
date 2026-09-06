@@ -1,3 +1,5 @@
+@use '../../styles/theme';
+
 .wrapper {
   margin-bottom: 5px;
 }
@@ -5,11 +7,11 @@
 .title {
   font-size: xx-large;
   font-weight: bold;
-  text-decoration: solid underline #ffc0ae 4px;
+  text-decoration: solid underline theme.$color-accent 4px;
 }
 
 .subtitle {
   font-size: x-large;
   font-weight: bold;
-  text-decoration: solid #ffc0ae 4px;
+  text-decoration: solid underline theme.$color-accent 4px;
 }

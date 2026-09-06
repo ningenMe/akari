@@ -1,3 +1,5 @@
+@use '../../styles/theme';
+
 .text {
   text-align: left;
   margin-left: 10%;
@@ -6,7 +8,8 @@
   color: white;
 }
 .ningenmeNetAppbar {
-  background-color: #212529 !important;
+  background-color: theme.$color-header-bg !important;
+  box-shadow: none !important;
 }
 .comproCategoryAppbar {
   background-color: #0066af !important;

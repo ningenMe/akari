@@ -1,5 +1,8 @@
+@use '../../styles/theme';
+
 .ningenmeNetAppbar {
-  background-color: #212529 !important;
+  background-color: theme.$color-header-bg !important;
+  box-shadow: none !important;
 }
 .brand {
   margin: 10px 10px 10px 10%;
@@ -20,7 +23,7 @@
   @extend .button;
   color: white !important;
   &:hover {
-    color: rgba(188,188,188,0.94) !important;
+    color: theme.$color-header-text-muted !important;
   }
 }
 .buttonSp {
