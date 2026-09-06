@@ -9,7 +9,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import { AppBar, Button, IconButton, Menu, MenuItem, Toolbar } from '@mui/material'
 import { Box } from '@mui/system'
 import MenuIcon from '@mui/icons-material/Menu'
-import { LinkConst } from '../../constants/Const'
+import { LinkConst, PathConst } from '../../constants/Const'
 import { BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
 import { LastUpdatedDesktop } from 'components/atoms/LastUpdatedDesktop'
 import { LastUpdatedMobile } from 'components/atoms/LastUpdatedMobile'
@@ -84,6 +84,11 @@ const BlogDropdownElement = ({
       open={Boolean(anchorEl)}
       onClose={onClose}
     >
+      <MenuItem sx={{ padding: 0 }}>
+        <a href={PathConst.BLOG} className={styles.dropdownLink}>
+          All
+        </a>
+      </MenuItem>
       <MenuItem>
         <BlogNingenmeUrlChip blogType='HATENA' clickable={true} />
       </MenuItem>
