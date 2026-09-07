@@ -7,7 +7,7 @@ import styles from './Profile.module.scss'
 export const Profile = (): JSX.Element => {
   return (
     <div>
-      <SubTitle title='About' />
+      <SubTitle title='Profile' />
       <div className={styles.row}>
         <Image
           src='/taishi.jpg'

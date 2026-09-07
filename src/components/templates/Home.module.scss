@@ -52,3 +52,22 @@
   object-fit: cover;
   object-position: top;
 }
+
+// 1024px未満ではイラスト列を表示しない代わりに、
+// 横幅いっぱい・顔まわりだけ見えるようにトリムしたバナーを出す。
+.mobileIcon {
+  display: block;
+  width: 100%;
+  height: 130px;
+  margin: 0 0 12px;
+  object-fit: cover;
+  object-position: center 25%;
+  border-radius: 12px;
+  box-shadow: theme.$shadow-card;
+}
+
+@media (min-width: 1024px) {
+  .mobileIcon {
+    display: none;
+  }
+}

@@ -18,6 +18,13 @@ export const Home = ({ blogList }: HomeProps): JSX.Element => {
       <div className={styles.pageGrid}>
         <div className={styles.content}>
           <Profile />
+          <Image
+            src='/ningenme-full.png'
+            alt=''
+            width={990}
+            height={1400}
+            className={styles.mobileIcon}
+          />
           <RecentBlog blogList={blogList} />
           <Creation />
           <div className={styles.grid}>
