@@ -1,0 +1,21 @@
+@use '../../../styles/theme';
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cardSlot {
+  flex: 1;
+  min-width: 0;
+}
+
+.avatar {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: theme.$shadow-card;
+}
