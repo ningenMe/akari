@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Profile } from '../organisms/home/Profile'
 import { Creation } from '../organisms/home/Creation'
 import { History } from '../organisms/home/History'
@@ -14,12 +15,26 @@ interface HomeProps {
 export const Home = ({ blogList }: HomeProps): JSX.Element => {
   return (
     <Container>
-      <Profile />
-      <RecentBlog blogList={blogList} />
-      <Creation />
-      <div className={styles.grid}>
-        <Activity />
-        <History />
+      <div className={styles.pageGrid}>
+        <div className={styles.content}>
+          <Profile />
+          <RecentBlog blogList={blogList} />
+          <Creation />
+          <div className={styles.grid}>
+            <Activity />
+            <History />
+          </div>
+        </div>
+        <div className={styles.illustrationColumn}>
+          <Image
+            src='/ningenme-full.png'
+            alt=''
+            width={990}
+            height={1400}
+            priority
+            className={styles.background}
+          />
+        </div>
       </div>
     </Container>
   )

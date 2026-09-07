@@ -29,7 +29,7 @@ export const RecentBlog = ({ blogList }: RecentBlogProps): JSX.Element => {
     <div>
       <div className={styles.header}>
         <SubTitle title={'Recent Blog'}></SubTitle>
-        <a href={PathConst.BLOG} className={styles.more}>もっと見る →</a>
+        <a href={PathConst.BLOG} className={styles.more}>もっと見る ↗</a>
       </div>
       <CustomNormalCard>
         <List disablePadding>
