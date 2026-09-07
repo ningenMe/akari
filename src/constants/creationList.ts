@@ -26,7 +26,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
   {
     href: PathConst.ILLUSTRATION,
     title: 'illustration',
-    body: '過去に描いたイラストのアーカイブ。',
+    body: '描いたイラスト一覧。',
     isDone: true,
     category: 'writing',
   },

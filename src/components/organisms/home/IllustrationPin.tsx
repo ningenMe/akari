@@ -18,7 +18,10 @@ const byFile = new Map(
     .map((illustration) => [illustration.file, illustration])
 )
 
-export const IllustrationPin = (): JSX.Element => {
+// Creationのグリッドにそのまま差し込む前提のため、
+// 単体のCustomCardではなくgridアイテム相当のdivを直接返す。
+// (cardSlotを介さないので、Creationカードの固定サイズの対象外になる)
+export const IllustrationPin = (): ReadonlyArray<JSX.Element> => {
   const pins = PICKS
     .map(({ file, rotate }) => {
       const illustration = byFile.get(file)
@@ -26,26 +29,20 @@ export const IllustrationPin = (): JSX.Element => {
     })
     .filter((pin): pin is { illustration: Illustration, rotate: number } => pin !== null)
 
-  if (pins.length === 0) return <></>
-
-  return (
-    <div className={styles.board}>
-      {pins.map(({ illustration, rotate }) => (
-        <span
-          key={illustration.file}
-          className={styles.pin}
-          style={{ '--rotate': `${rotate}deg` } as React.CSSProperties}
-        >
-          <Image
-            src={`/illustration/${illustration.category}/${illustration.file}`}
-            alt=''
-            width={illustration.width}
-            height={illustration.height}
-            sizes='120px'
-            className={styles.photo}
-          />
-        </span>
-      ))}
+  return pins.map(({ illustration, rotate }) => (
+    <div
+      key={illustration.file}
+      className={styles.pin}
+      style={{ '--rotate': `${rotate}deg` } as React.CSSProperties}
+    >
+      <Image
+        src={`/illustration/${illustration.category}/${illustration.file}`}
+        alt=''
+        width={illustration.width}
+        height={illustration.height}
+        sizes='120px'
+        className={styles.photo}
+      />
     </div>
-  )
+  ))
 }

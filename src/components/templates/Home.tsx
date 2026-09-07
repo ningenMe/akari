@@ -6,7 +6,6 @@ import styles from './Home.module.scss'
 import { Activity } from '../organisms/home/Activity'
 import { Container } from '@mui/material'
 import { RecentBlog } from '../organisms/home/RecentBlog'
-import { IllustrationPin } from '../organisms/home/IllustrationPin'
 import { BlogData } from 'repository/BlogData'
 
 interface HomeProps {
@@ -21,7 +20,6 @@ export const Home = ({ blogList }: HomeProps): JSX.Element => {
           <Profile />
           <RecentBlog blogList={blogList} />
           <Creation />
-          <IllustrationPin />
           <div className={styles.grid}>
             <Activity />
             <History />
