@@ -33,7 +33,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
   {
     href: UrlConst.ROOM,
     title: 'room',
-    body: 'All you do is ROM in ROOM.',
+    body: 'All you do is ROAM in ROOM.',
     isDone: true,
     category: 'service',
     accentColor: '#111111',
