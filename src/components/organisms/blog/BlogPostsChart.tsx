@@ -12,6 +12,7 @@ const CHART_HEIGHT = 220
 const MARGIN = { top: 28, right: 12, bottom: 28, left: 30 }
 const BAR_MAX_WIDTH = 24
 const BAR_RADIUS = 4
+const START_YEAR = 2017
 
 const niceStep = (max: number, targetTicks = 4): number => {
   if (max <= 0) return 1
@@ -35,14 +36,12 @@ export const BlogPostsChart = ({ blogList }: BlogPostsChartProps): JSX.Element =
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
 
   const yearCounts = useMemo(() => {
-    if (blogList.length === 0) return []
     const years = blogList.map((blog) => Number(blog.date.slice(0, 4)))
-    const minYear = Math.min(...years)
-    const maxYear = Math.max(...years)
+    const endYear = Math.max(new Date().getFullYear(), START_YEAR, ...years)
     const counts = new Map<number, number>()
     years.forEach((year) => counts.set(year, (counts.get(year) ?? 0) + 1))
     const result: Array<{ year: number, count: number }> = []
-    for (let year = minYear; year <= maxYear; year++) {
+    for (let year = START_YEAR; year <= endYear; year++) {
       result.push({ year, count: counts.get(year) ?? 0 })
     }
     return result
@@ -50,9 +49,7 @@ export const BlogPostsChart = ({ blogList }: BlogPostsChartProps): JSX.Element =
 
   return (
     <div className={`${styles.card} ${fontStyles.body}`}>
-      {yearCounts.length === 0
-        ? <p className={styles.empty}>表示できるデータがありません。</p>
-        : <BlogPostsChartBody yearCounts={yearCounts} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex} />}
+      <BlogPostsChartBody yearCounts={yearCounts} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex} />
     </div>
   )
 }
