@@ -1,6 +1,5 @@
 import React, { useMemo, useState } from 'react'
 import { BlogData } from 'repository/BlogData'
-import { SubTitle } from 'components/atoms/Title'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './BlogPostsChart.module.scss'
 
@@ -51,7 +50,6 @@ export const BlogPostsChart = ({ blogList }: BlogPostsChartProps): JSX.Element =
 
   return (
     <div className={`${styles.card} ${fontStyles.body}`}>
-      <SubTitle title='年別の投稿数' />
       {yearCounts.length === 0
         ? <p className={styles.empty}>表示できるデータがありません。</p>
         : <BlogPostsChartBody yearCounts={yearCounts} hoveredIndex={hoveredIndex} setHoveredIndex={setHoveredIndex} />}
@@ -85,94 +83,72 @@ const BlogPostsChartBody = ({ yearCounts, hoveredIndex, setHoveredIndex }: BlogP
   const hovered = hoveredIndex !== null ? yearCounts[hoveredIndex] : null
 
   return (
-    <>
-      <svg
-        viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
-        className={styles.svg}
-        role='img'
-        aria-label={`年別の投稿数。${yearCounts.map((d) => `${d.year}年は${d.count}件`).join('、')}。`}
-      >
-        {ticks.map((tick) => {
-          const y = MARGIN.top + innerHeight - (tick / niceMax) * innerHeight
-          return (
-            <g key={tick}>
-              <line x1={MARGIN.left} x2={CHART_WIDTH - MARGIN.right} y1={y} y2={y} className={styles.gridline} />
-              <text x={MARGIN.left - 8} y={y} className={styles.tickLabel} textAnchor='end' dominantBaseline='middle'>
-                {tick}
-              </text>
-            </g>
-          )
-        })}
+    <svg
+      viewBox={`0 0 ${CHART_WIDTH} ${CHART_HEIGHT}`}
+      className={styles.svg}
+      role='img'
+      aria-label={`年別の投稿数。${yearCounts.map((d) => `${d.year}年は${d.count}件`).join('、')}。`}
+    >
+      {ticks.map((tick) => {
+        const y = MARGIN.top + innerHeight - (tick / niceMax) * innerHeight
+        return (
+          <g key={tick}>
+            <line x1={MARGIN.left} x2={CHART_WIDTH - MARGIN.right} y1={y} y2={y} className={styles.gridline} />
+            <text x={MARGIN.left - 8} y={y} className={styles.tickLabel} textAnchor='end' dominantBaseline='middle'>
+              {tick}
+            </text>
+          </g>
+        )
+      })}
 
-        {yearCounts.map((d, idx) => {
-          const bandX = MARGIN.left + idx * bandWidth
-          const x = bandX + (bandWidth - barWidth) / 2
-          const { y, height } = barGeometry(d.count)
-          const isHovered = hoveredIndex === idx
-          return (
-            <g key={d.year}>
-              <rect
-                x={bandX}
-                y={MARGIN.top}
-                width={bandWidth}
-                height={innerHeight}
-                fill='transparent'
-                tabIndex={0}
-                role='img'
-                aria-label={`${d.year}年: ${d.count}件`}
-                onPointerEnter={() => setHoveredIndex(idx)}
-                onPointerLeave={() => setHoveredIndex((current) => (current === idx ? null : current))}
-                onFocus={() => setHoveredIndex(idx)}
-                onBlur={() => setHoveredIndex((current) => (current === idx ? null : current))}
-                className={styles.hitArea}
-              />
-              <path d={barPath(x, y, barWidth, height, BAR_RADIUS)} className={isHovered ? styles.barHovered : styles.bar} />
-              <text x={bandX + bandWidth / 2} y={MARGIN.top + innerHeight + 16} textAnchor='middle' className={styles.axisLabel}>
-                {d.year}
-              </text>
-            </g>
-          )
-        })}
+      {yearCounts.map((d, idx) => {
+        const bandX = MARGIN.left + idx * bandWidth
+        const x = bandX + (bandWidth - barWidth) / 2
+        const { y, height } = barGeometry(d.count)
+        const isHovered = hoveredIndex === idx
+        return (
+          <g key={d.year}>
+            <rect
+              x={bandX}
+              y={MARGIN.top}
+              width={bandWidth}
+              height={innerHeight}
+              fill='transparent'
+              tabIndex={0}
+              role='img'
+              aria-label={`${d.year}年: ${d.count}件`}
+              onPointerEnter={() => setHoveredIndex(idx)}
+              onPointerLeave={() => setHoveredIndex((current) => (current === idx ? null : current))}
+              onFocus={() => setHoveredIndex(idx)}
+              onBlur={() => setHoveredIndex((current) => (current === idx ? null : current))}
+              className={styles.hitArea}
+            />
+            <path d={barPath(x, y, barWidth, height, BAR_RADIUS)} className={isHovered ? styles.barHovered : styles.bar} />
+            <text x={bandX + bandWidth / 2} y={MARGIN.top + innerHeight + 16} textAnchor='middle' className={styles.axisLabel}>
+              {d.year}
+            </text>
+          </g>
+        )
+      })}
 
-        {hovered !== null && hoveredIndex !== null && (() => {
-          const bandX = MARGIN.left + hoveredIndex * bandWidth
-          const barCenterX = bandX + bandWidth / 2
-          const { y: barTopY } = barGeometry(hovered.count)
-          const label = `${hovered.year}年: ${hovered.count}件`
-          const tooltipWidth = Math.max(70, 24 + label.length * 8)
-          const tooltipHeight = 26
-          const tooltipX = Math.max(MARGIN.left, Math.min(barCenterX - tooltipWidth / 2, CHART_WIDTH - MARGIN.right - tooltipWidth))
-          const tooltipY = Math.max(2, barTopY - tooltipHeight - 8)
-          return (
-            <g className={styles.tooltip}>
-              <rect x={tooltipX} y={tooltipY} width={tooltipWidth} height={tooltipHeight} rx={6} className={styles.tooltipBg} />
-              <text x={tooltipX + tooltipWidth / 2} y={tooltipY + tooltipHeight / 2} textAnchor='middle' dominantBaseline='middle' className={styles.tooltipText}>
-                {label}
-              </text>
-            </g>
-          )
-        })()}
-      </svg>
-
-      <details className={styles.details}>
-        <summary className={styles.summary}>年別の内訳をテーブルで見る</summary>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>年</th>
-              <th>投稿数</th>
-            </tr>
-          </thead>
-          <tbody>
-            {yearCounts.map((d) => (
-              <tr key={d.year}>
-                <td>{d.year}年</td>
-                <td>{d.count}件</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </details>
-    </>
+      {hovered !== null && hoveredIndex !== null && (() => {
+        const bandX = MARGIN.left + hoveredIndex * bandWidth
+        const barCenterX = bandX + bandWidth / 2
+        const { y: barTopY } = barGeometry(hovered.count)
+        const label = `${hovered.year}年: ${hovered.count}件`
+        const tooltipWidth = Math.max(70, 24 + label.length * 8)
+        const tooltipHeight = 26
+        const tooltipX = Math.max(MARGIN.left, Math.min(barCenterX - tooltipWidth / 2, CHART_WIDTH - MARGIN.right - tooltipWidth))
+        const tooltipY = Math.max(2, barTopY - tooltipHeight - 8)
+        return (
+          <g className={styles.tooltip}>
+            <rect x={tooltipX} y={tooltipY} width={tooltipWidth} height={tooltipHeight} rx={6} className={styles.tooltipBg} />
+            <text x={tooltipX + tooltipWidth / 2} y={tooltipY + tooltipHeight / 2} textAnchor='middle' dominantBaseline='middle' className={styles.tooltipText}>
+              {label}
+            </text>
+          </g>
+        )
+      })()}
+    </svg>
   )
 }
