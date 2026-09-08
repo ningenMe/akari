@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { BlogData } from 'repository/BlogData'
-import { Box, Checkbox, Container, List } from '@mui/material'
-import { BlogChip, BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
+import { Box, Container, List } from '@mui/material'
+import { BlogChip } from 'components/atoms/blog/BlogChip'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
+import { BlogPostsChart } from 'components/organisms/blog/BlogPostsChart'
+import { BlogTypeFilter } from 'components/organisms/blog/BlogTypeFilter'
 
 const useBool = (): [boolean, () => void] => {
   const [value, setValue] = useState(true);
   return [value, () => setValue(value => !value)];
 }
-
-const checkboxSx = { '&.Mui-checked': { color: '#6e56cf' } }
 
 interface BlogSearchProps {
   blogList: BlogData[]
@@ -31,7 +31,7 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
     )
   }
 
-  const blogCardList = blogList.filter((blog) => {
+  const filteredBlogList = blogList.filter((blog) => {
     if (isSizu && blog.blogType === 'SIZU') return true
     if (isZenn && blog.blogType === 'ZENN') return true
     if (isQiita && blog.blogType === 'QIITA') return true
@@ -39,32 +39,23 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
     if (isAmeba && blog.blogType === 'AMEBA') return true
     if (isOldDiary && blog.blogType === 'OLD_DIARY') return true
     return false
-  }).map((blog, idx) => (
+  })
+  const blogCardList = filteredBlogList.map((blog, idx) => (
     <BlogChip blog={blog} key={idx}/>
   ));
 
   return (
     <Container>
-      <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, flexWrap: 'wrap', alignItems: { xs: 'flex-start', sm: 'center' }, gap: 1 }}>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isSizu} onChange={toggleSizu} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'SIZU'} clickable={false} />
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isZenn} onChange={toggleZenn} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'ZENN'} clickable={false} />
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isQiita} onChange={toggleQiita} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'QIITA'} clickable={false} />
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isHatena} onChange={toggleHatena} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'HATENA'} clickable={false} />
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isAmeba} onChange={toggleAmeba} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'AMEBA'} clickable={false} />
-        </Box>
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <Checkbox checked={isOldDiary} onChange={toggleOldDiary} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'OLD_DIARY'} clickable={false} />
-        </Box>
-      </Box>
+      <BlogPostsChart blogList={filteredBlogList} />
+
+      <BlogTypeFilter items={[
+        { blogType: 'SIZU', label: 'SIZU', checked: isSizu, onToggle: toggleSizu },
+        { blogType: 'ZENN', label: 'ZENN', checked: isZenn, onToggle: toggleZenn },
+        { blogType: 'QIITA', label: 'QIITA', checked: isQiita, onToggle: toggleQiita },
+        { blogType: 'HATENA', label: 'HATENA', checked: isHatena, onToggle: toggleHatena },
+        { blogType: 'AMEBA', label: 'AMEBA', checked: isAmeba, onToggle: toggleAmeba },
+        { blogType: 'OLD_DIARY', label: 'OLD_DIARY', checked: isOldDiary, onToggle: toggleOldDiary }
+      ]} />
 
       <Box sx={{ mt: 3 }}>
         <CustomNormalCard>

@@ -6,7 +6,7 @@ import styles from './BlogChip.module.scss'
 import { ListItem } from '@mui/material'
 import { PathConst, UrlConst } from 'constants/Const'
 
-const getBlogIconPath = (blogType: string): string => {
+export const getBlogIconPath = (blogType: string): string => {
     if (blogType === "HATENA") return 'hatena.svg'
     if (blogType === "QIITA") return 'qiita.png'
     if (blogType === "SIZU") return 'sizu.png'
