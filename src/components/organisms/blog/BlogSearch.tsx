@@ -3,6 +3,7 @@ import { BlogData } from 'repository/BlogData'
 import { Box, Checkbox, Container, List } from '@mui/material'
 import { BlogChip, BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
+import { BlogPostsChart } from 'components/organisms/blog/BlogPostsChart'
 
 const useBool = (): [boolean, () => void] => {
   const [value, setValue] = useState(true);
@@ -31,7 +32,7 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
     )
   }
 
-  const blogCardList = blogList.filter((blog) => {
+  const filteredBlogList = blogList.filter((blog) => {
     if (isSizu && blog.blogType === 'SIZU') return true
     if (isZenn && blog.blogType === 'ZENN') return true
     if (isQiita && blog.blogType === 'QIITA') return true
@@ -39,12 +40,15 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
     if (isAmeba && blog.blogType === 'AMEBA') return true
     if (isOldDiary && blog.blogType === 'OLD_DIARY') return true
     return false
-  }).map((blog, idx) => (
+  })
+  const blogCardList = filteredBlogList.map((blog, idx) => (
     <BlogChip blog={blog} key={idx}/>
   ));
 
   return (
     <Container>
+      <BlogPostsChart blogList={filteredBlogList} />
+
       <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, flexWrap: 'wrap', alignItems: { xs: 'flex-start', sm: 'center' }, gap: 1 }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Checkbox checked={isSizu} onChange={toggleSizu} sx={checkboxSx} /> <BlogNingenmeUrlChip blogType={'SIZU'} clickable={false} />
