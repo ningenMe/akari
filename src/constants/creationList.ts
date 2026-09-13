@@ -60,6 +60,13 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     category: 'service',
     accentColor: '#2b4a8a',
   },
+  {
+    href: UrlConst.MYLANG,
+    title: 'mylang',
+    body: '自分ならどんなプログラミング言語を設計するか、既存言語を比較しながら考える研究ノート。',
+    isDone: true,
+    category: 'writing',
+  },
 ] as const
 
 export const SERVICE_CREATION_LIST: ReadonlyArray<Creation> = CREATION_LIST.filter(
