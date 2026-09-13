@@ -60,6 +60,13 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     category: 'service',
     accentColor: '#2b4a8a',
   },
+  {
+    href: UrlConst.MYLANG,
+    title: 'mylang',
+    body: '自作言語への道のり。',
+    isDone: true,
+    category: 'writing',
+  },
 ] as const
 
 export const SERVICE_CREATION_LIST: ReadonlyArray<Creation> = CREATION_LIST.filter(
