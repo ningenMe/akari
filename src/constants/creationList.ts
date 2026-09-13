@@ -61,8 +61,8 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     accentColor: '#2b4a8a',
   },
   {
-    href: UrlConst.MYLANG,
-    title: 'mylang',
+    href: UrlConst.MELANG,
+    title: 'melang',
     body: '自作言語への道のり。',
     isDone: true,
     category: 'writing',
