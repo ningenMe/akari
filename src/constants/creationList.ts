@@ -63,7 +63,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
   {
     href: UrlConst.MYLANG,
     title: 'mylang',
-    body: '自分ならどんなプログラミング言語を設計するか、既存言語を比較しながら考える研究ノート。',
+    body: '自作言語への道のり。',
     isDone: true,
     category: 'writing',
   },
