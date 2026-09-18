@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { getBlogIconPath } from 'components/atoms/blog/BlogChip'
+import { getBlogColor } from 'constants/BlogTheme'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './BlogTypeFilter.module.scss'
 
@@ -26,6 +27,7 @@ export const BlogTypeFilter = ({ items }: BlogTypeFilterProps): JSX.Element => {
           onClick={item.onToggle}
           className={`${styles.pill} ${item.checked ? styles.pillActive : ''}`}
         >
+          <span className={styles.swatch} style={{ backgroundColor: getBlogColor(item.blogType) }} aria-hidden />
           <Image src={`/${getBlogIconPath(item.blogType)}`} alt='' width={16} height={16} className={styles.icon} />
           {item.label}
         </button>
