@@ -7,7 +7,7 @@ export const Service = (): JSX.Element => {
   return (
     <div className={styles.page}>
       <Container sx={{ pt: 8, pb: 12 }}>
-        <p className={styles.eyebrow}>Service</p>
+        <h1 className={styles.eyebrow}>Service</h1>
         <div className={styles.grid}>
           {SERVICE_CREATION_LIST.map((creation) => (
             <ServiceCard creation={creation} key={creation.href} />

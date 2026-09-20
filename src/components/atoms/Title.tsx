@@ -3,9 +3,9 @@ import styles from './Title.module.scss'
 export const Title = ({ title }: { title: string }): JSX.Element => {
   return (
     <div className={styles.wrapper}>
-      <span className={styles.title}>
+      <h1 className={styles.title}>
         {title}
-      </span>
+      </h1>
     </div>
   )
 }

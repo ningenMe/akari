@@ -19,3 +19,10 @@
   object-fit: cover;
   box-shadow: theme.$shadow-card;
 }
+
+// 以前のh4と同じ見た目を保ったままページのH1にする
+.name {
+  margin: 1.33em 0;
+  font-size: 1em;
+  font-weight: bold;
+}
