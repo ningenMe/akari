@@ -14,7 +14,7 @@ export const Task = (): JSX.Element => {
   const cardList = TASK_LIST.map((task) =>
     <CustomLinkCard href={task.href} key={task.href}>
       <div className={styles.head}>
-        <img className={styles.icon} src={onlineJudgeIconPath(task.type)} width={36} height={36} alt={task.type} />
+        <img className={styles.icon} src={onlineJudgeIconPath(task.type)} width={36} height={36} alt={task.type} loading='lazy' />
         <h5 className={styles.title}>
           {task.title}
         </h5>
