@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BlogData } from 'repository/BlogData'
 import { Box, Container, List } from '@mui/material'
+import { Title } from 'components/atoms/Title'
 import { BlogChip } from 'components/atoms/blog/BlogChip'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
 import { BlogPostsChart } from 'components/organisms/blog/BlogPostsChart'
@@ -26,6 +27,7 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
   if (blogList.length === 0) {
     return (
       <Container>
+        <Title title='Blog' />
         <p>ブログデータの取得に失敗しました。しばらく時間をおいて再度アクセスしてください。</p>
       </Container>
     )
@@ -46,6 +48,7 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
 
   return (
     <Container>
+      <Title title='Blog' />
       <BlogPostsChart blogList={filteredBlogList} />
 
       <BlogTypeFilter items={[

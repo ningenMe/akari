@@ -19,9 +19,9 @@ export const Profile = (): JSX.Element => {
         />
         <div className={styles.cardSlot}>
           <CustomNormalCard>
-            <h4>
+            <h1 className={styles.name}>
               Furuta Taishi
-            </h4>
+            </h1>
             <p className={fontStyles.body}>
               {SiteConst.PROFILE_TEXT}
             </p>
