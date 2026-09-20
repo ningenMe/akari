@@ -5,11 +5,13 @@ import { IllustrationGallery } from 'components/organisms/illustration/Illustrat
 import { NextPage } from 'next'
 import illustrationList from 'data/illustration.json'
 import { Illustration } from 'interfaces/Illustration'
+import { PathConst } from 'constants/Const'
+import { getCreationBody } from 'constants/creationList'
 
 export const Index: NextPage = () => {
   return (
     <>
-      <HtmlHead title='Illustration' description='ningenMeが過去に描いたイラストのアーカイブ。' />
+      <HtmlHead title='Illustration' description={getCreationBody(PathConst.ILLUSTRATION)} />
       <NingenmeNetHeader />
       <IllustrationGallery illustrationList={illustrationList as ReadonlyArray<Illustration>} />
       <NingenmeNetFooter />

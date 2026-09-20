@@ -10,6 +10,11 @@ export class PathConst {
   static readonly ILLUSTRATION: string = '/illustration'
 }
 
+export class SiteConst {
+  // Profileの本文と、各ページのmeta descriptionで共有する自己紹介文
+  static readonly PROFILE_TEXT: string = 'ソフトウェア開発とコードレビューと静的型付け言語が好きです。ningenMeというハンドルネームで活動しています。'
+}
+
 export class UrlConst {
   // サイト自体の絶対オリジン。canonical/OGPのURL組み立て専用（サイト内リンクにはPathConstを使う）
   static readonly ORIGIN: string = 'https://ningenme.net'

@@ -7,6 +7,7 @@ import { BlogData } from 'repository/BlogData'
 import { PathConst } from 'constants/Const'
 import { getOldDiaryList } from 'repository/OldDiaryData'
 import staticBlogList from 'data/blog.json'
+import { getCreationBody } from 'constants/creationList'
 
 interface Props {
   blogList: BlogData[]
@@ -15,10 +16,7 @@ interface Props {
 export const Index: NextPage<Props> = ({ blogList }) => {
   return (
     <>
-      <HtmlHead
-        title='Blog'
-        description='ningenMeのブログ記事一覧。Zenn, Qiita, はてなブログ, Ameba, sizuなど複数プラットフォームの投稿をまとめています。'
-      />
+      <HtmlHead title='Blog' description={getCreationBody(PathConst.BLOG)} />
       <NingenmeNetHeader />
       <BlogSearch blogList={blogList} />
       <NingenmeNetFooter />

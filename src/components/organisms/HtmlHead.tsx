@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { UrlConst } from '../../constants/Const'
+import { SiteConst, UrlConst } from '../../constants/Const'
 
 interface HtmlHeadProps {
   title: string
-  description: string
+  description?: string
   type?: 'website' | 'article'
   publishedTime?: string
 }
 
-export const HtmlHead = ({ title, description, type = 'website', publishedTime }: HtmlHeadProps): JSX.Element => {
+export const HtmlHead = ({ title, description = SiteConst.PROFILE_TEXT, type = 'website', publishedTime }: HtmlHeadProps): JSX.Element => {
   const router = useRouter()
   const siteName = 'ningenMe.net'
   const pageTitle = title ? `${title} | ${siteName}` : siteName
