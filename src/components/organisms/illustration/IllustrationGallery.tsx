@@ -3,6 +3,8 @@ import { SubTitle, Title } from 'components/atoms/Title'
 import Image from 'next/image'
 import React from 'react'
 import { Illustration, IllustrationCategory } from 'interfaces/Illustration'
+import { PathConst } from 'constants/Const'
+import { getCreationBody } from 'constants/creationList'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './IllustrationGallery.module.scss'
 
@@ -44,7 +46,7 @@ export const IllustrationGallery = (
     <Container>
       <Title title='Illustration' />
       <Typography variant='body2' className={`${styles.description} ${fontStyles.body}`}>
-        過去に描いたイラストのアーカイブ
+        {getCreationBody(PathConst.ILLUSTRATION)}
       </Typography>
       <IllustrationSection category='color' illustrationList={illustrationList} />
       <IllustrationSection category='mono' illustrationList={illustrationList} />
