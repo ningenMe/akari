@@ -2,6 +2,8 @@ import { Container, Typography } from '@mui/material'
 import { Title } from 'components/atoms/Title'
 import React from 'react'
 import { TASK_LIST } from 'constants/taskList'
+import { PathConst } from 'constants/Const'
+import { getCreationBody } from 'constants/creationList'
 import { CustomLinkCard } from '../CustomCard'
 import styles from './Task.module.scss'
 import fontStyles from 'styles/Font.module.scss'
@@ -28,7 +30,7 @@ export const Task = (): JSX.Element => {
     <Container>
       <Title title='Task' />
       <Typography variant='body2' className={`${styles.description} ${fontStyles.body}`}>
-        ningenMeの作った問題一覧
+        {getCreationBody(PathConst.TASK)}
       </Typography>
       <div className={styles.grid}>
         {cardList}

@@ -69,6 +69,10 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
   },
 ] as const
 
+// 自サイト内にページを持つ作品のmeta descriptionを、creationカードの文言と一致させるために使う
+export const getCreationBody = (href: string): string | undefined =>
+  CREATION_LIST.find((creation) => creation.href === href)?.body
+
 export const SERVICE_CREATION_LIST: ReadonlyArray<Creation> = CREATION_LIST.filter(
   (creation) => creation.category === 'service'
 )

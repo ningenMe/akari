@@ -3,6 +3,7 @@ import { CustomNormalCard } from '../CustomCard'
 import { SubTitle } from 'components/atoms/Title'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './Profile.module.scss'
+import { SiteConst } from 'constants/Const'
 
 export const Profile = (): JSX.Element => {
   return (
@@ -22,7 +23,7 @@ export const Profile = (): JSX.Element => {
               Furuta Taishi
             </h4>
             <p className={fontStyles.body}>
-              ソフトウェア開発とコードレビューと静的型付け言語が好きです。ningenMeというハンドルネームで活動しています。
+              {SiteConst.PROFILE_TEXT}
             </p>
           </CustomNormalCard>
         </div>
