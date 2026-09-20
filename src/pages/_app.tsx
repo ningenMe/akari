@@ -32,15 +32,7 @@ function MyApp ({ Component, pageProps }: AppProps): JSX.Element {
       <Script
         id="gtag-init"
         strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){dataLayer.push(arguments);}
-           gtag('js', new Date());
- 
-           gtag('config', '${GA_MEASUREMENT_ID}');
-           `,
-        }}
+        src="/gtag-init.js"
       />
       <Component {...pageProps} />
     </>
