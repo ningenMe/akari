@@ -53,6 +53,7 @@ export class UrlConst {
   static readonly ROOM: string = 'https://room.ningenme.net/'
   static readonly LAST1TILE: string = 'https://last1tile.ningenme.net/'
   static readonly MELANG: string = 'https://melang.ningenme.net/'
+  static readonly GEEQ: string = 'https://geeq.ningenme.net/'
 }
 
 export class LinkConst {
