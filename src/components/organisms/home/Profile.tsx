@@ -7,7 +7,7 @@ import { SiteConst } from 'constants/Const'
 
 export const Profile = (): JSX.Element => {
   return (
-    <div>
+    <div className={styles.root}>
       <SubTitle title='Profile' />
       <div className={styles.row}>
         <Image
