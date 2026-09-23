@@ -1,7 +1,8 @@
 import { Container, Typography } from '@mui/material'
 import { Title } from 'components/atoms/Title'
+import { ProvidedServices } from 'components/atoms/ProvidedServices'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
-import { SiteConst } from 'constants/Const'
+import { PathConst } from 'constants/Const'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './Legal.module.scss'
 
@@ -12,7 +13,7 @@ export const Terms = (): JSX.Element => {
       <CustomNormalCard>
         <div className={`${styles.article} ${fontStyles.body}`}>
           <h2>適用</h2>
-          <p>本規約は、ningenMe が提供する Web サイトおよび Web サービス（geeq、last1tile、ROOM、melang 等を含み、以下「本サービス」といいます）に共通して適用される利用規約です。本規約は、本サービスに個別の規約（以下「個別規約」）が定められる場合の親規約となるものであり、本規約と個別規約の内容が抵触する場合は、当該個別規約が優先して適用されます。ユーザーは本サービスを利用した時点で、本規約に同意したものとみなします。</p>
+          <p>本規約は、<ProvidedServices defineAsHonService />に共通して適用される利用規約です。本規約は、本サービスに個別の規約（以下「個別規約」）が定められる場合の親規約となるものであり、本規約と個別規約の内容が抵触する場合は、当該個別規約が優先して適用されます。ユーザーは本サービスを利用した時点で、本規約に同意したものとみなします。</p>
 
           <h2>サービス内容</h2>
           <p>運営者は、予告なく本サービスの内容の追加・変更・削除、その他本サービスの内容を変更することがあります。</p>
@@ -49,7 +50,7 @@ export const Terms = (): JSX.Element => {
           <p>本規約の解釈にあたっては、日本法を準拠法とします。本サービスに関して紛争が生じた場合には、運営者の所在地を管轄する裁判所を専属的合意管轄とします。</p>
 
           <h2>お問い合わせ</h2>
-          <p>本規約に関するお問い合わせは、<a href={`mailto:${SiteConst.CONTACT_EMAIL}`}>{SiteConst.CONTACT_EMAIL}</a> までご連絡ください。</p>
+          <p>本規約に関するお問い合わせは、<a href={PathConst.CONTACT}>お問い合わせページ</a> よりご連絡ください。</p>
         </div>
       </CustomNormalCard>
       <Typography variant='body2' className={`${styles.date} ${fontStyles.body}`}>
