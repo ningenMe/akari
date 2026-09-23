@@ -1,0 +1,23 @@
+@use '../../../styles/theme';
+
+.article {
+  line-height: 1.8;
+
+  p {
+    margin: 0 0 12px;
+  }
+
+  a {
+    color: theme.$color-accent-strong;
+    text-decoration: none;
+    word-break: break-all;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.service {
+  color: theme.$color-text-muted;
+}

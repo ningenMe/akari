@@ -14,6 +14,7 @@ const FooterLinks = () => {
       <a href={PathConst.SERVICE} className={styles.footerLink}>Service</a>
       <a href={PathConst.PRIVACY} className={styles.footerLink}>Privacy</a>
       <a href={PathConst.TERMS} className={styles.footerLink}>Terms</a>
+      <a href={PathConst.CONTACT} className={styles.footerLink}>Contact</a>
     </span>
   )
 }

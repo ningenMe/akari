@@ -11,7 +11,8 @@ const STATIC_PATHS: ReadonlyArray<string> = [
   PathConst.OLD_DIARY,
   PathConst.ILLUSTRATION,
   PathConst.PRIVACY,
-  PathConst.TERMS
+  PathConst.TERMS,
+  PathConst.CONTACT
 ]
 
 const buildSitemap = (paths: ReadonlyArray<string>): string => {

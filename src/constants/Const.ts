@@ -10,6 +10,7 @@ export class PathConst {
   static readonly ILLUSTRATION: string = '/illustration'
   static readonly PRIVACY: string = '/privacy'
   static readonly TERMS: string = '/terms'
+  static readonly CONTACT: string = '/contact'
 }
 
 export class SiteConst {
@@ -62,6 +63,7 @@ export class LinkConst {
   static readonly SERVICE: Link = { href: PathConst.SERVICE, name: 'service' }
   static readonly PRIVACY: Link = { href: PathConst.PRIVACY, name: 'Privacy' }
   static readonly TERMS: Link = { href: PathConst.TERMS, name: 'Terms' }
+  static readonly CONTACT: Link = { href: PathConst.CONTACT, name: 'Contact' }
   static readonly GITHUB: Link = { href: UrlConst.GITHUB, name: 'GitHub' }
   static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: '@ningenMe' }
   static readonly ATCODER: Link = { href: UrlConst.ATCODER, name: 'AtCoder' }
