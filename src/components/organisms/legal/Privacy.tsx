@@ -9,11 +9,11 @@ export const Privacy = (): JSX.Element => {
   return (
     <Container>
       <Title title='Privacy' />
-      <Typography variant='body2' className={`${styles.lead} ${fontStyles.body}`}>
-        本ポリシーは、ningenMe が提供する Web サイトおよび Web サービス（geeq、last1tile、ROOM、melang 等を含み、以下「本サービス」といいます）に適用されます。本サービスに個別のプライバシーポリシーが定められている場合を除き、本ポリシーが優先して適用されます。
-      </Typography>
       <CustomNormalCard>
         <div className={`${styles.article} ${fontStyles.body}`}>
+          <h2>適用範囲</h2>
+          <p>本ポリシーは、ningenMe が提供する Web サイトおよび Web サービス（geeq、last1tile、ROOM、melang 等を含み、以下「本サービス」といいます）に適用されます。本サービスに個別のプライバシーポリシーが定められている場合を除き、本ポリシーが優先して適用されます。</p>
+
           <h2>取得する情報</h2>
           <p>本サービスの多くはアカウント登録や入力フォームを持たず、氏名・メールアドレス等の個人情報を直接収集することはありません。ただし、以下の場合には情報を取得することがあります。</p>
           <ul>
