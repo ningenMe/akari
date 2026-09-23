@@ -67,6 +67,14 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     isDone: true,
     category: 'writing',
   },
+  {
+    href: UrlConst.GEEQ,
+    title: 'geeq',
+    body: '技術知識を楽しく確認・学習できるWebサービス。',
+    isDone: true,
+    category: 'service',
+    accentColor: '#f97316',
+  },
 ] as const
 
 // 自サイト内にページを持つ作品のmeta descriptionを、creationカードの文言と一致させるために使う
