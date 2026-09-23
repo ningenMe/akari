@@ -9,7 +9,7 @@ interface ServiceLink {
 const SERVICE_LINKS: ReadonlyArray<ServiceLink> = [
   { name: 'geeq', href: UrlConst.GEEQ },
   { name: 'last1tile', href: UrlConst.LAST1TILE },
-  { name: 'ROOM', href: UrlConst.ROOM },
+  { name: 'room', href: UrlConst.ROOM },
   { name: 'melang', href: UrlConst.MELANG }
 ]
 
