@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { Container } from '@mui/material'
 import { Title } from 'components/atoms/Title'
+import { ProvidedServices } from 'components/atoms/ProvidedServices'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
 import { SiteConst } from 'constants/Const'
 import { CREATION_LIST } from 'constants/creationList'
@@ -26,7 +27,7 @@ export const Contact = (): JSX.Element => {
       <Title title='Contact' />
       <CustomNormalCard>
         <div className={`${styles.article} ${fontStyles.body}`}>
-          <p>ningenMe が提供する Web サイトおよび Web サービス（geeq、last1tile、ROOM、melang 等を含みます）共通のお問い合わせ窓口です。ご意見・不具合報告・その他お問い合わせは、以下のメールアドレスまでご連絡ください。</p>
+          <p><ProvidedServices />共通のお問い合わせ窓口です。ご意見・不具合報告・その他お問い合わせは、以下のメールアドレスまでご連絡ください。</p>
           {serviceName && (
             <p className={styles.service}>対象サービス: {serviceName}</p>
           )}

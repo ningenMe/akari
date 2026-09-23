@@ -1,5 +1,6 @@
 import { Container, Typography } from '@mui/material'
 import { Title } from 'components/atoms/Title'
+import { ProvidedServices } from 'components/atoms/ProvidedServices'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
 import { PathConst } from 'constants/Const'
 import fontStyles from 'styles/Font.module.scss'
@@ -12,7 +13,7 @@ export const Privacy = (): JSX.Element => {
       <CustomNormalCard>
         <div className={`${styles.article} ${fontStyles.body}`}>
           <h2>適用範囲</h2>
-          <p>本ポリシーは、ningenMe が提供する Web サイトおよび Web サービス（geeq、last1tile、ROOM、melang 等を含み、以下「本サービス」といいます）に適用されます。本サービスに個別のプライバシーポリシーが定められている場合を除き、本ポリシーが優先して適用されます。</p>
+          <p>本ポリシーは、<ProvidedServices defineAsHonService />に適用されます。本サービスに個別のプライバシーポリシーが定められている場合を除き、本ポリシーが優先して適用されます。</p>
 
           <h2>取得する情報</h2>
           <p>本サービスの多くはアカウント登録や入力フォームを持たず、氏名・メールアドレス等の個人情報を直接収集することはありません。ただし、以下の場合には情報を取得することがあります。</p>
