@@ -1,0 +1,10 @@
+name: Reusable Echo Test
+
+on:
+  workflow_call:
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello from akari reusable workflow"
