@@ -1,5 +1,13 @@
 @use '../../../styles/theme';
 
+// SubTitle('Profile')の下余白は共通コンポーネント側の20pxのままだと広すぎるため、
+// このセクション内だけ詰める。
+.root {
+  > div:first-child {
+    margin-bottom: 8px;
+  }
+}
+
 .row {
   display: flex;
   align-items: center;
@@ -20,9 +28,10 @@
   box-shadow: theme.$shadow-card;
 }
 
-// 以前のh4と同じ見た目を保ったままページのH1にする
+// 以前のh4と同じ見た目を保ったままページのH1にする。
+// 縦の間隔はCustomCard側のgapに任せ、marginでは持たない。
 .name {
-  margin: 1.33em 0;
+  margin: 0;
   font-size: 1em;
   font-weight: bold;
 }
