@@ -1,5 +1,8 @@
 name: Notion Issue Sync
 
+# akari自身のIssue同期に加えて、他リポジトリから
+# `uses: ningenMe/akari/.github/workflows/notion-sync.yml@main` で
+# reusable workflowとして呼び出されることを想定している。
 on:
   issues:
     types: [opened, edited, closed, reopened]
@@ -9,6 +12,12 @@ on:
         description: "再同期するIssue番号"
         required: true
         type: number
+  workflow_call:
+    secrets:
+      NOTION_TOKEN:
+        required: true
+      NOTION_DATABASE_ID:
+        required: true
 
 permissions:
   contents: read
@@ -26,7 +35,12 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || github.event.issue.author_association == 'OWNER'
     runs-on: ubuntu-latest
     steps:
+      # reusable workflowとして呼ばれた場合、github.repositoryは呼び出し元
+      # リポジトリを指すため、同期スクリプトの実体を持つakari自身を明示的に
+      # checkoutする(akariはpublicなので呼び出し元のGITHUB_TOKENで読める)。
       - uses: actions/checkout@v4
+        with:
+          repository: ningenMe/akari
       - name: Sync issue to Notion
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}

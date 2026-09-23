@@ -36,12 +36,16 @@ html_url=$(jq -r '.html_url' <<<"$issue")
 number=$(jq -r '.number' <<<"$issue")
 state=$(jq -r '.state' <<<"$issue")
 
+# 「リポジトリ」列にはowner/repoのowner部分(常にningenMe)はノイズなので、
+# repo名だけを残す。owner/repoはGitHub API呼び出しには引き続き使う。
+repo_name="${repo_full_name##*/}"
+
 if [ "$state" = "closed" ]; then status="完了"; else status="未着手"; fi
 
 properties=$(jq -n \
   --arg title "$title" \
   --arg status "$status" \
-  --arg repo "$repo_full_name" \
+  --arg repo "$repo_name" \
   --argjson number "$number" \
   --arg url "$html_url" \
   '{
