@@ -1,7 +1,7 @@
 import { Container, Typography } from '@mui/material'
 import { Title } from 'components/atoms/Title'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
-import { SiteConst } from 'constants/Const'
+import { PathConst } from 'constants/Const'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './Legal.module.scss'
 
@@ -49,7 +49,7 @@ export const Terms = (): JSX.Element => {
           <p>本規約の解釈にあたっては、日本法を準拠法とします。本サービスに関して紛争が生じた場合には、運営者の所在地を管轄する裁判所を専属的合意管轄とします。</p>
 
           <h2>お問い合わせ</h2>
-          <p>本規約に関するお問い合わせは、<a href={`mailto:${SiteConst.CONTACT_EMAIL}`}>{SiteConst.CONTACT_EMAIL}</a> までご連絡ください。</p>
+          <p>本規約に関するお問い合わせは、<a href={PathConst.CONTACT}>お問い合わせページ</a> よりご連絡ください。</p>
         </div>
       </CustomNormalCard>
       <Typography variant='body2' className={`${styles.date} ${fontStyles.body}`}>
