@@ -13,11 +13,11 @@
   justify-content: space-between;
   padding-right: 10%;
 }
-.legalLinks {
+.footerLinks {
   display: flex;
   gap: 12px;
 }
-.legalLink {
+.footerLink {
   font-size: 12px;
   color: theme.$color-header-text-muted;
   text-decoration: none;

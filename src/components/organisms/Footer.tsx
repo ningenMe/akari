@@ -8,11 +8,12 @@ const Copy = () => {
   )
 }
 
-const LegalLinks = () => {
+const FooterLinks = () => {
   return (
-    <span className={styles.legalLinks}>
-      <a href={PathConst.PRIVACY} className={styles.legalLink}>Privacy</a>
-      <a href={PathConst.TERMS} className={styles.legalLink}>Terms</a>
+    <span className={styles.footerLinks}>
+      <a href={PathConst.SERVICE} className={styles.footerLink}>Service</a>
+      <a href={PathConst.PRIVACY} className={styles.footerLink}>Privacy</a>
+      <a href={PathConst.TERMS} className={styles.footerLink}>Terms</a>
     </span>
   )
 }
@@ -22,7 +23,7 @@ export const NingenmeNetFooter = (): JSX.Element => {
     <AppBar position='static' className={styles.ningenmeNetAppbar}>
       <div className={styles.inner}>
         <Copy />
-        <LegalLinks />
+        <FooterLinks />
       </div>
     </AppBar>
   )

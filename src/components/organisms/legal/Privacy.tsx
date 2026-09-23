@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material'
 import { Title } from 'components/atoms/Title'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
+import { SiteConst } from 'constants/Const'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './Legal.module.scss'
 
@@ -49,7 +50,7 @@ export const Privacy = (): JSX.Element => {
           <p>本サービスからリンクやバナー等で移動したサイトで提供される情報、サービス等について一切の責任を負いません。本サービスのコンテンツは、可能な限り正確な情報を掲載するよう努めていますが、その正確性や安全性を保証するものではありません。</p>
 
           <h2>お問い合わせ</h2>
-          <p>本ポリシーに関するお問い合わせは、各サービスに対応する GitHub リポジトリの Issue にてご連絡ください。</p>
+          <p>本ポリシーに関するお問い合わせは、<a href={`mailto:${SiteConst.CONTACT_EMAIL}`}>{SiteConst.CONTACT_EMAIL}</a> までご連絡ください。</p>
 
           <h2>プライバシーポリシーの変更について</h2>
           <p>本ポリシーは、個人情報に関して適用される法令を遵守するとともに、その内容を適宜見直し改善に努めます。本ポリシーの内容は予告なく変更されることがあり、変更後のポリシーは本ページに掲載した時点から効力を生じるものとします。</p>
