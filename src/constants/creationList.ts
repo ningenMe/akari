@@ -61,9 +61,9 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     accentColor: '#2b4a8a',
   },
   {
-    href: UrlConst.MELANG,
-    title: 'melang',
-    body: '自作言語への道のり。',
+    href: UrlConst.MEENGINEERING_NOTE,
+    title: 'meengineering-note',
+    body: '設計の選択肢を比較・記録するノート。',
     isDone: true,
     category: 'writing',
   },
