@@ -1,7 +1,7 @@
 import { Link } from '../interfaces/Link'
 
 export class PathConst {
-  static readonly HOME: string = '/home'
+  static readonly HOME: string = '/'
   static readonly TASK: string = '/task'
   static readonly BLOG: string = '/blog'
   static readonly OLD_DIARY: string = '/old-diary'
