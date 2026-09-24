@@ -1,4 +1,5 @@
 import { Creation } from 'interfaces/Creation'
+import { Link } from 'interfaces/Link'
 import { PathConst, UrlConst } from './Const'
 
 export const CREATION_LIST: ReadonlyArray<Creation> = [
@@ -37,6 +38,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     isDone: true,
     category: 'service',
     accentColor: '#111111',
+    isProvidedService: true,
   },
   {
     href: PathConst.BLOG,
@@ -59,13 +61,15 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     isDone: true,
     category: 'service',
     accentColor: '#2b4a8a',
+    isProvidedService: true,
   },
   {
-    href: UrlConst.MELANG,
-    title: 'melang',
-    body: '自作言語への道のり。',
+    href: UrlConst.MEENGINEERING_NOTE,
+    title: 'meengineering-note',
+    body: '設計の選択肢を比較・記録するノート。',
     isDone: true,
     category: 'writing',
+    isProvidedService: true,
   },
   {
     href: UrlConst.GEEQ,
@@ -74,6 +78,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     isDone: true,
     category: 'service',
     accentColor: '#f97316',
+    isProvidedService: true,
   },
 ] as const
 
@@ -84,3 +89,9 @@ export const getCreationBody = (href: string): string | undefined =>
 export const SERVICE_CREATION_LIST: ReadonlyArray<Creation> = CREATION_LIST.filter(
   (creation) => creation.category === 'service'
 )
+
+// Privacy/Terms/Contactの「ningenMeが提供するWebサイト・Webサービス」一覧(ProvidedServices)用。
+// サービス名・URLの二重管理を避けるため、CREATION_LISTから導出する
+export const PROVIDED_SERVICE_LIST: ReadonlyArray<Link> = CREATION_LIST
+  .filter((creation) => creation.isProvidedService)
+  .map((creation) => ({ name: creation.title, href: creation.href }))

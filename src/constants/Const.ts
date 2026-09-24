@@ -53,7 +53,7 @@ export class UrlConst {
   static readonly ISUCON12_TEAM_LIST: string = 'https://isucon.net/archives/56566155.html'
   static readonly ROOM: string = 'https://room.ningenme.net/'
   static readonly LAST1TILE: string = 'https://last1tile.ningenme.net/'
-  static readonly MELANG: string = 'https://melang.ningenme.net/'
+  static readonly MEENGINEERING_NOTE: string = 'https://meengineering-note.ningenme.net/'
   static readonly GEEQ: string = 'https://geeq.ningenme.net/'
 }
 
