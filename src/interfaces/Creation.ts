@@ -7,4 +7,6 @@ export interface Creation{
   readonly isDone: boolean,
   readonly category: CreationCategory,
   readonly accentColor?: string
+  // trueの場合、Privacy/Terms/Contactの「ningenMeが提供するWebサイト・Webサービス」一覧(ProvidedServices)にも掲載する
+  readonly isProvidedService?: boolean
 }
