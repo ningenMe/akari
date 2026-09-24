@@ -2,7 +2,7 @@
   "name": "ningenMe.net",
   "short_name": "ningenMe",
   "description": "ningenMeのポートフォリオサイト",
-  "start_url": "/home",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#f7f5fb",
   "theme_color": "#453a6b",
