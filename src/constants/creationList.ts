@@ -74,7 +74,7 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
   {
     href: UrlConst.GEEQ,
     title: 'geeq',
-    body: '技術知識を楽しく確認・学習できるWebサービス。',
+    body: 'AIと競いながら、ソフトウェア技術を楽しく学べるWebサービス。',
     isDone: true,
     category: 'service',
     accentColor: '#f97316',
