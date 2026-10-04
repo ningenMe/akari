@@ -32,15 +32,6 @@ export const CREATION_LIST: ReadonlyArray<Creation> = [
     category: 'writing',
   },
   {
-    href: UrlConst.ROOM,
-    title: 'room',
-    body: 'All you do is ROAM in ROOM.',
-    isDone: true,
-    category: 'service',
-    accentColor: '#111111',
-    isProvidedService: true,
-  },
-  {
     href: PathConst.BLOG,
     title: 'blog',
     body: '日々。',
