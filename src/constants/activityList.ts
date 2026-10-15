@@ -80,7 +80,7 @@ export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
   {
     year: 2019,
     body: '第一回アルゴリズム実技検定 エキスパート取得',
-    href: null,
+    href: UrlConst.ATCODER_PAST201912_OPEN,
   },
   {
     year: 2019,
@@ -95,7 +95,7 @@ export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
   {
     year: 2019,
     body: '全国統一プログラミング王本戦出場',
-    href: null,
+    href: UrlConst.ATCODER_NIKKEI2019_FINAL,
   },
   {
     year: 2018,
@@ -105,6 +105,6 @@ export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
   {
     year: 2018,
     body: '春季応用物理学会英語講演奨励賞受賞',
-    href: null,
+    href: UrlConst.JSAP_SPINTRO_RESEARCH_2018,
   },
 ] as const
