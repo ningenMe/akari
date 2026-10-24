@@ -80,6 +80,6 @@ export class LinkConst {
   static readonly QIITA: Link = { href: UrlConst.QIITA, name: 'QIITA' }
   static readonly ZENN: Link = { href: UrlConst.ZENN, name: 'ZENN' }
   static readonly SIZU: Link = { href: UrlConst.SIZU, name: 'SIZU' }
-  static readonly SNSS: ReadonlyArray<Link> = [LinkConst.TWITTER, LinkConst.BLUESKY] as const
+  static readonly SNS_LINKS: ReadonlyArray<Link> = [LinkConst.TWITTER, LinkConst.BLUESKY] as const
   static readonly COMPROS: ReadonlyArray<Link> = [LinkConst.ATCODER, LinkConst.CODEFORCES, LinkConst.YUKICODER, LinkConst.TOKI, LinkConst.CSACADEMY] as const
 }

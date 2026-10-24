@@ -68,7 +68,7 @@ const DropdownElement = ({
       >
         {links.map((link) => (
           <MenuItem key={link.name} sx={{ padding: 0 }}>
-            <a href={link.href} className={styles.dropdownLink}>
+            <a href={link.href} rel='noreferrer noopener' target='_blank' className={styles.dropdownLink}>
               {link.name}
             </a>
           </MenuItem>
@@ -140,7 +140,7 @@ export const NingenmeNetHeader = (): JSX.Element => {
   const getElementList = ({ className }: { className: string }) => {
     return [
       <NormalElement key={1} link={LinkConst.GITHUB} className={className} icon={<GitHubIcon sx={iconSx} />} />,
-      <DropdownElement key={2} title={'sns'} links={LinkConst.SNSS} className={className}
+      <DropdownElement key={2} title={'sns'} links={LinkConst.SNS_LINKS} className={className}
                        icon={<ShareIcon sx={iconSx} />} />,
       <DropdownElement key={3} title={'compro'} links={LinkConst.COMPROS} className={className}
                        icon={<ComputerIcon sx={iconSx} />} />,
