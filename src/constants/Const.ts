@@ -28,6 +28,7 @@ export class UrlConst {
   static readonly TWITTER: string = 'https://twitter.com/ningenMe'
   static readonly BLUESKY: string = 'https://bsky.app/profile/ningenme.bsky.social'
   static readonly DEV_NULL: string = 'https://dev-null.sh/@ningenMe'
+  static readonly FACEBOOK: string = 'https://www.facebook.com/taishi.furuta.3'
   static readonly YOUTRUST: string = 'https://youtrust.jp/users/c547983174691857f9881962eaa00436'
   static readonly ATCODER: string = 'https://atcoder.jp/users/ningenMe'
   static readonly CODEFORCES: string = 'https://codeforces.com/profile/ningenMe'
@@ -73,6 +74,7 @@ export class LinkConst {
   static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: 'Twitter' }
   static readonly BLUESKY: Link = { href: UrlConst.BLUESKY, name: 'Bluesky' }
   static readonly DEV_NULL: Link = { href: UrlConst.DEV_NULL, name: 'dev-null.sh' }
+  static readonly FACEBOOK: Link = { href: UrlConst.FACEBOOK, name: 'Facebook' }
   static readonly YOUTRUST: Link = { href: UrlConst.YOUTRUST, name: 'YOUTRUST' }
   static readonly ATCODER: Link = { href: UrlConst.ATCODER, name: 'AtCoder' }
   static readonly CODEFORCES: Link = { href: UrlConst.CODEFORCES, name: 'Codeforces' }
@@ -84,6 +86,6 @@ export class LinkConst {
   static readonly QIITA: Link = { href: UrlConst.QIITA, name: 'QIITA' }
   static readonly ZENN: Link = { href: UrlConst.ZENN, name: 'ZENN' }
   static readonly SIZU: Link = { href: UrlConst.SIZU, name: 'SIZU' }
-  static readonly SNS_LINKS: ReadonlyArray<Link> = [LinkConst.TWITTER, LinkConst.BLUESKY, LinkConst.DEV_NULL, LinkConst.YOUTRUST] as const
+  static readonly SNS_LINKS: ReadonlyArray<Link> = [LinkConst.TWITTER, LinkConst.BLUESKY, LinkConst.DEV_NULL, LinkConst.FACEBOOK, LinkConst.YOUTRUST] as const
   static readonly COMPROS: ReadonlyArray<Link> = [LinkConst.ATCODER, LinkConst.CODEFORCES, LinkConst.YUKICODER, LinkConst.TOKI, LinkConst.CSACADEMY] as const
 }
