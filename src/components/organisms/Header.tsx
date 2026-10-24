@@ -2,7 +2,7 @@ import { Link } from '../../interfaces/Link'
 import styles from './Header.module.scss'
 import React, { ReactNode, useState } from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import TwitterIcon from '@mui/icons-material/Twitter'
+import ShareIcon from '@mui/icons-material/Share'
 import ArticleIcon from '@mui/icons-material/Article'
 import ComputerIcon from '@mui/icons-material/Computer'
 import AppsIcon from '@mui/icons-material/Apps'
@@ -140,7 +140,8 @@ export const NingenmeNetHeader = (): JSX.Element => {
   const getElementList = ({ className }: { className: string }) => {
     return [
       <NormalElement key={1} link={LinkConst.GITHUB} className={className} icon={<GitHubIcon sx={iconSx} />} />,
-      <NormalElement key={2} link={LinkConst.TWITTER} className={className} icon={<TwitterIcon sx={iconSx} />} />,
+      <DropdownElement key={2} title={'sns'} links={LinkConst.SNSS} className={className}
+                       icon={<ShareIcon sx={iconSx} />} />,
       <DropdownElement key={3} title={'compro'} links={LinkConst.COMPROS} className={className}
                        icon={<ComputerIcon sx={iconSx} />} />,
       <BlogDropdownElement key={4} className={className} />,
