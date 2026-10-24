@@ -1,4 +1,5 @@
 import { Link } from '../../interfaces/Link'
+import Image from 'next/image'
 import styles from './Header.module.scss'
 import React, { ReactNode, useState } from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub'
@@ -41,7 +42,16 @@ const SNS_ITEMS: ReadonlyArray<DropdownItem> = [
   { link: LinkConst.INSTAGRAM, icon: <InstagramIcon sx={caretSx} /> },
   { link: LinkConst.YOUTRUST, icon: <WorkIcon sx={caretSx} /> },
 ]
-const COMPRO_ITEMS: ReadonlyArray<DropdownItem> = LinkConst.COMPROS.map((link) => ({ link }))
+
+// 各サービスのfaviconを public に置いて表示する(BlogChipと同じ方式)。yukicoderは既存の画像を流用
+const ImageIcon = ({ src }: { src: string }) => <Image src={src} alt='' width={16} height={16} />
+const COMPRO_ITEMS: ReadonlyArray<DropdownItem> = [
+  { link: LinkConst.ATCODER, icon: <ImageIcon src='/atcoder.png' /> },
+  { link: LinkConst.CODEFORCES, icon: <ImageIcon src='/codeforces.png' /> },
+  { link: LinkConst.YUKICODER, icon: <ImageIcon src='/yukicoder.jpg' /> },
+  { link: LinkConst.TOKI, icon: <ImageIcon src='/toki.png' /> },
+  { link: LinkConst.CSACADEMY, icon: <ImageIcon src='/csacademy.png' /> },
+]
 
 const NormalElement = (
   { link, className, icon }: { link: Link, className: string, icon: ReactNode },
