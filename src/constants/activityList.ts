@@ -3,6 +3,11 @@ import { UrlConst } from './Const'
 
 export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
   {
+    year: 2026,
+    body: 'ISUCON16 参加(チーム: たこたこ)',
+    href: UrlConst.ISUCON16_TEAM_LIST,
+  },
+  {
     year: 2025,
     body: 'Open Hack U 2025 NAGOYA 審査員',
     href: UrlConst.LY_OPEN_HACK_U_NAGOYA_2025,
