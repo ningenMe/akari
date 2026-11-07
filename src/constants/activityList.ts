@@ -3,14 +3,14 @@ import { UrlConst } from './Const'
 
 export const ACTIVITY_LIST: ReadonlyArray<Activity> = [
   {
-    year: 2025,
-    body: 'Open Hack U 2025 NAGOYA 審査員',
-    href: UrlConst.LY_OPEN_HACK_U_NAGOYA_2025,
+    year: 2026,
+    body: 'ISUCON2026 参加(チーム: たこたこ)',
+    href: UrlConst.ISUCON2026_TEAM_LIST,
   },
   {
     year: 2025,
-    body: 'ISUCON15 参加(チーム: たこたこ)',
-    href: UrlConst.ISUCON15_TEAM_LIST,
+    body: 'Open Hack U 2025 NAGOYA 審査員',
+    href: UrlConst.LY_OPEN_HACK_U_NAGOYA_2025,
   },
   {
     year: 2024,
