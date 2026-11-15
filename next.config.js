@@ -38,6 +38,8 @@ module.exports = {
           { key: 'Strict-Transport-Security', value: 'max-age=31536000' },
           // frame-ancestorsに未対応の古いブラウザ向け
           { key: 'X-Frame-Options', value: 'DENY' },
+          // エージェント/クローラ向けにサイトマップとllms.txtの場所をRFC 8288のLinkヘッダで通知する
+          { key: 'Link', value: '</sitemap.xml>; rel="sitemap"; type="application/xml", </llms.txt>; rel="describedby"; type="text/markdown"' },
           ...(process.env.NODE_ENV === 'production'
             ? [{ key: 'Content-Security-Policy', value: contentSecurityPolicy }]
             : [])

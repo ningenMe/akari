@@ -1,0 +1,22 @@
+# ningenMe.net
+
+> ningenMe(ソフトウェアエンジニア)のポートフォリオサイト。ソフトウェア開発とコードレビューと静的型付け言語が好きです。経歴・登壇/活動・論文・ブログ・個人開発サービス・イラストを掲載しています。
+
+主要なページはすべてサーバーサイドレンダリングされたHTMLで、ログイン不要で閲覧できます。全URLは [sitemap.xml](https://ningenme.net/sitemap.xml) を参照してください。
+
+## Pages
+
+- [Home](https://ningenme.net/): プロフィール、経歴、SNS・競技プログラミングのリンク
+- [Task](https://ningenme.net/task): 登壇・イベント参加などの活動履歴
+- [Paper](https://ningenme.net/paper): 論文・研究発表
+- [Blog](https://ningenme.net/blog): 外部ブログ(はてなブログ・Zenn・Qiita等)の記事一覧
+- [Service](https://ningenme.net/service): 個人開発しているWebサービス
+- [Illustration](https://ningenme.net/illustration): イラスト
+- [Contact](https://ningenme.net/contact): 連絡先
+
+## Optional
+
+- [Old diary](https://ningenme.net/old-diary): 過去の日記
+- [Privacy](https://ningenme.net/privacy): プライバシーポリシー
+- [Terms](https://ningenme.net/terms): 利用規約
+- [GitHub](https://github.com/ningenMe): ソースコード

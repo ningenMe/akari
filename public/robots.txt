@@ -1,4 +1,7 @@
+# Content Signals (https://contentsignals.org/)
+# search: 検索インデックス / ai-input: AIの回答生成時の参照(RAG等) / ai-train: AIモデルの学習
 User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 
 Sitemap: https://ningenme.net/sitemap.xml
