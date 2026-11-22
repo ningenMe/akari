@@ -1,6 +1,8 @@
 // 本番のみ。開発時はReact Refreshがevalを使うためCSPで塞がないようにする。
 // style-srcの'unsafe-inline'はMUI(emotion)とnext/imageのstyle属性のために必要。
 // GA4(gtag.js)とGoogle Fontsだけを外部として許可している。
+// script-srcに'unsafe-inline'が無いため、Turbopackのビルドが出すインラインの起動スクリプトがブロックされ、
+// ハイドレーションが止まる(ヘッダーのプルダウンが反応しなくなる)。ビルドはwebpackを使う(package.jsonのbuild)。
 const contentSecurityPolicy = [
   "default-src 'self'",
   "script-src 'self' https://www.googletagmanager.com",
