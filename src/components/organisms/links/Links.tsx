@@ -56,8 +56,8 @@ export const Links = (): JSX.Element => {
                     {item.handle && <span className={styles.handle}>{item.handle}</span>}
                   </span>
                 )}
-                <span className={styles.purpose}>{item.purpose}</span>
               </span>
+              <span className={styles.purpose}>{item.purpose}</span>
             </a>
           </li>
         ))}
