@@ -28,7 +28,7 @@ export class UrlConst {
   static readonly TWITTER: string = 'https://twitter.com/ningenMe'
   static readonly BLUESKY: string = 'https://bsky.app/profile/ningenme.bsky.social'
   static readonly DEV_NULL: string = 'https://dev-null.sh/@ningenMe'
-  static readonly MIXI: string = 'https://mixi.social/@ningenMe'
+  static readonly MIXI2: string = 'https://mixi.social/@ningenMe'
   static readonly FACEBOOK: string = 'https://www.facebook.com/taishi.furuta.0511'
   static readonly INSTAGRAM: string = 'https://www.instagram.com/taishi.furuta/'
   static readonly YOUTRUST: string = 'https://youtrust.jp/users/c547983174691857f9881962eaa00436'
@@ -77,7 +77,7 @@ export class LinkConst {
   static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: 'Twitter' }
   static readonly BLUESKY: Link = { href: UrlConst.BLUESKY, name: 'Bluesky' }
   static readonly DEV_NULL: Link = { href: UrlConst.DEV_NULL, name: 'dev-null.sh' }
-  static readonly MIXI: Link = { href: UrlConst.MIXI, name: 'mixi2' }
+  static readonly MIXI2: Link = { href: UrlConst.MIXI2, name: 'mixi2' }
   static readonly FACEBOOK: Link = { href: UrlConst.FACEBOOK, name: 'Facebook' }
   static readonly INSTAGRAM: Link = { href: UrlConst.INSTAGRAM, name: 'Instagram' }
   static readonly YOUTRUST: Link = { href: UrlConst.YOUTRUST, name: 'YOUTRUST' }

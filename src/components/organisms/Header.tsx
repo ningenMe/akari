@@ -39,7 +39,7 @@ const SNS_ITEMS: ReadonlyArray<DropdownItem> = [
   { link: LinkConst.BLUESKY, icon: <BlueskyIcon /> },
   { link: LinkConst.DEV_NULL, icon: <TerminalIcon sx={caretSx} /> },
   // mixi の favicon（public/mixi.png）を使う
-  { link: LinkConst.MIXI, icon: <Image src='/mixi.png' alt='' width={16} height={16} /> },
+  { link: LinkConst.MIXI2, icon: <Image src='/mixi.png' alt='' width={16} height={16} /> },
   { link: LinkConst.FACEBOOK, icon: <FacebookIcon sx={caretSx} /> },
   { link: LinkConst.INSTAGRAM, icon: <InstagramIcon sx={caretSx} /> },
   { link: LinkConst.YOUTRUST, icon: <WorkIcon sx={caretSx} /> },
