@@ -8,7 +8,6 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import TerminalIcon from '@mui/icons-material/Terminal'
 import WorkIcon from '@mui/icons-material/Work'
 import ArticleIcon from '@mui/icons-material/Article'
-import ComputerIcon from '@mui/icons-material/Computer'
 import { Title } from 'components/atoms/Title'
 import { SNS_ACCOUNTS, SnsId } from 'constants/SnsAccounts'
 import styles from './Links.module.scss'
@@ -23,8 +22,16 @@ const ORDER: ReadonlyArray<SnsId> = [
   'instagram',
   'youtrust',
   'devNull',
-  'blog',
-  'compro',
+  'qiita',
+  'zenn',
+  'hatena',
+  'ameba',
+  'sizu',
+  'atcoder',
+  'codeforces',
+  'yukicoder',
+  'toki',
+  'csacademy',
 ]
 
 // アイコンはこのページの見せ方なので、ページ側で持つ
@@ -37,8 +44,16 @@ const ICONS: Readonly<Record<SnsId, ReactNode>> = {
   facebook: <FacebookIcon />,
   instagram: <InstagramIcon />,
   youtrust: <WorkIcon />,
-  blog: <ArticleIcon />,
-  compro: <ComputerIcon />,
+  qiita: <Image src='/qiita.png' alt='' width={18} height={18} />,
+  zenn: <Image src='/zenn.svg' alt='' width={18} height={18} />,
+  hatena: <Image src='/hatena.svg' alt='' width={18} height={18} />,
+  ameba: <ArticleIcon />,
+  sizu: <Image src='/sizu.png' alt='' width={18} height={18} />,
+  atcoder: <Image src='/atcoder.png' alt='' width={18} height={18} />,
+  codeforces: <Image src='/codeforces.png' alt='' width={18} height={18} />,
+  yukicoder: <Image src='/yukicoder.jpg' alt='' width={18} height={18} />,
+  toki: <Image src='/toki.png' alt='' width={18} height={18} />,
+  csacademy: <Image src='/csacademy.png' alt='' width={18} height={18} />,
 }
 
 export const Links = (): JSX.Element => {
