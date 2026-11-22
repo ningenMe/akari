@@ -25,6 +25,7 @@ type LinkItem = {
 
 // 既存の定数（UrlConst）を参照するだけで、リンク先の定義は増やさない
 const LINK_ITEMS: ReadonlyArray<LinkItem> = [
+  { href: UrlConst.GITHUB, name: 'GitHub', icon: <GitHubIcon />, displayName: 'taishi', handle: '@ningenMe', purpose: 'ソースコード・個人開発' },
   { href: UrlConst.TWITTER, name: 'Twitter', icon: <TwitterIcon />, displayName: 'taishi', handle: '@ningenMe', purpose: '発信・日々のつぶやき' },
   { href: UrlConst.BLUESKY, name: 'Bluesky', icon: <WorkIcon />, displayName: 'taishi', handle: '@ningenme.bsky.social', purpose: '発信（Twitterと同じ用途）' },
   { href: UrlConst.DEV_NULL, name: 'dev-null.sh', icon: <TerminalIcon />, displayName: 'taishi', handle: '@ningenMe', purpose: '技術系の投稿' },
@@ -32,7 +33,6 @@ const LINK_ITEMS: ReadonlyArray<LinkItem> = [
   { href: UrlConst.FACEBOOK, name: 'Facebook', icon: <FacebookIcon />, displayName: 'taishi', handle: 'taishi.furuta.0511', purpose: '知人との近況' },
   { href: UrlConst.INSTAGRAM, name: 'Instagram', icon: <InstagramIcon />, displayName: 'taishi', handle: '@taishi.furuta', purpose: '写真・日常' },
   { href: UrlConst.YOUTRUST, name: 'YOUTRUST', icon: <WorkIcon />, displayName: 'taishi', purpose: '評価・信頼の確認' },
-  { href: UrlConst.GITHUB, name: 'GitHub', icon: <GitHubIcon />, displayName: 'taishi', handle: '@ningenMe', purpose: 'ソースコード・個人開発' },
 ]
 
 export const Links = (): JSX.Element => {
