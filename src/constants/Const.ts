@@ -77,7 +77,7 @@ export class LinkConst {
   static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: 'Twitter' }
   static readonly BLUESKY: Link = { href: UrlConst.BLUESKY, name: 'Bluesky' }
   static readonly DEV_NULL: Link = { href: UrlConst.DEV_NULL, name: 'dev-null.sh' }
-  static readonly MIXI: Link = { href: UrlConst.MIXI, name: 'mixi' }
+  static readonly MIXI: Link = { href: UrlConst.MIXI, name: 'mixi2' }
   static readonly FACEBOOK: Link = { href: UrlConst.FACEBOOK, name: 'Facebook' }
   static readonly INSTAGRAM: Link = { href: UrlConst.INSTAGRAM, name: 'Instagram' }
   static readonly YOUTRUST: Link = { href: UrlConst.YOUTRUST, name: 'YOUTRUST' }
