@@ -27,7 +27,7 @@ export const SNS_ACCOUNTS: Readonly<Record<SnsId, SnsAccount>> = {
   twitter: { href: UrlConst.TWITTER, name: 'Twitter', displayName: 'taishi', handle: '@ningenMe', purpose: '発信' },
   bluesky: { href: UrlConst.BLUESKY, name: 'Bluesky', displayName: 'taishi', handle: '@ningenme.bsky.social', purpose: '日常' },
   devNull: { href: UrlConst.DEV_NULL, name: 'dev-null.sh', displayName: 'taishi', handle: '@ningenMe', purpose: '技術発信' },
-  mixi2: { href: UrlConst.MIXI2, name: 'mixi2', displayName: 'taishi', handle: '@ningenMe', purpose: '発信（仮）' },
+  mixi2: { href: UrlConst.MIXI2, name: 'mixi2', displayName: 'taishi', handle: '@ningenMe', purpose: '日常' },
   facebook: { href: UrlConst.FACEBOOK, name: 'Facebook', displayName: 'taishi', handle: 'taishi.furuta.0511', purpose: '知人との近況' },
   instagram: { href: UrlConst.INSTAGRAM, name: 'Instagram', displayName: 'taishi', handle: '@taishi.furuta', purpose: '写真・日常' },
   youtrust: { href: UrlConst.YOUTRUST, name: 'YOUTRUST', displayName: 'taishi', purpose: '評価・信頼の確認' },
