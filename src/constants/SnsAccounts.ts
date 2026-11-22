@@ -25,7 +25,7 @@ export type SnsAccount = {
 export const SNS_ACCOUNTS: Readonly<Record<SnsId, SnsAccount>> = {
   github: { href: UrlConst.GITHUB, name: 'GitHub', displayName: 'taishi', handle: '@ningenMe', purpose: '開発' },
   twitter: { href: UrlConst.TWITTER, name: 'Twitter', displayName: 'taishi', handle: '@ningenMe', purpose: '発信' },
-  bluesky: { href: UrlConst.BLUESKY, name: 'Bluesky', displayName: 'taishi', handle: '@ningenme.bsky.social', purpose: '発信（Twitterと同じ用途）' },
+  bluesky: { href: UrlConst.BLUESKY, name: 'Bluesky', displayName: 'taishi', handle: '@ningenme.bsky.social', purpose: '日常' },
   devNull: { href: UrlConst.DEV_NULL, name: 'dev-null.sh', displayName: 'taishi', handle: '@ningenMe', purpose: '技術系の投稿' },
   mixi2: { href: UrlConst.MIXI2, name: 'mixi2', displayName: 'taishi', handle: '@ningenMe', purpose: '発信（仮）' },
   facebook: { href: UrlConst.FACEBOOK, name: 'Facebook', displayName: 'taishi', handle: 'taishi.furuta.0511', purpose: '知人との近況' },
