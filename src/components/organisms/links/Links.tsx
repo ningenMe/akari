@@ -16,11 +16,11 @@ const ORDER: ReadonlyArray<SnsId> = [
   'github',
   'twitter',
   'bluesky',
-  'devNull',
   'mixi2',
   'facebook',
   'instagram',
   'youtrust',
+  'devNull',
 ]
 
 // アイコンはこのページの見せ方なので、ページ側で持つ
