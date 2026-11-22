@@ -8,8 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import TerminalIcon from '@mui/icons-material/Terminal'
 import WorkIcon from '@mui/icons-material/Work'
 import { Title } from 'components/atoms/Title'
-import { SiteConst, UrlConst } from 'constants/Const'
-import fontStyles from 'styles/Font.module.scss'
+import { UrlConst } from 'constants/Const'
 import styles from './Links.module.scss'
 
 type LinkItem = {
@@ -42,8 +41,7 @@ export const Links = (): JSX.Element => {
       <Title title='Links' />
       <div className={styles.profile}>
         <Image src='/taishi.jpg' alt='' width={96} height={96} className={styles.avatar} />
-        <h2 className={styles.name}>Furuta Taishi</h2>
-        <p className={`${styles.bio} ${fontStyles.body}`}>{SiteConst.PROFILE_TEXT}</p>
+        <h2 className={styles.name}>taishi / ningenMe</h2>
       </div>
       <ul className={styles.list}>
         {LINK_ITEMS.map((item) => (
