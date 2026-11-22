@@ -1,0 +1,20 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "ningenMe.net",
+    "identifier": "urn:air:ningenme.net:host"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:ningenme.net:site:portfolio",
+      "displayName": "ningenMe.net ポートフォリオサイト",
+      "type": "text/html",
+      "url": "https://ningenme.net/",
+      "representativeQueries": [
+        "ningenMeのポートフォリオを見たい",
+        "ningenMeの経歴や作品を知りたい",
+        "ningenMeのブログ記事を読みたい"
+      ]
+    }
+  ]
+}
