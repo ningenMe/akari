@@ -8,6 +8,7 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import TerminalIcon from '@mui/icons-material/Terminal'
+import PublicIcon from '@mui/icons-material/Public'
 import WorkIcon from '@mui/icons-material/Work'
 import ArticleIcon from '@mui/icons-material/Article'
 import ComputerIcon from '@mui/icons-material/Computer'
@@ -38,6 +39,8 @@ const SNS_ITEMS: ReadonlyArray<DropdownItem> = [
   { link: LinkConst.TWITTER, icon: <TwitterIcon sx={caretSx} /> },
   { link: LinkConst.BLUESKY, icon: <BlueskyIcon /> },
   { link: LinkConst.DEV_NULL, icon: <TerminalIcon sx={caretSx} /> },
+  // mixi はMUIにブランドアイコンが無いため、汎用の地球アイコンで代用する
+  { link: LinkConst.MIXI, icon: <PublicIcon sx={caretSx} /> },
   { link: LinkConst.FACEBOOK, icon: <FacebookIcon sx={caretSx} /> },
   { link: LinkConst.INSTAGRAM, icon: <InstagramIcon sx={caretSx} /> },
   { link: LinkConst.YOUTRUST, icon: <WorkIcon sx={caretSx} /> },
