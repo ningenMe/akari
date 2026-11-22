@@ -44,6 +44,24 @@ module.exports = {
         ]
       },
       {
+        // エージェント向けのディスカバリー用リンク（RFC 8288）。トップページのみ
+        source: '/',
+        headers: [
+          {
+            key: 'Link',
+            value: '</sitemap.xml>; rel="sitemap", </.well-known/ai-catalog.json>; rel="describedby"; type="application/json"'
+          }
+        ]
+      },
+      {
+        // ARDのカタログはクロスオリジンのエージェントからも読めるようにする
+        source: '/.well-known/ai-catalog.json',
+        headers: [
+          { key: 'Content-Type', value: 'application/json' },
+          { key: 'Access-Control-Allow-Origin', value: '*' }
+        ]
+      },
+      {
         // public配下の画像はファイル名にハッシュが付かないので、immutableにはせず1日キャッシュにする
         source: '/:all*(png|jpg|jpeg|svg|ico|webp|gif)',
         headers: [
