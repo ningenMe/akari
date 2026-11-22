@@ -1,4 +1,4 @@
-import { UrlConst } from './Const'
+import { PathConst, UrlConst } from './Const'
 
 export type SnsId =
   | 'github'
@@ -9,6 +9,8 @@ export type SnsId =
   | 'facebook'
   | 'instagram'
   | 'youtrust'
+  | 'blog'
+  | 'compro'
 
 export type SnsAccount = {
   readonly href: string,
@@ -31,4 +33,6 @@ export const SNS_ACCOUNTS: Readonly<Record<SnsId, SnsAccount>> = {
   facebook: { href: UrlConst.FACEBOOK, name: 'Facebook', displayName: 'taishi', handle: 'taishi.furuta.0511', purpose: '写真・日常' },
   instagram: { href: UrlConst.INSTAGRAM, name: 'Instagram', displayName: 'taishi', handle: '@taishi.furuta', purpose: '写真・日常' },
   youtrust: { href: UrlConst.YOUTRUST, name: 'YOUTRUST', displayName: 'taishi', purpose: '技術発信' },
+  blog: { href: PathConst.BLOG, name: 'blog', purpose: '記事' },
+  compro: { href: UrlConst.COMPRO_LIBRARY, name: 'compro', purpose: '競技プログラミング' },
 }

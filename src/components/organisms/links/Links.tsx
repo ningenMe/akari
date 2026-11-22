@@ -7,6 +7,8 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TerminalIcon from '@mui/icons-material/Terminal'
 import WorkIcon from '@mui/icons-material/Work'
+import ArticleIcon from '@mui/icons-material/Article'
+import ComputerIcon from '@mui/icons-material/Computer'
 import { Title } from 'components/atoms/Title'
 import { SNS_ACCOUNTS, SnsId } from 'constants/SnsAccounts'
 import styles from './Links.module.scss'
@@ -21,6 +23,8 @@ const ORDER: ReadonlyArray<SnsId> = [
   'instagram',
   'youtrust',
   'devNull',
+  'blog',
+  'compro',
 ]
 
 // アイコンはこのページの見せ方なので、ページ側で持つ
@@ -33,6 +37,8 @@ const ICONS: Readonly<Record<SnsId, ReactNode>> = {
   facebook: <FacebookIcon />,
   instagram: <InstagramIcon />,
   youtrust: <WorkIcon />,
+  blog: <ArticleIcon />,
+  compro: <ComputerIcon />,
 }
 
 export const Links = (): JSX.Element => {
