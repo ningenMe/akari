@@ -7,6 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TerminalIcon from '@mui/icons-material/Terminal'
 import WorkIcon from '@mui/icons-material/Work'
+import { Title } from 'components/atoms/Title'
 import { SiteConst, UrlConst } from 'constants/Const'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './Links.module.scss'
@@ -38,9 +39,10 @@ const LINK_ITEMS: ReadonlyArray<LinkItem> = [
 export const Links = (): JSX.Element => {
   return (
     <Container className={styles.root}>
+      <Title title='Links' />
       <div className={styles.profile}>
         <Image src='/taishi.jpg' alt='' width={96} height={96} className={styles.avatar} />
-        <h1 className={styles.name}>Furuta Taishi</h1>
+        <h2 className={styles.name}>Furuta Taishi</h2>
         <p className={`${styles.bio} ${fontStyles.body}`}>{SiteConst.PROFILE_TEXT}</p>
       </div>
       <ul className={styles.list}>
