@@ -42,7 +42,7 @@ export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   facebook: { href: UrlConst.FACEBOOK, name: 'Facebook', displayName: 'Furuta Taishi', handle: 'taishi.furuta.0511', purpose: '写真・日常' },
   instagram: { href: UrlConst.INSTAGRAM, name: 'Instagram', displayName: 'taishi.furuta', handle: 'taishi.furuta', purpose: '写真・日常' },
   youtrust: { href: UrlConst.YOUTRUST, name: 'YOUTRUST', displayName: 'taishi', purpose: '技術発信' },
-  linkedin: { href: UrlConst.LINKEDIN, name: 'LinkedIn', handle: 'Taishi Furuta' },
+  linkedin: { href: UrlConst.LINKEDIN, name: 'LinkedIn', displayName: 'Taishi Furuta' },
   qiita: { href: UrlConst.QIITA, name: 'Qiita', handle: 'ningenMe', purpose: '技術記事' },
   zenn: { href: UrlConst.ZENN, name: 'Zenn', handle: 'ningenme', purpose: '技術記事' },
   hatena: { href: UrlConst.HATENA, name: 'はてなブログ', handle: 'ningenme.hatenablog.com', purpose: 'エンジニアリング全般' },
