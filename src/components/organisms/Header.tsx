@@ -167,9 +167,9 @@ export const NingenmeNetHeader = (): JSX.Element => {
       <NormalElement key={1} link={LinkConst.GITHUB} className={className} icon={<GitHubIcon sx={iconSx} />} />,
       <DropdownElement key={2} title={'sns'} items={SNS_ITEMS} className={className}
                        icon={<ShareIcon sx={iconSx} />} />,
-      <DropdownElement key={3} title={'compro'} items={COMPRO_ITEMS} className={className}
+      <BlogDropdownElement key={3} className={className} />,
+      <DropdownElement key={4} title={'compro'} items={COMPRO_ITEMS} className={className}
                        icon={<ComputerIcon sx={iconSx} />} />,
-      <BlogDropdownElement key={4} className={className} />,
       <InternalLinkElement key={5} link={LinkConst.SERVICE} className={className} icon={<AppsIcon sx={iconSx} />} />,
     ]
   }
