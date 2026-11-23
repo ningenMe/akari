@@ -45,7 +45,7 @@ export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   zenn: { href: UrlConst.ZENN, name: 'Zenn', handle: 'ningenme' },
   hatena: { href: UrlConst.HATENA, name: 'はてなブログ', handle: 'ningenme.hatenablog.com' },
   ameba: { href: UrlConst.AMEBA, name: 'Ameba', handle: 'ningenme' },
-  sizu: { href: UrlConst.SIZU, name: 'しずかなインターネット', handle: 'ningenme' },
+  sizu: { href: UrlConst.SIZU, name: 'しずかなインターネット', handle: 'ningenme', purpose: '私生活とか思いとか' },
   atcoder: { href: UrlConst.ATCODER, name: 'AtCoder', handle: 'ningenMe', purpose: '競技プログラミング' },
   codeforces: { href: UrlConst.CODEFORCES, name: 'Codeforces', handle: 'ningenMe', purpose: '競技プログラミング' },
   yukicoder: { href: UrlConst.YUKICODER, name: 'yukicoder', handle: '4145', purpose: '競技プログラミング' },
