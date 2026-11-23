@@ -7,6 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import TerminalIcon from '@mui/icons-material/Terminal'
 import WorkIcon from '@mui/icons-material/Work'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import ArticleIcon from '@mui/icons-material/Article'
 import { Title } from 'components/atoms/Title'
 import { LINK_ACCOUNTS, LinkId } from 'constants/LinkAccounts'
@@ -36,6 +37,7 @@ const ORDER: ReadonlyArray<LinkId> = [
   'facebook',
   'instagram',
   'youtrust',
+  'linkedin',
   'devNull',
   ...BLOG_LINK_IDS,
   'atcoder',
@@ -55,6 +57,7 @@ const ICONS: Readonly<Record<LinkId, ReactNode>> = {
   facebook: <FacebookIcon />,
   instagram: <InstagramIcon />,
   youtrust: <WorkIcon />,
+  linkedin: <LinkedInIcon />,
   qiita: <Image src='/qiita.png' alt='' width={18} height={18} />,
   zenn: <Image src='/zenn.svg' alt='' width={18} height={18} />,
   hatena: <Image src='/hatena.svg' alt='' width={18} height={18} />,

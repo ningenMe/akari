@@ -32,6 +32,7 @@ export class UrlConst {
   static readonly FACEBOOK: string = 'https://www.facebook.com/taishi.furuta.0511'
   static readonly INSTAGRAM: string = 'https://www.instagram.com/taishi.furuta/'
   static readonly YOUTRUST: string = 'https://youtrust.jp/users/c547983174691857f9881962eaa00436'
+  static readonly LINKEDIN: string = 'https://www.linkedin.com/in/taishi-furuta-b8b397187/'
   static readonly ATCODER: string = 'https://atcoder.jp/users/ningenMe'
   static readonly CODEFORCES: string = 'https://codeforces.com/profile/ningenMe'
   static readonly YUKICODER: string = 'https://yukicoder.me/users/4145'
