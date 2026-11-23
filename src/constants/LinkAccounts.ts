@@ -43,7 +43,7 @@ export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   youtrust: { href: UrlConst.YOUTRUST, name: 'YOUTRUST', displayName: 'taishi', purpose: '技術発信' },
   qiita: { href: UrlConst.QIITA, name: 'Qiita', handle: 'ningenMe' },
   zenn: { href: UrlConst.ZENN, name: 'Zenn', handle: 'ningenme' },
-  hatena: { href: UrlConst.HATENA, name: 'はてなブログ', handle: 'ningenme.hatenablog.com' },
+  hatena: { href: UrlConst.HATENA, name: 'はてなブログ', handle: 'ningenme.hatenablog.com', purpose: 'エンジニアリング全般' },
   ameba: { href: UrlConst.AMEBA, name: 'Ameba', handle: 'ningenme' },
   sizu: { href: UrlConst.SIZU, name: 'しずかなインターネット', handle: 'ningenme', purpose: '私生活とか思いとか' },
   atcoder: { href: UrlConst.ATCODER, name: 'AtCoder', handle: 'ningenMe', purpose: '競技プログラミング' },
