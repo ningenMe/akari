@@ -36,12 +36,21 @@
   font-weight: bold;
 }
 
-// 名前からリンク集(/link)への導線。見た目は見出しのまま
+// 名前からリンク集(/link)への導線。下線とアクセント色と矢印で、クリックできると分かるようにする
 .nameLink {
-  color: inherit;
-  text-decoration: none;
+  color: theme.$color-accent-strong;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: bold;
+  white-space: nowrap;
+
+  &::after {
+    content: ' →';
+    font-weight: normal;
+  }
 
   &:hover {
-    text-decoration: underline;
+    color: theme.$color-accent;
   }
 }

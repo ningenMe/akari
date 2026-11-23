@@ -6,6 +6,9 @@ import fontStyles from 'styles/Font.module.scss'
 import styles from './Profile.module.scss'
 import { PathConst, SiteConst } from 'constants/Const'
 
+// 自己紹介文の中の名前部分だけをリンクにするため、文章を名前の前後に分ける
+const [textBeforeHandle, textAfterHandle = ''] = SiteConst.PROFILE_TEXT.split(SiteConst.PROFILE_HANDLE)
+
 export const Profile = (): JSX.Element => {
   return (
     <div className={styles.root}>
@@ -22,11 +25,15 @@ export const Profile = (): JSX.Element => {
           <CustomNormalCard>
             <h1 className={styles.name}>
               <NextLink href={PathConst.LINK} className={styles.nameLink}>
-                taishi / ningenMe
+                {SiteConst.PROFILE_HANDLE}
               </NextLink>
             </h1>
             <p className={fontStyles.body}>
-              {SiteConst.PROFILE_TEXT}
+              {textBeforeHandle}
+              <NextLink href={PathConst.LINK} className={styles.nameLink}>
+                {SiteConst.PROFILE_HANDLE}
+              </NextLink>
+              {textAfterHandle}
             </p>
           </CustomNormalCard>
         </div>
