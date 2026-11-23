@@ -16,7 +16,7 @@ export class PathConst {
 
 export class SiteConst {
   // Profileの本文と、各ページのmeta descriptionで共有する自己紹介文
-  static readonly PROFILE_TEXT: string = 'Furuta Taishiです。ソフトウェア開発とコードレビューと静的型付け言語が好きです。ningenMeというハンドルネームで活動しています。'
+  static readonly PROFILE_TEXT: string = 'Furuta Taishiです。ソフトウェア開発とコードレビューと静的型付け言語が好きです。taishi / ningenMe というハンドルネームで活動しています。'
   // Privacy/Terms共通のお問い合わせ先。個別サービスのリポジトリはprivateで外部からissueを立てられないため、メール窓口に一本化する
   static readonly CONTACT_EMAIL: string = 'amohkuru@gmail.com'
 }

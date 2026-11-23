@@ -21,14 +21,13 @@ export const Profile = (): JSX.Element => {
         <div className={styles.cardSlot}>
           <CustomNormalCard>
             <h1 className={styles.name}>
-              taishi / ningenMe
+              <NextLink href={PathConst.LINK} className={styles.nameLink}>
+                taishi / ningenMe
+              </NextLink>
             </h1>
             <p className={fontStyles.body}>
               {SiteConst.PROFILE_TEXT}
             </p>
-            <NextLink href={PathConst.LINK} className={styles.linkAnchor}>
-              link
-            </NextLink>
           </CustomNormalCard>
         </div>
       </div>

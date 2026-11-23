@@ -36,9 +36,9 @@
   font-weight: bold;
 }
 
-// プロフィールからリンク集(/link)への導線
-.linkAnchor {
-  color: theme.$color-accent-strong;
+// 名前からリンク集(/link)への導線。見た目は見出しのまま
+.nameLink {
+  color: inherit;
   text-decoration: none;
 
   &:hover {
