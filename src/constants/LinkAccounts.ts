@@ -39,7 +39,7 @@ export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   bluesky: { href: UrlConst.BLUESKY, name: 'Bluesky', displayName: 'taishi', handle: '@ningenme.bsky.social', purpose: '日常' },
   devNull: { href: UrlConst.DEV_NULL, name: 'dev-null.sh', displayName: 'taishi', handle: '@ningenMe', purpose: '技術発信' },
   mixi2: { href: UrlConst.MIXI2, name: 'mixi2', displayName: 'taishi', handle: '@ningenMe', purpose: '日常' },
-  facebook: { href: UrlConst.FACEBOOK, name: 'Facebook', displayName: 'taishi', handle: 'Furuta Taishi', purpose: '写真・日常' },
+  facebook: { href: UrlConst.FACEBOOK, name: 'Facebook', displayName: 'Furuta Taishi', handle: 'taishi.furuta.0511', purpose: '写真・日常' },
   instagram: { href: UrlConst.INSTAGRAM, name: 'Instagram', displayName: 'taishi', handle: 'taishi.furuta', purpose: '写真・日常' },
   youtrust: { href: UrlConst.YOUTRUST, name: 'YOUTRUST', displayName: 'taishi', purpose: '技術発信' },
   linkedin: { href: UrlConst.LINKEDIN, name: 'LinkedIn', handle: 'Taishi Furuta' },
