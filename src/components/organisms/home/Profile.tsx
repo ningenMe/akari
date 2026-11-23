@@ -1,9 +1,10 @@
 import Image from 'next/image'
+import NextLink from 'next/link'
 import { CustomNormalCard } from '../CustomCard'
 import { SubTitle } from 'components/atoms/Title'
 import fontStyles from 'styles/Font.module.scss'
 import styles from './Profile.module.scss'
-import { SiteConst } from 'constants/Const'
+import { PathConst, SiteConst } from 'constants/Const'
 
 export const Profile = (): JSX.Element => {
   return (
@@ -25,6 +26,9 @@ export const Profile = (): JSX.Element => {
             <p className={fontStyles.body}>
               {SiteConst.PROFILE_TEXT}
             </p>
+            <NextLink href={PathConst.LINK} className={styles.linkAnchor}>
+              link
+            </NextLink>
           </CustomNormalCard>
         </div>
       </div>

@@ -35,3 +35,13 @@
   font-size: 1em;
   font-weight: bold;
 }
+
+// プロフィールからリンク集(/link)への導線
+.linkAnchor {
+  color: theme.$color-accent-strong;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
