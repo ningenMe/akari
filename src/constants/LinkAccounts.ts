@@ -50,7 +50,7 @@ export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   sizu: { href: UrlConst.SIZU, name: 'しずかなインターネット', handle: 'ningenme', purpose: '私生活とか思いとか' },
   atcoder: { href: UrlConst.ATCODER, name: 'AtCoder', handle: 'ningenMe', purpose: '競技プログラミング' },
   codeforces: { href: UrlConst.CODEFORCES, name: 'Codeforces', handle: 'ningenMe', purpose: '競技プログラミング' },
-  yukicoder: { href: UrlConst.YUKICODER, name: 'yukicoder', handle: '4145', purpose: '競技プログラミング' },
+  yukicoder: { href: UrlConst.YUKICODER, name: 'yukicoder', displayName: 'ningenMe', purpose: '競技プログラミング' },
   toki: { href: UrlConst.TOKI, name: 'TOKI', handle: 'ningenMe', purpose: '競技プログラミング' },
   csacademy: { href: UrlConst.CSACADEMY, name: 'CS Academy', handle: 'ningenMe', purpose: '競技プログラミング' },
 }
