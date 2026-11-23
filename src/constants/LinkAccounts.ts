@@ -34,7 +34,7 @@ export type LinkAccount = {
 // SNSアカウントの情報を1か所に集める。並び順や表示の仕方はここでは決めない（各ページが決める）
 export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   github: { href: UrlConst.GITHUB, name: 'GitHub', displayName: 'taishi', handle: 'ningenMe', purpose: '開発' },
-  twitter: { href: UrlConst.TWITTER, name: 'Twitter', displayName: 'taishi', handle: '@ningenMe', purpose: '発信' },
+  twitter: { href: UrlConst.TWITTER, name: 'Twitter', displayName: 'taishi', handle: '@ningenMe', purpose: 'メイン。共有など雑多' },
   bluesky: { href: UrlConst.BLUESKY, name: 'Bluesky', displayName: 'taishi', handle: '@ningenme.bsky.social', purpose: '日常' },
   devNull: { href: UrlConst.DEV_NULL, name: 'dev-null.sh', displayName: 'taishi', handle: '@ningenMe', purpose: '技術発信' },
   mixi2: { href: UrlConst.MIXI2, name: 'mixi2', displayName: 'taishi', handle: '@ningenMe', purpose: '日常' },
