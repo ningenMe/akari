@@ -145,13 +145,13 @@ const BlogDropdownElement = ({
         <BlogNingenmeUrlChip blogType='SIZU' clickable={true} />
       </MenuItem>
       <MenuItem>
-        <BlogNingenmeUrlChip blogType='ZENN' clickable={true} />
+        <BlogNingenmeUrlChip blogType='HATENA' clickable={true} />
       </MenuItem>
       <MenuItem>
         <BlogNingenmeUrlChip blogType='QIITA' clickable={true} />
       </MenuItem>
       <MenuItem>
-        <BlogNingenmeUrlChip blogType='HATENA' clickable={true} />
+        <BlogNingenmeUrlChip blogType='ZENN' clickable={true} />
       </MenuItem>
       <MenuItem>
         <BlogNingenmeUrlChip blogType='AMEBA' clickable={true} />

@@ -53,9 +53,9 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
 
       <BlogTypeFilter items={[
         { blogType: 'SIZU', label: 'SIZU', checked: isSizu, onToggle: toggleSizu },
-        { blogType: 'ZENN', label: 'ZENN', checked: isZenn, onToggle: toggleZenn },
-        { blogType: 'QIITA', label: 'QIITA', checked: isQiita, onToggle: toggleQiita },
         { blogType: 'HATENA', label: 'HATENA', checked: isHatena, onToggle: toggleHatena },
+        { blogType: 'QIITA', label: 'QIITA', checked: isQiita, onToggle: toggleQiita },
+        { blogType: 'ZENN', label: 'ZENN', checked: isZenn, onToggle: toggleZenn },
         { blogType: 'AMEBA', label: 'AMEBA', checked: isAmeba, onToggle: toggleAmeba },
         { blogType: 'OLD_DIARY', label: 'OLD_DIARY', checked: isOldDiary, onToggle: toggleOldDiary }
       ]} />
