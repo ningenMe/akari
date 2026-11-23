@@ -35,3 +35,25 @@
   font-size: 1em;
   font-weight: bold;
 }
+
+// 名前からリンク集(/link)への導線。下線とアクセント色で、クリックできると分かるようにする
+.nameLink {
+  color: theme.$color-accent-strong;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  font-weight: bold;
+  white-space: nowrap;
+
+  &:hover {
+    color: theme.$color-accent;
+  }
+}
+
+// 説明文の中のリンク。色は本文のままにして、下線だけで示す
+.bodyLink {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}

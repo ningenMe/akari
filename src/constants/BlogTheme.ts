@@ -15,4 +15,7 @@ export const BLOG_TYPE_COLORS: Record<string, string> = {
 // 積み上げ順(下から上)。投稿数の多いものを下に置く。
 export const BLOG_TYPE_STACK_ORDER: string[] = ['AMEBA', 'HATENA', 'QIITA', 'SIZU', 'ZENN', 'OLD_DIARY']
 
+// 表示順。/blogのフィルター、ヘッダーのブログドロップダウン、リンク集はすべてこの順に従う。
+export const BLOG_TYPE_DISPLAY_ORDER: ReadonlyArray<string> = ['SIZU', 'HATENA', 'QIITA', 'ZENN', 'AMEBA', 'OLD_DIARY']
+
 export const getBlogColor = (blogType: string): string => BLOG_TYPE_COLORS[blogType] ?? BLOG_TYPE_FALLBACK_COLOR

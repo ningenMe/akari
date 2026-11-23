@@ -7,15 +7,20 @@ export class PathConst {
   static readonly OLD_DIARY: string = '/old-diary'
   static readonly PAPER: string = '/paper'
   static readonly SERVICE: string = '/service'
+  static readonly LINK: string = '/link'
   static readonly ILLUSTRATION: string = '/illustration'
   static readonly PRIVACY: string = '/privacy'
   static readonly TERMS: string = '/terms'
   static readonly CONTACT: string = '/contact'
 }
 
+// 名前の表記。自己紹介文の中のリンク部分の判定にも使うので、1か所で定義する
+const PROFILE_HANDLE: string = 'taishi / ningenMe'
+
 export class SiteConst {
+  static readonly PROFILE_HANDLE: string = PROFILE_HANDLE
   // Profileの本文と、各ページのmeta descriptionで共有する自己紹介文
-  static readonly PROFILE_TEXT: string = 'ソフトウェア開発とコードレビューと静的型付け言語が好きです。ningenMeというハンドルネームで活動しています。'
+  static readonly PROFILE_TEXT: string = `Furuta Taishiです。ソフトウェア開発とコードレビューと静的型付け言語が好きです。${PROFILE_HANDLE} というハンドルネームで活動しています。`
   // Privacy/Terms共通のお問い合わせ先。個別サービスのリポジトリはprivateで外部からissueを立てられないため、メール窓口に一本化する
   static readonly CONTACT_EMAIL: string = 'amohkuru@gmail.com'
 }
@@ -32,6 +37,7 @@ export class UrlConst {
   static readonly FACEBOOK: string = 'https://www.facebook.com/taishi.furuta.0511'
   static readonly INSTAGRAM: string = 'https://www.instagram.com/taishi.furuta/'
   static readonly YOUTRUST: string = 'https://youtrust.jp/users/c547983174691857f9881962eaa00436'
+  static readonly LINKEDIN: string = 'https://www.linkedin.com/in/taishi-furuta-b8b397187/'
   static readonly ATCODER: string = 'https://atcoder.jp/users/ningenMe'
   static readonly CODEFORCES: string = 'https://codeforces.com/profile/ningenMe'
   static readonly YUKICODER: string = 'https://yukicoder.me/users/4145'
@@ -70,17 +76,11 @@ export class LinkConst {
   static readonly NINGENME_NET: Link = { href: UrlConst.NINGENME_NET, name: 'ningenMe.net' }
   static readonly COMPRO_LIBRARY: Link = { href: UrlConst.COMPRO_LIBRARY, name: 'compro-library' }
   static readonly SERVICE: Link = { href: PathConst.SERVICE, name: 'service' }
+  static readonly LINK: Link = { href: PathConst.LINK, name: 'link' }
   static readonly PRIVACY: Link = { href: PathConst.PRIVACY, name: 'Privacy' }
   static readonly TERMS: Link = { href: PathConst.TERMS, name: 'Terms' }
   static readonly CONTACT: Link = { href: PathConst.CONTACT, name: 'Contact' }
   static readonly GITHUB: Link = { href: UrlConst.GITHUB, name: 'GitHub' }
-  static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: 'Twitter' }
-  static readonly BLUESKY: Link = { href: UrlConst.BLUESKY, name: 'Bluesky' }
-  static readonly DEV_NULL: Link = { href: UrlConst.DEV_NULL, name: 'dev-null.sh' }
-  static readonly MIXI2: Link = { href: UrlConst.MIXI2, name: 'mixi2' }
-  static readonly FACEBOOK: Link = { href: UrlConst.FACEBOOK, name: 'Facebook' }
-  static readonly INSTAGRAM: Link = { href: UrlConst.INSTAGRAM, name: 'Instagram' }
-  static readonly YOUTRUST: Link = { href: UrlConst.YOUTRUST, name: 'YOUTRUST' }
   static readonly ATCODER: Link = { href: UrlConst.ATCODER, name: 'AtCoder' }
   static readonly CODEFORCES: Link = { href: UrlConst.CODEFORCES, name: 'Codeforces' }
   static readonly YUKICODER: Link = { href: UrlConst.YUKICODER, name: 'yukicoder' }
