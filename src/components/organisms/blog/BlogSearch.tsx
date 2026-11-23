@@ -6,23 +6,20 @@ import { BlogChip } from 'components/atoms/blog/BlogChip'
 import { CustomNormalCard } from 'components/organisms/CustomCard'
 import { BlogPostsChart } from 'components/organisms/blog/BlogPostsChart'
 import { BlogTypeFilter } from 'components/organisms/blog/BlogTypeFilter'
-
-const useBool = (): [boolean, () => void] => {
-  const [value, setValue] = useState(true);
-  return [value, () => setValue(value => !value)];
-}
+import { BLOG_TYPE_DISPLAY_ORDER } from 'constants/BlogTheme'
 
 interface BlogSearchProps {
   blogList: BlogData[]
 }
 
 export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
-  const [isSizu, toggleSizu] = useBool()
-  const [isZenn, toggleZenn] = useBool()
-  const [isQiita, toggleQiita] = useBool()
-  const [isHatena, toggleHatena] = useBool()
-  const [isAmeba, toggleAmeba] = useBool()
-  const [isOldDiary, toggleOldDiary] = useBool()
+  // 各ブログ種別の表示/非表示。初期状態はすべて表示
+  const [checked, setChecked] = useState<Record<string, boolean>>(
+    () => Object.fromEntries(BLOG_TYPE_DISPLAY_ORDER.map((blogType) => [blogType, true]))
+  )
+  const toggle = (blogType: string): void => {
+    setChecked((prev) => ({ ...prev, [blogType]: !prev[blogType] }))
+  }
 
   if (blogList.length === 0) {
     return (
@@ -33,15 +30,7 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
     )
   }
 
-  const filteredBlogList = blogList.filter((blog) => {
-    if (isSizu && blog.blogType === 'SIZU') return true
-    if (isZenn && blog.blogType === 'ZENN') return true
-    if (isQiita && blog.blogType === 'QIITA') return true
-    if (isHatena && blog.blogType === 'HATENA') return true
-    if (isAmeba && blog.blogType === 'AMEBA') return true
-    if (isOldDiary && blog.blogType === 'OLD_DIARY') return true
-    return false
-  })
+  const filteredBlogList = blogList.filter((blog) => checked[blog.blogType] === true)
   const blogCardList = filteredBlogList.map((blog, idx) => (
     <BlogChip blog={blog} key={idx}/>
   ));
@@ -51,14 +40,12 @@ export const BlogSearch = ({ blogList }: BlogSearchProps): JSX.Element => {
       <Title title='Blog' />
       <BlogPostsChart blogList={filteredBlogList} />
 
-      <BlogTypeFilter items={[
-        { blogType: 'SIZU', label: 'SIZU', checked: isSizu, onToggle: toggleSizu },
-        { blogType: 'HATENA', label: 'HATENA', checked: isHatena, onToggle: toggleHatena },
-        { blogType: 'QIITA', label: 'QIITA', checked: isQiita, onToggle: toggleQiita },
-        { blogType: 'ZENN', label: 'ZENN', checked: isZenn, onToggle: toggleZenn },
-        { blogType: 'AMEBA', label: 'AMEBA', checked: isAmeba, onToggle: toggleAmeba },
-        { blogType: 'OLD_DIARY', label: 'OLD_DIARY', checked: isOldDiary, onToggle: toggleOldDiary }
-      ]} />
+      <BlogTypeFilter items={BLOG_TYPE_DISPLAY_ORDER.map((blogType) => ({
+        blogType,
+        label: blogType,
+        checked: checked[blogType],
+        onToggle: () => toggle(blogType),
+      }))} />
 
       <Box sx={{ mt: 3 }}>
         <CustomNormalCard>

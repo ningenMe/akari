@@ -1,6 +1,6 @@
 import { UrlConst } from './Const'
 
-export type SnsId =
+export type LinkId =
   | 'github'
   | 'twitter'
   | 'bluesky'
@@ -20,7 +20,7 @@ export type SnsId =
   | 'toki'
   | 'csacademy'
 
-export type SnsAccount = {
+export type LinkAccount = {
   readonly href: string,
   readonly name: string,
   // 表示名（screen name）。未確認のものは省略
@@ -32,7 +32,7 @@ export type SnsAccount = {
 }
 
 // SNSアカウントの情報を1か所に集める。並び順や表示の仕方はここでは決めない（各ページが決める）
-export const SNS_ACCOUNTS: Readonly<Record<SnsId, SnsAccount>> = {
+export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   github: { href: UrlConst.GITHUB, name: 'GitHub', displayName: 'taishi', handle: 'ningenMe', purpose: '開発' },
   twitter: { href: UrlConst.TWITTER, name: 'Twitter', displayName: 'taishi', handle: '@ningenMe', purpose: '発信' },
   bluesky: { href: UrlConst.BLUESKY, name: 'Bluesky', displayName: 'taishi', handle: '@ningenme.bsky.social', purpose: '日常' },

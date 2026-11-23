@@ -19,6 +19,7 @@ import { Box } from '@mui/system'
 import MenuIcon from '@mui/icons-material/Menu'
 import { LinkConst, PathConst } from '../../constants/Const'
 import { BlogNingenmeUrlChip } from 'components/atoms/blog/BlogChip'
+import { BLOG_TYPE_DISPLAY_ORDER } from 'constants/BlogTheme'
 import { LastUpdatedDesktop } from 'components/atoms/LastUpdatedDesktop'
 import { LastUpdatedMobile } from 'components/atoms/LastUpdatedMobile'
 
@@ -141,24 +142,11 @@ const BlogDropdownElement = ({
           All
         </a>
       </MenuItem>
-      <MenuItem>
-        <BlogNingenmeUrlChip blogType='SIZU' clickable={true} />
-      </MenuItem>
-      <MenuItem>
-        <BlogNingenmeUrlChip blogType='HATENA' clickable={true} />
-      </MenuItem>
-      <MenuItem>
-        <BlogNingenmeUrlChip blogType='QIITA' clickable={true} />
-      </MenuItem>
-      <MenuItem>
-        <BlogNingenmeUrlChip blogType='ZENN' clickable={true} />
-      </MenuItem>
-      <MenuItem>
-        <BlogNingenmeUrlChip blogType='AMEBA' clickable={true} />
-      </MenuItem>
-      <MenuItem>
-        <BlogNingenmeUrlChip blogType='OLD_DIARY' clickable={true} label='OLD DIARY' />
-      </MenuItem>
+      {BLOG_TYPE_DISPLAY_ORDER.map((blogType) => (
+        <MenuItem key={blogType}>
+          <BlogNingenmeUrlChip blogType={blogType} clickable={true} label={blogType === 'OLD_DIARY' ? 'OLD DIARY' : undefined} />
+        </MenuItem>
+      ))}
     </Menu>
   </div>
 )

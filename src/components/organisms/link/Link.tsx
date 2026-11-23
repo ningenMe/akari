@@ -9,11 +9,26 @@ import TerminalIcon from '@mui/icons-material/Terminal'
 import WorkIcon from '@mui/icons-material/Work'
 import ArticleIcon from '@mui/icons-material/Article'
 import { Title } from 'components/atoms/Title'
-import { SNS_ACCOUNTS, SnsId } from 'constants/SnsAccounts'
-import styles from './Links.module.scss'
+import { LINK_ACCOUNTS, LinkId } from 'constants/LinkAccounts'
+import { BLOG_TYPE_DISPLAY_ORDER } from 'constants/BlogTheme'
+import styles from './Link.module.scss'
 
-// このページで表示する順番。データ自体は constants/SnsAccounts にある
-const ORDER: ReadonlyArray<SnsId> = [
+// ブログ種別 → リンク先のid。OLD_DIARY は自サイト内のページなので、リンク集には載せない
+const BLOG_TYPE_TO_LINK_ID: Readonly<Record<string, LinkId>> = {
+  SIZU: 'sizu',
+  HATENA: 'hatena',
+  QIITA: 'qiita',
+  ZENN: 'zenn',
+  AMEBA: 'ameba',
+}
+// ブログ系の並びは BLOG_TYPE_DISPLAY_ORDER に従う
+const BLOG_LINK_IDS: ReadonlyArray<LinkId> = BLOG_TYPE_DISPLAY_ORDER.flatMap((blogType) => {
+  const linkId = BLOG_TYPE_TO_LINK_ID[blogType]
+  return linkId ? [linkId] : []
+})
+
+// このページで表示する順番。データ自体は constants/LinkAccounts にある
+const ORDER: ReadonlyArray<LinkId> = [
   'github',
   'twitter',
   'bluesky',
@@ -22,11 +37,7 @@ const ORDER: ReadonlyArray<SnsId> = [
   'instagram',
   'youtrust',
   'devNull',
-  'sizu',
-  'hatena',
-  'qiita',
-  'zenn',
-  'ameba',
+  ...BLOG_LINK_IDS,
   'atcoder',
   'codeforces',
   'yukicoder',
@@ -35,7 +46,7 @@ const ORDER: ReadonlyArray<SnsId> = [
 ]
 
 // アイコンはこのページの見せ方なので、ページ側で持つ
-const ICONS: Readonly<Record<SnsId, ReactNode>> = {
+const ICONS: Readonly<Record<LinkId, ReactNode>> = {
   github: <GitHubIcon />,
   twitter: <TwitterIcon />,
   bluesky: <WorkIcon />,
@@ -56,17 +67,17 @@ const ICONS: Readonly<Record<SnsId, ReactNode>> = {
   csacademy: <Image src='/csacademy.png' alt='' width={18} height={18} />,
 }
 
-export const Links = (): JSX.Element => {
+export const Link = (): JSX.Element => {
   return (
     <Container className={styles.root}>
-      <Title title='Links' />
+      <Title title='Link' />
       <div className={styles.profile}>
         <Image src='/taishi.jpg' alt='' width={96} height={96} className={styles.avatar} />
         <h2 className={styles.name}>taishi / ningenMe</h2>
       </div>
       <ul className={styles.list}>
         {ORDER.map((id) => {
-          const account = SNS_ACCOUNTS[id]
+          const account = LINK_ACCOUNTS[id]
           return (
             <li key={id}>
               <a href={account.href} target='_blank' rel='noreferrer noopener' className={styles.link}>
