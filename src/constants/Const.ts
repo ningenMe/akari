@@ -7,6 +7,7 @@ export class PathConst {
   static readonly OLD_DIARY: string = '/old-diary'
   static readonly PAPER: string = '/paper'
   static readonly SERVICE: string = '/service'
+  static readonly LINK: string = '/link'
   static readonly ILLUSTRATION: string = '/illustration'
   static readonly PRIVACY: string = '/privacy'
   static readonly TERMS: string = '/terms'
@@ -71,17 +72,11 @@ export class LinkConst {
   static readonly NINGENME_NET: Link = { href: UrlConst.NINGENME_NET, name: 'ningenMe.net' }
   static readonly COMPRO_LIBRARY: Link = { href: UrlConst.COMPRO_LIBRARY, name: 'compro-library' }
   static readonly SERVICE: Link = { href: PathConst.SERVICE, name: 'service' }
+  static readonly LINK: Link = { href: PathConst.LINK, name: 'link' }
   static readonly PRIVACY: Link = { href: PathConst.PRIVACY, name: 'Privacy' }
   static readonly TERMS: Link = { href: PathConst.TERMS, name: 'Terms' }
   static readonly CONTACT: Link = { href: PathConst.CONTACT, name: 'Contact' }
   static readonly GITHUB: Link = { href: UrlConst.GITHUB, name: 'GitHub' }
-  static readonly TWITTER: Link = { href: UrlConst.TWITTER, name: 'Twitter' }
-  static readonly BLUESKY: Link = { href: UrlConst.BLUESKY, name: 'Bluesky' }
-  static readonly DEV_NULL: Link = { href: UrlConst.DEV_NULL, name: 'dev-null.sh' }
-  static readonly MIXI2: Link = { href: UrlConst.MIXI2, name: 'mixi2' }
-  static readonly FACEBOOK: Link = { href: UrlConst.FACEBOOK, name: 'Facebook' }
-  static readonly INSTAGRAM: Link = { href: UrlConst.INSTAGRAM, name: 'Instagram' }
-  static readonly YOUTRUST: Link = { href: UrlConst.YOUTRUST, name: 'YOUTRUST' }
   static readonly ATCODER: Link = { href: UrlConst.ATCODER, name: 'AtCoder' }
   static readonly CODEFORCES: Link = { href: UrlConst.CODEFORCES, name: 'Codeforces' }
   static readonly YUKICODER: Link = { href: UrlConst.YUKICODER, name: 'yukicoder' }
