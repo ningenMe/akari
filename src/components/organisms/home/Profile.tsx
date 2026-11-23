@@ -30,7 +30,7 @@ export const Profile = (): JSX.Element => {
             </h1>
             <p className={fontStyles.body}>
               {textBeforeHandle}
-              <NextLink href={PathConst.LINK} className={styles.nameLink}>
+              <NextLink href={PathConst.LINK} className={styles.bodyLink}>
                 {SiteConst.PROFILE_HANDLE}
               </NextLink>
               {textAfterHandle}
