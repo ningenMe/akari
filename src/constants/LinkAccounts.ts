@@ -51,6 +51,6 @@ export const LINK_ACCOUNTS: Readonly<Record<LinkId, LinkAccount>> = {
   atcoder: { href: UrlConst.ATCODER, name: 'AtCoder', displayName: 'ningenMe', handle: 'ningenMe', purpose: '競技プログラミング' },
   codeforces: { href: UrlConst.CODEFORCES, name: 'Codeforces', displayName: 'ningenMe', handle: 'ningenMe', purpose: '競技プログラミング' },
   yukicoder: { href: UrlConst.YUKICODER, name: 'yukicoder', displayName: 'ningenMe', purpose: '競技プログラミング' },
-  toki: { href: UrlConst.TOKI, name: 'TOKI', handle: 'ningenMe', purpose: '競技プログラミング' },
-  csacademy: { href: UrlConst.CSACADEMY, name: 'CS Academy', handle: 'ningenMe', purpose: '競技プログラミング' },
+  toki: { href: UrlConst.TOKI, name: 'TOKI', displayName: 'ningenMe', handle: 'ningenMe', purpose: '競技プログラミング' },
+  csacademy: { href: UrlConst.CSACADEMY, name: 'CS Academy', displayName: 'ningenMe', handle: 'ningenMe', purpose: '競技プログラミング' },
 }
